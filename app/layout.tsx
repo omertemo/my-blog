@@ -1,0 +1,36 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Ömer Çayır — Blog & Portfolio",
+  description:
+    "Veri entegrasyonu, Full-Stack geliştirme ve kişisel düşünceler üzerine yazılar.",
+  openGraph: {
+    title: "Ömer Çayır — Blog & Portfolio",
+    description:
+      "Veri entegrasyonu, Full-Stack geliştirme ve kişisel düşünceler üzerine yazılar.",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="tr" suppressHydrationWarning>
+      <body className="min-h-screen flex flex-col">
+        <LanguageProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </LanguageProvider>
+      </body>
+    </html>
+  );
+}
