@@ -5,11 +5,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Ömer Çayır — Blog & Portfolio",
+  title: "Ömer ÇAYIR — Blog & Portfolio",
   description:
     "Veri entegrasyonu, Full-Stack geliştirme ve kişisel düşünceler üzerine yazılar.",
   openGraph: {
-    title: "Ömer Çayır — Blog & Portfolio",
+    title: "Ömer ÇAYIR — Blog & Portfolio",
     description:
       "Veri entegrasyonu, Full-Stack geliştirme ve kişisel düşünceler üzerine yazılar.",
     locale: "tr_TR",

@@ -338,23 +338,6 @@ run().catch(console.error);</code></pre>
     },
   },
   {
-    slug: "redux-vs-zustand-state-management",
-    title: {
-      tr: "Redux vs Zustand: 2025'te State Yönetimi",
-      en: "Redux vs Zustand: State Management in 2025",
-    },
-    desc: {
-      tr: "İkisini de production'da kullanan biri olarak gerçek farklar, trade-off'lar ve ne zaman hangisini seçmeli.",
-      en: "Real differences, trade-offs, and when to pick each — from someone who's used both in production.",
-    },
-    tag: "React",
-    tagVariant: "purple",
-    emoji: "⚛️",
-    readTime: 5,
-    date: "2026-03-01",
-    published: false,
-  },
-  {
     slug: "airflow-dag-tasarimi",
     title: {
       tr: "Airflow DAG Tasarımı: Hatalardan Öğrendiklerim",

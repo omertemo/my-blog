@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="text-gradient text-lg font-bold">
-          ömer.dev
+          Ömer ÇAYIR
         </Link>
 
         {/* Desktop nav */}

@@ -3,31 +3,44 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const tech = [
-  { label: "JavaScript / TypeScript / Python", pct: 90, icon: "⚡" },
-  { label: "React / Node.js", pct: 88, icon: "⚛️" },
-  { label: "Kafka / Spark / Telegraf", pct: 82, icon: "🔥" },
+  { label: "JavaScript / TypeScript / Python / C/C++", pct: 90, icon: "⚡" },
+  { label: "React / Node.js / MERN Stack", pct: 88, icon: "⚛️" },
+  { label: "Kafka / Spark / ETL-ELT Pipelines", pct: 82, icon: "🔥" },
   { label: "Airflow / Docker / Kubernetes", pct: 78, icon: "☸️" },
-  { label: "Greenplum / PostgreSQL / MongoDB / Redis", pct: 80, icon: "🗄️" },
+  { label: "PostgreSQL / MongoDB / MSSQL / Redis", pct: 80, icon: "🗄️" },
   { label: "Linux / Bash / Git", pct: 80, icon: "🖥️" },
 ];
 
-const interests = [
-  "Veri Mühendisliği",
-  "Açık Kaynak",
-  "Mekanik Klavye",
-  "Satranç",
-  "Hiking",
-];
+const interests = {
+  tr: [
+    "Veri Mühendisliği",
+    "Gerçek Zamanlı Sistemler",
+    "Açık Kaynak",
+    "Full-Stack Geliştirme",
+    "Bulut Mimarisi",
+    "DevOps & CI/CD",
+    "Dağıtık Sistemler",
+  ],
+  en: [
+    "Data Engineering",
+    "Real-Time Systems",
+    "Open Source",
+    "Full-Stack Development",
+    "Cloud Architecture",
+    "DevOps & CI/CD",
+    "Distributed Systems",
+  ],
+};
 
 export default function AboutPage() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
       {/* Header */}
       <div className="mb-12">
         <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent1">
-          ömer.dev
+          Ömer ÇAYIR
         </p>
         <h1 className="text-4xl font-extrabold tracking-tight text-white">
           {t("about.title")}
@@ -90,7 +103,7 @@ export default function AboutPage() {
           {t("about.interests")}
         </h2>
         <div className="flex flex-wrap gap-2">
-          {interests.map((i) => (
+          {interests[lang].map((i) => (
             <span
               key={i}
               className="rounded-lg border border-accent2/15 bg-accent2/10 px-3 py-1.5 text-sm text-accent2/90"

@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/7 py-6 text-center text-xs text-white/30">
-      © 2026 Ömer Çayır · {t("footer.rights")}
+      © 2026 Ömer ÇAYIR · {t("footer.rights")}
     </footer>
   );
 }

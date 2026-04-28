@@ -37,7 +37,7 @@ export default function ContactPage() {
       {/* Header */}
       <div className="mb-10">
         <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent1">
-          ömer.dev
+          Ömer ÇAYIR
         </p>
         <h1 className="text-4xl font-extrabold tracking-tight text-white">
           {t("contact.title")}

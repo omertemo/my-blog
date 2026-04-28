@@ -32,15 +32,17 @@ export default function HomePage() {
       <section className="mx-auto max-w-5xl px-6 pb-20">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {/* Featured post (spans 2 cols on lg) */}
-          <div className="sm:col-span-2 h-full">
-            <BlogCard post={recent[0]} featured />
-          </div>
+          {recent[0] && (
+            <div className="sm:col-span-2 h-full">
+              <BlogCard post={recent[0]} featured />
+            </div>
+          )}
           {/* Post 2 */}
-          <BlogCard post={recent[1]} />
+          {recent[1] && <BlogCard post={recent[1]} />}
           {/* Post 3 */}
-          <BlogCard post={recent[2]} />
+          {recent[2] && <BlogCard post={recent[2]} />}
           {/* Post 4 */}
-          <BlogCard post={recent[3]} />
+          {recent[3] && <BlogCard post={recent[3]} />}
         </div>
       </section>
     </>

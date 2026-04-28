@@ -38,7 +38,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.education": "Eğitim",
     "about.eduSchool": "Karadeniz Teknik Üniversitesi",
     "about.eduDept": "Bilgisayar Mühendisliği",
-    "about.eduYear": "2018 – 2023",
+    "about.eduYear": "2017 – 2023",
     "about.interests": "İlgi Alanları",
 
     // Contact
@@ -55,7 +55,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     // CV
     "cv.backHome": "Ana Sayfaya Dön",
-    "cv.title": "Ömer Çayır — CV",
+    "cv.title": "Ömer ÇAYIR — CV",
     "cv.role": "Data Engineer • Full-Stack Developer",
     "cv.about": "Hakkımda",
     "cv.aboutText":
@@ -109,7 +109,7 @@ export const translations: Record<Lang, Record<string, string>> = {
     "about.education": "Education",
     "about.eduSchool": "Karadeniz Technical University",
     "about.eduDept": "Computer Engineering",
-    "about.eduYear": "2018 – 2023",
+    "about.eduYear": "2017 – 2023",
     "about.interests": "Interests",
 
     // Contact
@@ -126,7 +126,7 @@ export const translations: Record<Lang, Record<string, string>> = {
 
     // CV
     "cv.backHome": "Back to Home",
-    "cv.title": "Ömer Çayır — Resume",
+    "cv.title": "Ömer ÇAYIR — Resume",
     "cv.role": "Data Engineer • Full-Stack Developer",
     "cv.about": "About",
     "cv.aboutText":

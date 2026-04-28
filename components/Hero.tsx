@@ -46,7 +46,7 @@ export default function Hero() {
           {t("hero.greeting")}
         </p>
         <h1 className="mb-5 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-          Ömer <span className="text-gradient">Çayır</span>
+          Ömer <span className="text-gradient">ÇAYIR</span>
         </h1>
         <p className="mb-8 max-w-md text-base text-white/55 md:text-lg">
           {t("hero.lead")}
@@ -97,8 +97,8 @@ export default function Hero() {
           <div className="absolute inset-[-6px] rounded-full bg-accent-gradient opacity-30 blur-xl" />
           <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-accent1/25 bg-bg3">
             <Image
-              src="/assets/pp.jpeg"
-              alt="Ömer Çayır"
+              src="/assets/MyPhoto.jpeg"
+              alt="Ömer ÇAYIR"
               fill
               className="object-cover"
               priority
