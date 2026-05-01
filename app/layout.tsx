@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Ömer ÇAYIR — Blog & Portfolio",
@@ -31,6 +31,7 @@ export default function RootLayout({
           <Footer />
         </LanguageProvider>
       </body>
+      <Analytics />
     </html>
   );
 }
