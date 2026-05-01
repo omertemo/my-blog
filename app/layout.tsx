@@ -30,8 +30,8 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </LanguageProvider>
+        <Analytics />
       </body>
-      <Analytics />
     </html>
   );
 }
