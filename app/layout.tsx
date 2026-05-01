@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Ömer ÇAYIR — Blog & Portfolio",
@@ -32,6 +33,7 @@ export default function RootLayout({
           <Footer />
         </LanguageProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
