@@ -13,6 +13,125 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    slug: "claude-code-uzmanlik-rehberi-1",
+    title: {
+      tr: "Claude Code Uzmanlık Rehberi: Bölüm 1 – Temeller ve Akıllı Bağlam Yönetimi",
+      en: "Claude Code Mastery Guide: Chapter 1 – Basics and Smart Context Management",
+    },
+    desc: {
+      tr: "Kurulumdan oturum yönetimine; CLAUDE.md'den token tasarrufuna kadar Claude Code'un temel özelliklerini ve slash komutlarını keşfedin.",
+      en: "From installation to session management; explore Claude Code's core features including CLAUDE.md, slash commands, and token-saving strategies.",
+    },
+    tag: "Claude Code",
+    tagVariant: "purple",
+    emoji: "🤖",
+    readTime: 7,
+    date: "2026-06-17",
+    published: true,
+    content: {
+      tr: `
+<p>Claude Code, standart bir yapay zeka sohbet arayüzü değildir. Terminalinizde çalışan, dosya sisteminize erişebilen, testlerinizi koşturabilen ve Git operasyonlarını yönetebilen gelişmiş bir CLI Geliştirici Ajanıdır.</p>
+
+<h2>Kurulum</h2>
+<p>Claude Code'u kullanmaya başlamak için önce npm üzerinden global olarak yüklemeniz gerekiyor:</p>
+<pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+<p>Ardından Anthropic API anahtarınızı ortam değişkeni olarak tanımlayın:</p>
+<pre><code>export ANTHROPIC_API_KEY="sk-ant-..."</code></pre>
+<p>Bu satırı <code>~/.zshrc</code> veya <code>~/.bashrc</code> dosyanıza eklerseniz her oturumda tekrar tanımlamanıza gerek kalmaz. API anahtarını console.anthropic.com adresinden edinebilirsiniz.</p>
+
+<h2>Temel CLI Başlangıç Komutları</h2>
+<ul>
+  <li><code>claude</code> — İnteraktif terminal oturumunu başlatır.</li>
+  <li><code>claude "explain this project"</code> — Doğrudan bir görev veya soruyla oturumu tetikler.</li>
+  <li><code>claude -c</code> / <code>--continue</code> — Mevcut dizindeki en son konuşmaya kaldığın yerden devam eder. Bağlamı tekrar anlatmak zorunda kalmazsın!</li>
+  <li><code>claude -p "query"</code> — Sadece tek bir komut çalıştırıp cevabı alır ve terminalden çıkar. Script otomasyonları için harikadır.</li>
+</ul>
+
+<h2>Hayat Kurtaran Slash Komutları</h2>
+<p>Claude içerisindeyken terminale yön veren en kritik komutlar:</p>
+<ul>
+  <li><code>/help</code> — Kullanılabilir tüm slash komutlarını listeler. Claude Code'a ilk başladığınızda çalıştırmanızı öneririm.</li>
+  <li><code>/config</code> (veya <code>/settings</code>) — Temayı, varsayılan modeli ve çıktı stillerini özelleştirebileceğiniz arayüzü açar.</li>
+  <li><code>/context</code> — Token kullanımını renkli bir grid grafiği olarak görselleştirir. Hafızayı neyin şişirdiğini nokta atışı gösterir.</li>
+  <li><code>/compact [talimatlar]</code> — <strong>Token Cankurtaranı.</strong> Hafıza %80'i geçtiğinde geçmişi özetler ve temizler. <code>/compact Focus on tests</code> diyerek sadece test odaklı kısımları aklında tutmasını sağlayabilirsin.</li>
+  <li><code>/cost</code> — Mevcut oturumda harcanan token sayısını ve tahmini maliyeti gösterir. Uzun oturumlarda ne kadar harcadığınızı takip etmek için idealdir.</li>
+  <li><code>/clear</code> (veya <code>/reset</code>) — Geçmişi tamamen sıfırlar. Farklı bir göreve geçerken context karmaşasını önlemek için şarttır.</li>
+  <li><code>/model [model_adı]</code> — Oturumu kapatmadan model değiştirir. Kod okuma/keşif için hızlı model, ağır refactor için üst model — maliyet ve hız dengesi kurabilirsin.</li>
+</ul>
+
+<h2>CLAUDE.md: Hafıza Yerine Kalıcı Bağlam</h2>
+<p>Her oturum başında projeyi Claude'a yeniden anlatmak hem yorucu hem de pahalıdır. Çözüm: proje kökünüze bir <code>CLAUDE.md</code> dosyası oluşturun.</p>
+<p>Claude Code her session başında bu dosyayı otomatik olarak okur. İçine şunları yazabilirsiniz:</p>
+<ul>
+  <li>Proje mimarisi ve klasör yapısı</li>
+  <li>Kod yazım kuralları ve stil tercihleri</li>
+  <li>Sık kullanılan komutlar (<code>npm run dev</code>, test komutu vb.)</li>
+  <li>Dokunulmaması gereken dosyalar veya önemli kısıtlamalar</li>
+  <li>Aktif geliştirme bağlamı: "Şu an auth modülü üzerinde çalışıyoruz"</li>
+</ul>
+<p>CLAUDE.md sayesinde her yeni oturumda "bu proje şöyle çalışıyor" diye uzun uzun anlatmak zorunda kalmazsınız. Token tasarrufu yapar, zaman kazanırsınız.</p>
+
+<h2>Oturum Yönetimi</h2>
+<p>Yazılım geliştirirken sürekli bölünürüz. Claude Code buna harika bir çözüm sunuyor:</p>
+<ul>
+  <li><code>/rename &lt;isim&gt;</code> — Mevcut seansına <code>auth-fix</code> gibi anlamlı bir isim verir.</li>
+  <li><code>/resume</code> — Boş çalıştırıldığında eski seansların listesini getirir; seçip kaldığın yere dönebilirsin.</li>
+  <li><code>/fork</code> — Git branch mantığı gibidir. Mevcut konuşmayı çatallandırır. Bir yöntem denersin, patlarsa çatalladığın yere geri dönebilirsin.</li>
+</ul>
+      `,
+      en: `
+<p>Claude Code is not a standard AI chat interface. It is an advanced CLI Developer Agent that runs in your terminal, accesses your file system, runs your tests, and manages Git operations.</p>
+
+<h2>Installation</h2>
+<p>To get started with Claude Code, install it globally via npm:</p>
+<pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+<p>Then set your Anthropic API key as an environment variable:</p>
+<pre><code>export ANTHROPIC_API_KEY="sk-ant-..."</code></pre>
+<p>Add this to your <code>~/.zshrc</code> or <code>~/.bashrc</code> so you don't need to set it again each session. Get your API key at console.anthropic.com.</p>
+
+<h2>Core CLI Commands</h2>
+<ul>
+  <li><code>claude</code> — Starts an interactive terminal session.</li>
+  <li><code>claude "explain this project"</code> — Triggers a session with a direct task or question.</li>
+  <li><code>claude -c</code> / <code>--continue</code> — Continues from where you left off in the most recent conversation in the current directory. No need to re-explain context!</li>
+  <li><code>claude -p "query"</code> — Runs a single command and exits after getting the answer. Great for script automation.</li>
+</ul>
+
+<h2>Life-Saving Slash Commands</h2>
+<p>The most critical commands to use once inside Claude:</p>
+<ul>
+  <li><code>/help</code> — Lists all available slash commands. I recommend running this when you first start Claude Code.</li>
+  <li><code>/config</code> (or <code>/settings</code>) — Opens the interface to customize theme, default model, and output styles.</li>
+  <li><code>/context</code> — Visualizes token usage as a colorful grid graph. Pinpoints exactly what's inflating your memory.</li>
+  <li><code>/compact [instructions]</code> — <strong>Token Lifesaver.</strong> Summarizes and clears history when memory exceeds 80%. Use <code>/compact Focus on tests</code> to keep only test-relevant context in memory.</li>
+  <li><code>/cost</code> — Shows the token count and estimated cost spent in the current session. Ideal for tracking spend during long sessions.</li>
+  <li><code>/clear</code> (or <code>/reset</code>) — Completely resets history. Essential to prevent context pollution when switching to a different task.</li>
+  <li><code>/model [model_name]</code> — Switches models without closing the session. Use a faster model for code reading, switch to a higher model for heavy refactoring — balance cost and speed.</li>
+</ul>
+
+<h2>CLAUDE.md: Persistent Context Instead of Memory</h2>
+<p>Re-explaining your project to Claude at the start of every session is tedious and costly. The solution: create a <code>CLAUDE.md</code> file in your project root.</p>
+<p>Claude Code automatically reads this file at the start of every session. You can put in it:</p>
+<ul>
+  <li>Project architecture and folder structure</li>
+  <li>Coding conventions and style preferences</li>
+  <li>Frequently used commands (<code>npm run dev</code>, test command, etc.)</li>
+  <li>Files not to touch or important constraints</li>
+  <li>Active development context: "We're currently working on the auth module"</li>
+</ul>
+<p>With CLAUDE.md, you never have to explain "here's how this project works" in every new session. Save tokens, save time.</p>
+
+<h2>Session Management</h2>
+<p>We constantly get interrupted while developing software. Claude Code has a great solution for this:</p>
+<ul>
+  <li><code>/rename &lt;name&gt;</code> — Gives your current session a meaningful name like <code>auth-fix</code>.</li>
+  <li><code>/resume</code> — When run without arguments, shows a list of past sessions so you can pick up where you left off.</li>
+  <li><code>/fork</code> — Works like Git branching. Forks the current conversation. Try one approach; if it fails, return to where you forked.</li>
+</ul>
+      `,
+    },
+  },
+  {
     slug: "kafka-gercek-zamanli-veri-isleme",
     title: {
       tr: "Apache Kafka ile Gerçek Zamanlı Veri İşleme",
