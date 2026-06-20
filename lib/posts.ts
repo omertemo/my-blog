@@ -12,7 +12,7 @@ export interface Post {
 }
 
 export const posts: Post[] = [
-                      {
+                                      {
     slug: "claude-101-rehberi",
     title: {
       tr: "A'dan Z'ye Claude 101: Geliştiriciler İçin Akıllı Bir İş Ortağı",
@@ -25,7 +25,7 @@ export const posts: Post[] = [
     tag: "AI",
     tagVariant: "cyan",
     emoji: "🤖",
-    readTime: 15,
+    readTime: 25,
     date: "2026-06-20",
     published: false,
     content: {
@@ -192,6 +192,104 @@ export const posts: Post[] = [
   <li><strong>Belgelere İsimleriyle Referans Verin:</strong> Sohbet esnasında Claude'a belirli bir belgeye odaklanmasını söyleyebilirsiniz (örneğin: *"Q3 raporumuza dayanarak en önemli müşteri geri bildirimlerini özetle"*).</li>
 </ul>
 
+<h3>Artifacts Nedir?</h3>
+
+<p><strong>Artifacts</strong> (Yapay Nesneler), Claude'un sohbetinizin hemen yanında yer alan özel bir pencerede oluşturduğu bağımsız (<strong>standalone</strong>) ve etkileşimli çıktılardır. Sohbet akışının içinde kaybolan uzun kod blokları veya metin yığınları almak yerine, içeriğinizin derlenmiş (<strong>rendered</strong>) ve doğrudan kullanıma hazır halini yan tarafta ayrı bir pencerede görürsünüz. Bu, çalışan bir web sitesi prototipi, etkileşimli bir grafik (<strong>interactive chart</strong>) veya anında indirebileceğiniz bir sistem mimarisi dokümanı olabilir.</p>
+
+<p>Claude, üretilen içerik şu kriterleri karşıladığında otomatik olarak bir <strong>artifact</strong> oluşturur:</p>
+
+<ul>
+  <li><strong>Belirgin ve Kendi Kendine Yeten İçerikler:</strong> Genellikle 15 satırın üzerindeki karmaşık kodlar veya belgeler.</li>
+
+  <li><strong>İterasyon ve Düzenlemeye Uygun Yapılar:</strong> Üzerinde tekrar çalışmak, düzenlemek veya gelecekte yeniden kullanmak isteyeceğiniz dosyalar.</li>
+
+  <li><strong>Bağımsız Değer Taşıyan İçerikler:</strong> Çevresindeki sohbet bağlamına ihtiyaç duymadan, kendi başına anlam ifade eden karmaşık yapılar.</li>
+
+  <li><strong>Referans Alınacak Kaynaklar:</strong> Daha sonra tekrar başvurmak veya başka yerlerde kullanmak isteyeceğiniz çıktılar.</li>
+</ul>
+
+<h3>Yaygın Artifact Türleri</h3>
+
+<p>Claude, geliştirme süreçlerinizdeki farklı ihtiyaçlara uygun çeşitli <strong>artifact</strong> formatları üretebilir:</p>
+
+<ul>
+  <li><strong>Dokümanlar (Documents):</strong> Markdown, düz metin, Word, PDF, PowerPoint ve Excel formatları dahil olmak üzere metin ağırlıklı ve ihraç edilmeye uygun tüm raporlar, toplantı notları veya proje planları bu gruptadır.</li>
+
+  <li><strong>Kod Parçacıkları (Code Snippets):</strong> Herhangi bir dilde (Python, JavaScript, Go, Rust vb.) yazılmış, kopyalanmaya veya doğrudan indirilip kullanılmaya hazır çalışır durumdaki kodlar.</li>
+
+  <li><strong>HTML Sayfaları (HTML Pages):</strong> Tek bir dosyada HTML, CSS ve JavaScript içeren eksiksiz web sayfaları. Hızlı prototipler, açılış sayfaları (<strong>landing pages</strong>) veya etkileşimli demolar için idealdir.</li>
+
+  <li><strong>SVG Görselleri (SVG Images):</strong> Logolar, simgeler ve şemalar için ölçeklenebilir vektör grafikleri. Doğrudan arayüzde render edilerek anında görüntülenebilir.</li>
+
+  <li><strong>Mermaid Diyagramları (Mermaid Diagrams):</strong> Akış şemaları (<strong>flowcharts</strong>), sıralı diyagramlar (<strong>sequence diagrams</strong>) veya Gantt şemaları gibi görselleştirme araçları. Sadece ilişkileri tarif ederek Claude'un çizim yapmasını sağlayabilirsiniz.</li>
+
+  <li><strong>React Bileşenleri (React Components):</strong> Sadece statik birer taslak (<strong>mockup</strong>) olmayan, durum yönetimi (state) ve kullanıcı girdilerine tepki verme gibi gerçek mantık (<strong>logic</strong>) içeren işlevsel kullanıcı arayüzü (<strong>UI</strong>) elemanları.</li>
+</ul>
+
+<h3>İlk Artifact'inizi Oluşturmak</h3>
+
+<p>Bir <strong>artifact</strong> oluşturmak, Claude ile sohbet etmek kadar basittir. Yapmak veya tasarlamak istediğiniz şeyi doğal dilde tarif edin, Claude bunu bir <strong>artifact</strong> olarak sunup sunmayacağına kendisi karar verecektir.</p>
+
+<p>Örneğin, şu prompt'ları kullanabilirsiniz:</p>
+
+<ul>
+  <li>*"Müşteri katılım (onboarding) sürecimizi gösteren bir akış şeması oluştur."* (Not: Claude artık kod tabanlı diyagramların yanı sıra, Imagine özelliğini kullanarak bunları HTML formatında görsel şemalar olarak da üretebilir.)</li>
+
+  <li>*"Aylık giderlerimi girebileceğim ve dökümleri görebileceğim etkileşimli bir dashboard geliştir."*</li>
+
+  <li>*"Hero bölümü ve özellik listesi olan bir üretkenlik uygulaması için landing page tasarla."*</li>
+
+  <li>*"Projelerimde tekrar kullanabileceğim bir proje özeti şablonu yaz."*</li>
+</ul>
+
+<p>Claude beklediğiniz durumlarda otomatik olarak bir artifact oluşturmazsa, ona *"Bunu bir artifact olarak oluştur"* veya *"Bunu bana bir artifact içinde göster"* diyerek bu yapıyı açıkça tetikleyebilirsiniz.</p>
+
+<p>Claude bir artifact ürettiğinde, bu çıktı sohbet pencerenizin sağında bağımsız bir pencerede açılır. Bu pencere üzerinden şu işlemleri yapabilirsiniz:</p>
+
+<ul>
+  <li><strong>Formatlar Arasında Geçiş Yapma:</strong> Canlı görünüm (<strong>Preview</strong>) ile kaynak kod (<strong>underlying code</strong>) arasında geçiş yapabilirsiniz (<strong>toggle</strong>).</li>
+
+  <li><strong>Kopyalama:</strong> Kodun veya içeriğin tamamını tek tıkla kopyalayıp başka bir yere yapıştırabilirsiniz.</li>
+
+  <li><strong>Dosya İndirme:</strong> Üretilen dosyayı doğrudan bilgisayarınıza indirebilirsiniz.</li>
+
+  <li><strong>Kod Analizi:</strong> Claude'un arka planda nasıl bir kod yapısı kurduğunu inceleyebilirsiniz.</li>
+</ul>
+
+<h3>Artifact'leri Paylaşmak ve Yayınlamak</h3>
+
+<p>Yararlı bir artifact oluşturduktan sonra, bunu başkalarıyla paylaşmak için çeşitli yollara sahipsiniz:</p>
+
+<ul>
+  <li><strong>Yerel Kopyalama veya İndirme:</strong> Kişisel projelerinizde kullanmak için sağ alt köşedeki kopyalama veya indirme butonlarını kullanabilirsiniz.</li>
+
+  <li><strong>Organizasyon İçi Güvenli Paylaşım (Claude for Work):</strong> Team ve Enterprise planlarındaki kullanıcılar, hazırladıkları artifact'leri organizasyon içinde güvenle paylaşabilirler. Paylaşılan dosyalara erişim için ekip kimlik doğrulaması (<strong>authentication</strong>) gerekir.</li>
+
+  <li><strong>Herkese Açık Yayınlama (Public Publishing):</strong> Free, Pro veya Max kullanıcısıysanız, oluşturduğunuz aracı herkese açık hale getirebilirsiniz. Bu durumda:</li>
+
+  <li>*   Yalnızca seçtiğiniz belirli sürüm (versiyon) dışa açılır; Claude ile yaptığınız özel sohbet geçmişi tamamen gizli kalır.</li>
+
+  <li>*   Claude hesabı olmayan kişiler bile paylaştığınız linke tıklayarak artifact'i görüntüleyebilir ve onunla etkileşime girebilir.</li>
+
+  <li>*   Diğer kullanıcılar çalışmanızı "<strong>remix</strong>" edebilir; yani tek tıkla kendi Claude sohbetlerine kopyalayarak üzerinde değişiklik yapmaya ve geliştirmeye devam edebilirler.</li>
+</ul>
+
+<p>Oluşturduğunuz aracı yayınlamak için sağ üstteki "Share" veya "Publish" butonunu kullanabilirsiniz. Fikrinizi değiştirirseniz, istediğiniz zaman herkese açık erişimi kaldırarak yayından çekebilirsiniz (<strong>unpublish</strong>). Yayınlanan artifact'ler arama motorları (Google vb.) tarafından dizine eklenmez (<strong>not indexed</strong>), bu nedenle arama sonuçlarında doğrudan listelenmezler.</p>
+
+<h3>Artifacts İçin En İyi Pratikler (Best Practices)</h3>
+
+<p>Artifacts özelliğinden maksimum verim almak için şu ipuçlarına dikkat edebilirsiniz:</p>
+
+<ul>
+  <li><strong>Prompt Yazarken Spesifik Olun:</strong> "Bir bütçe takipçisi yap" yerine, "Giderleri kategori bazlı girebileceğim, harcama dağılımını pasta grafikle (<strong>pie chart</strong>) gösteren ve bütçe aşıldığında uyarı veren aylık bir bütçe takipçisi geliştir" şeklinde detay vermek çok daha iyi sonuçlar üretir.</li>
+
+  <li><strong>Hedef Kullanıcıyı (End User) Tanımlayın:</strong> Claude'a bu aracı kimin kullanacağını belirtmek tasarım kararlarını etkiler. "Bu akış şeması yeni çalışanlar için" yönergesi ile "Mühendislik ekibi için" yönergesi Claude'un farklı görsel diller seçmesini sağlar.</li>
+
+  <li><strong>Adım Adım Geliştirin (Iterate Incrementally):</strong> Claude'dan tüm özellikleri tek seferde istemek yerine, her adımda tek bir özellik eklemesini veya değişiklik yapmasını talep edin. Bu, hata ayıklamayı (<strong>debugging</strong>) kolaylaştırır.</li>
+
+  <li><strong>Gerektiğinde Manuel Talep Edin:</strong> Büyük bir kod bloğu istediğiniz halde Claude bunu normal sohbet penceresinde verirse, *"Bunu bir artifact olarak oluştur"* diyerek sistemi yönlendirebilirsiniz.</li>
+</ul>
+
 <h3>Bu Bölümün Önemli Konseptleri</h3>
 
 <ul>
@@ -212,6 +310,85 @@ export const posts: Post[] = [
   <li><strong>Use Case (Kullanım Senaryosu):</strong> Bir sistemin belirli bir hedefe ulaşmak için izlediği kullanım adımları ve senaryosu.</li>
 
   <li><strong>Proximity (Semantik Yakınlık):</strong> RAG aramalarında ve veri hiyerarşilerinde, belgelerin veya metin bloklarının anlam olarak birbirine olan yakınlığı ve ilişkisi.</li>
+
+  <li><strong>Standalone (Bağımsız Çıktı):</strong> Harici bir sisteme veya sohbet bağlamına ihtiyaç duymadan kendi sınırları içinde çalışabilen veya kullanılabilen modüller.</li>
+
+  <li><strong>Render (Görselleştirme/Derleme):</strong> Kod bloklarının işlenerek tarayıcı üzerinde canlı ve etkileşimli bir görsel arayüze dönüştürülmesi süreci.</li>
+
+  <li><strong>Mockup (Taslak Arayüz):</strong> Bir uygulamanın veya web sitesinin nasıl görüneceğini gösteren, ancak arka planda çalışan işlevsel bir kod barındırmayan statik tasarım modeli.</li>
+
+  <li><strong>Preview (Önizleme):</strong> Kod tabanlı arayüz çıktılarının tarayıcı tarafından yorumlanarak canlı ve etkileşimli şekilde sunulduğu önizleme ekranı.</li>
+
+  <li><strong>Toggle (Geçiş):</strong> Kullanıcı arayüzünde iki farklı durum veya görünüm arasında geçiş yapmayı sağlayan düğme veya eylem.</li>
+
+  <li><strong>Remix (Klonlama):</strong> Herkese açık paylaşılan bir kodun veya tasarımın, başka bir kullanıcı tarafından kendi sohbet alanına kopyalanarak üzerinde yeni değişiklikler yapılması.</li>
+
+  <li><strong>Unpublish (Yayından Kaldırma):</strong> Herkese açık yayınlanmış bir artifact'in erişim izinlerini sıfırlayarak genel kullanıma kapatılması.</li>
+
+  <li><strong>End User (Hedef Kullanıcı):</strong> Bir yazılım veya tasarımı nihai olarak kullanacak olan kişi veya kitle.</li>
+
+  <li><strong>Incremental Iteration (Aşamalı Geliştirme):</strong> Büyük projeleri yönetmek adına yapay zeka ile parça parça, her adımda tek bir özellik ekleterek çalışma yöntemi.</li>
+</ul>
+
+<h2>Gelişmiş Özellikler</h2>
+
+<p>Claude, projelerinizi ve kod tabanınızı yönetirken genel yeteneklerinin yanı sıra dinamik uzmanlık paketleri ve dış dünya araç entegrasyonları sunar.</p>
+
+<h3>Beceriler (Skills) Nedir?</h3>
+
+<p><strong>Skills</strong> (Beceriler), Claude'un belirli ve özelleştirilmiş görevlerdeki başarısını artırmak için arka planda dinamik olarak yüklediği talimatlar, <strong>scripts</strong> (betikler) ve kaynak şablonlarından oluşan modüler klasörlerdir. Bunları, Claude'a yeni yetenekler kazandıran otonom "uzmanlık paketleri" olarak tanımlayabiliriz.</p>
+
+<p>Eğer Claude'u Excel dosyaları, PowerPoint sunumları veya PDF'ler üretmek için kullandıysanız, aslında arka planda bu beceri paketlerini çalıştırmışsınızdır. Ancak Skills yapısı sadece belge oluşturmakla sınırlı değildir. Özel beceriler (<strong>custom skills</strong>) sayesinde tüm tekrarlanabilir iş akışlarınızı kodlayabilirsiniz:</p>
+
+<ul>
+  <li><strong>Quarterly Variance Analysis (Çeyreklik Sapma Analizi):</strong> Finansal verilerdeki çeyreklik sapmaları inceleyen analiz şablonları.</li>
+
+  <li><strong>Brand Voice (Marka Sesi):</strong> Metinlerin marka sesine ve tonuna uygunluğunu denetleyen kalite kontrol kuralları.</li>
+
+  <li><strong>Compliance Checklist (Uyumluluk Kontrol Listesi):</strong> Kodun veya dokümanların yasal ve teknik standartlara uyumluluğunu kontrol eden listeler.</li>
+</ul>
+
+<p>Custom Skills sayesinde Claude, ona devrettiğiniz kritik süreçlerde her zaman aynı profesyonel adımları ve kuralları takip eder.</p>
+
+<h3>Beceri Türleri (Types of Skills)</h3>
+
+<p>Kullanım esnasında karşılaşacağınız iki ana <strong>skills</strong> kategorisi vardır:</p>
+
+<ul>
+  <li><strong>Anthropic Becerileri (Anthropic Skills):</strong> Doğrudan Anthropic tarafından geliştirilen ve güncellenen yerleşik becerilerdir. Excel e-tabloları, Word belgeleri, PowerPoint sunumları ve PDF dosyaları için gelişmiş dosya oluşturma yeteneklerini barındırır. Anthropic Becerileri tüm paid (ücretli) kullanıcılar için varsayılan olarak açıktır ve Claude, ilgili bir işlem yaptığınızda bunları arka planda otomatik olarak tetikler.</li>
+
+  <li><strong>Özel Beceriler (Custom Skills):</strong> Sizin veya kuruluşunuzun belirli iş akışları ve alana özgü (<strong>domain-specific</strong>) görevleri otomatikleştirmek için geliştirdiği beceri paketleridir. Örneğin, şirketinizin marka kurallarını sunumlara entegre eden, toplantı notlarını belirli bir şablona göre düzenleyen veya veri analizi script'lerinizi çalıştıran özel beceriler hazırlayabilirsiniz.</li>
+</ul>
+
+<h3>Becerileri Etkinleştirmek (Enabling Skills)</h3>
+
+<p>Beceriler (Skills) özelliği şu anda Pro, Max, Team ve Enterprise planlarındaki kullanıcılar için özellik önizlemesi (<strong>feature preview</strong>) aşamasındadır. Becerilerin çalışabilmesi, Claude'un güvenli yalıtılmış bilgi işlem ortamına (<strong>sandboxed computing environment</strong>) ihtiyaç duyması nedeniyle, <strong>Code execution</strong> (kod yürütme) ve <strong>file creation</strong> (dosya oluşturma) özelliklerinin açık olmasına bağlıdır.</p>
+
+<p>Becerileri etkinleştirmek için şu adımları izleyebilirsiniz:</p>
+
+<p>1. <strong>Settings > Capabilities</strong> (Ayarlar > Yetenekler) menüsüne gidin.</p>
+<p>2. <strong>Code execution and file creation</strong> seçeneğini açık (<strong>toggled on</strong>) duruma getirin.</p>
+<p>3. Aşağı kaydırarak <strong>Skills</strong> bölümünü bulun.</p>
+<p>4. İstediğiniz becerileri tek tek aktif veya pasif hale getirin.</p>
+
+<p>Kurumsal (Enterprise) planlarda, bireysel çalışanların bu özelliklere erişebilmesi için öncelikle organizasyon sahiplerinin (Owners) Yönetici (Admin) ayarlarından <strong>Code execution</strong> ve <strong>Skills</strong> izinlerini vermesi gerekir. Team planlarında ise bu özellik önizlemesi organizasyon düzeyinde varsayılan olarak etkindir.</p>
+
+<p>Beceriler etkinleştirildiğinde, ayarlar sayfanızda hem Anthropic'in yerleşik (built-in) becerilerini hem de sisteme yüklediğiniz özel (custom) becerileri listeleyebilirsiniz.</p>
+
+<h3>Bu Bölümün Önemli Konseptleri</h3>
+
+<ul>
+  <li><strong>Skills (Beceriler):</strong> Yapay zekaya belirli ve tekrarlanabilir uzmanlık alanlarında otonom çalışma yeteneği kazandıran modüler talimat ve kod paketleri.</li>
+
+  <li><strong>Scripts (Betikler):</strong> Bir derleme işlemine gerek duymadan satır satır yorumlanarak çalıştırılan ve otomasyon süreçlerinde kullanılan kod dosyaları.</li>
+
+  <li><strong>Domain-Specific (Alana Özgü):</strong> Sadece belirli bir teknik uzmanlık alanı, sektör veya şirket kuralları çerçevesinde geçerlilik taşıyan veri ve iş akışları.</li>
+
+  <li><strong>Feature Preview (Özellik Önizlemesi):</strong> Yeni geliştirilen yeteneklerin genel kullanıma açılmadan önce belirli kullanıcı planlarında test edilmesi süreci.</li>
+
+  <li><strong>Sandboxed Environment (Yalıtılmış Ortam):</strong> Kodların ve dosyaların ana sisteme veya kişisel verilere zarar vermesini önlemek adına izole ve güvenli bir sanal çember içinde çalıştırılması.</li>
+
+  <li><strong>Code Execution (Kod Yürütme):</strong> Yapay zekanın arka planda yazılım kodlarını çalıştırıp çıktı üretebilme yeteneği.</li>
 </ul>
       `,
       en: `
@@ -379,6 +556,104 @@ export const posts: Post[] = [
   <li><strong>Reference Documents by Name:</strong> When asking questions, you can mention specific documents to help Claude focus its search (e.g., *"Based on our Q3 report, what were the top customer concerns?"*).</li>
 </ul>
 
+<h3>What are Artifacts?</h3>
+
+<p><strong>Artifacts</strong> are standalone, interactive outputs that Claude creates in a dedicated window alongside your conversation. Instead of getting a long block of code or text buried in the chat, you see your content rendered and ready to use—whether that's a working website, an interactive chart, or a document you can immediately download.</p>
+
+<p>Claude automatically creates an artifact when content meets certain criteria:</p>
+
+<ul>
+  <li><strong>Significant and Self-Contained:</strong> Typically over 15 lines of complex code or documentation.</li>
+
+  <li><strong>Iterative and Modifiable:</strong> Something you are likely to edit, iterate on, or reuse in the future.</li>
+
+  <li><strong>Complex and Standalone:</strong> Content that represents a distinct asset that stands on its own without needing the surrounding conversation.</li>
+
+  <li><strong>Persistent Reference:</strong> Assets that you will want to reference or use later in your workflow.</li>
+</ul>
+
+<h3>Common Artifact Types</h3>
+
+<p>Claude can create different types of artifacts, each suited to different needs:</p>
+
+<ul>
+  <li><strong>Documents:</strong> Excel, PowerPoint, Word, Markdown, or PDF formats. Ideal for text-heavy content you want to export or continue editing, such as reports, meeting notes, or project plans.</li>
+
+  <li><strong>Code Snippets:</strong> Working code in Python, JavaScript, C++, Go, and more, which you can copy or download to use in your own projects.</li>
+
+  <li><strong>HTML Pages:</strong> Complete, standalone web pages with HTML, CSS, and JS. Perfect for landing pages, interactive forms, or quick prototypes.</li>
+
+  <li><strong>SVG Images:</strong> Scalable vector graphics for logos and illustrations, rendering directly in the artifact window.</li>
+
+  <li><strong>Mermaid Diagrams:</strong> Visualizations like flowcharts, sequence diagrams, and Gantt charts created simply by describing relationships.</li>
+
+  <li><strong>React Components:</strong> Interactive UI elements featuring real functional logic (such as calculators, dashboards, or interactive charts) that respond directly to user input rather than being static mockups.</li>
+</ul>
+
+<h3>Creating Your First Artifact</h3>
+
+<p>Creating an artifact is as simple as having a conversation. Just describe what you want, and Claude will determine whether to present it as an artifact.</p>
+
+<p>For example, you might say:</p>
+
+<ul>
+  <li>*"Create a flowchart showing our customer onboarding process."* (Note: Claude may now generate visual diagrams like flowcharts as HTML using Imagine, in addition to code-based artifacts.)</li>
+
+  <li>*"Build an interactive dashboard that lets me input monthly expenses and see a breakdown."*</li>
+
+  <li>*"Design a landing page for a productivity app with a hero section and feature list."*</li>
+
+  <li>*"Write a project brief template I can reuse for new initiatives."*</li>
+</ul>
+
+<p>If Claude doesn't automatically create an artifact when you expect one, you can explicitly ask: *"Create this as an artifact"* or *"Show me this in an artifact."*</p>
+
+<p>When Claude generates an artifact, it appears in a dedicated window to the right of your conversation. From here, you can:</p>
+
+<ul>
+  <li><strong>View Different Formats:</strong> Toggle between a preview (how it looks) and the underlying code.</li>
+
+  <li><strong>Copy Content:</strong> Click the copy icon to grab the content for use elsewhere.</li>
+
+  <li><strong>Download Files:</strong> Save the artifact as a file to your computer.</li>
+
+  <li><strong>View Code:</strong> See exactly what Claude generated under the hood.</li>
+</ul>
+
+<h3>Sharing and Publishing Artifacts</h3>
+
+<p>Once you've created something useful, you have several options for sharing it:</p>
+
+<ul>
+  <li><strong>Copy or Download:</strong> For personal use or sharing via other channels, use the copy or download buttons in the lower-right corner of the artifact window.</li>
+
+  <li><strong>Share within Your Organization (Claude for Work):</strong> Team and Enterprise users can share artifacts internally with colleagues. The shared artifact stays within your organization and requires team identity <strong>authentication</strong> to access.</li>
+
+  <li><strong>Publish Publicly:</strong> For free, Pro, and Max users, you can publish artifacts to make them accessible to anyone with the link. When you publish:</li>
+
+  <li>*   Only the selected version becomes public; your conversation history remains private.</li>
+
+  <li>*   Anyone can view and interact with the artifact without needing a Claude account.</li>
+
+  <li>*   Others can "<strong>remix</strong>" your artifact—opening it in their own Claude conversation to modify and build upon it.</li>
+</ul>
+
+<p>To publish, click the "Share" or "Publish" button in the upper-right corner of the artifact. You can unpublish at any time by returning to that artifact and removing public access. Note that published artifacts are accessible to anyone with the link, but are not indexed by search engines, meaning they won't appear in Google search results.</p>
+
+<h3>Tips for Getting the Most from Artifacts</h3>
+
+<p>To extract the maximum value from the Artifacts feature, consider these tips:</p>
+
+<ul>
+  <li><strong>Be Specific About What You Want:</strong> Instead of "Build a budget tracker," say "Build a monthly budget tracker where I can input expenses by category, see a pie chart breakdown, and get a warning when I'm over budget" to guide Claude towards more comprehensive designs.</li>
+
+  <li><strong>Describe the End User:</strong> Identifying who will use the artifact informs its UI choices. "This flowchart is for new employees" yields a different design approach than "This flowchart is for the engineering team."</li>
+
+  <li><strong>Iterate Incrementally:</strong> Ask Claude to add one feature or make one change at a time rather than requesting everything at once. This simplifies debugging and testing.</li>
+
+  <li><strong>Request Artifacts When Needed:</strong> If you prompt for something substantial and Claude responds inline in the chat instead of spawning a new panel, explicitly request: *"Please create that as an artifact."*</li>
+</ul>
+
 <h3>Key Concepts</h3>
 
 <ul>
@@ -399,6 +674,85 @@ export const posts: Post[] = [
   <li><strong>Use Case:</strong> A specific situation or scenario in which a product or service could be used to achieve a goal.</li>
 
   <li><strong>Proximity:</strong> The physical or semantic closeness of documents or code blocks within a system hierarchy, which RAG tools analyze to infer relationships.</li>
+
+  <li><strong>Standalone:</strong> An independent output or module that functions and provides value on its own without external dependencies or surrounding chat context.</li>
+
+  <li><strong>Render:</strong> The process of compiling and displaying raw code (such as HTML/CSS/JS) into a visual, interactive interface in the browser.</li>
+
+  <li><strong>Mockup:</strong> A static design model representing how a website or application will look, without containing functional logic.</li>
+
+  <li><strong>Preview:</strong> A live visualization screen showing code-based user interfaces executed by the browser.</li>
+
+  <li><strong>Toggle:</strong> A user interface control or action that switches between two alternative states or views.</li>
+
+  <li><strong>Remix:</strong> The action of cloning another user's published artifact into one's own chat session to modify and extend it.</li>
+
+  <li><strong>Unpublish:</strong> The process of removing public access to a previously published URL, restoring its visibility only to the author.</li>
+
+  <li><strong>End User:</strong> The final target audience or individuals who will interact with and utilize a software product or design.</li>
+
+  <li><strong>Incremental Iteration:</strong> The methodology of building software piece-by-piece, requesting individual additions or modifications sequentially rather than all at once.</li>
+</ul>
+
+<h2>Advanced Features</h2>
+
+<p>While executing tasks within workspaces and codebases, Claude offers modular expertise packages and dynamic integrations with external tools to handle specialized workflows.</p>
+
+<h3>What are Skills?</h3>
+
+<p><strong>Skills</strong> are directories containing instructions, <strong>scripts</strong>, and template resources that Claude loads dynamically in the background to optimize performance on specialized tasks. Think of them as autonomous expertise packages designed to extend Claude's core capabilities in a repeatable way.</p>
+
+<p>If you have used Claude to generate Excel sheets, PowerPoint slideshows, Word docs, or PDFs, you have already experienced Skills at work behind the scenes. However, the modular nature of Skills goes far beyond document generation. Custom Skills can codify complete repeatable workflows:</p>
+
+<ul>
+  <li><strong>Quarterly Variance Analysis:</strong> Automated templates designed to compare financial figures across quarters.</li>
+
+  <li><strong>Brand Voice:</strong> Quality control rules ensuring text aligns with brand voice guidelines.</li>
+
+  <li><strong>Compliance Checklist:</strong> Predefined checklists verifying code compliance against regulatory and security benchmarks.</li>
+</ul>
+
+<p>By deploying custom Skills, you guarantee that Claude executes complex, standard-dependent workflows with high rigor and reproducibility.</p>
+
+<h3>Types of Skills</h3>
+
+<p>There are two primary categories of Skills you will encounter:</p>
+
+<ul>
+  <li><strong>Anthropic Skills:</strong> Created and maintained by Anthropic. These include enhanced document creation capabilities for Excel, Word, PowerPoint, and PDF files. Anthropic Skills are available to all paid users, and Claude invokes them automatically when relevant—meaning no configuration is needed on your part.</li>
+
+  <li><strong>Custom Skills:</strong> Custom skills built by you or your organization to automate specialized workflows and <strong>domain-specific</strong> tasks. For example, you can create a skill that enforces company brand guidelines on presentations, templates meeting notes in a specific format, or executes custom data analysis pipelines.</li>
+</ul>
+
+<h3>Enabling Skills</h3>
+
+<p>Skills are currently available as a feature preview for users on Pro, Max, Team, and Enterprise plans. To use Skills, you'll need to have <strong>Code execution</strong> and <strong>file creation</strong> enabled, since Skills require Claude's secure <strong>sandboxed computing environment</strong> to function.</p>
+
+<p>Here's how to enable Skills:</p>
+
+<p>1. Navigate to <strong>Settings > Capabilities</strong></p>
+<p>2. Ensure that <strong>Code execution and file creation</strong> is toggled on</p>
+<p>3. Scroll to the <strong>Skills</strong> section</p>
+<p>4. Toggle individual skills on or off as needed</p>
+
+<p>For Enterprise plans, organization Owners must first enable both Code execution and Skills in Admin settings before individual members can access them. For Team plans, this feature preview is enabled by default at the organization level.</p>
+
+<p>Once enabled, you'll see available Skills listed in your settings, including Anthropic's built-in Skills and any custom Skills you've uploaded.</p>
+
+<h3>Key Concepts</h3>
+
+<ul>
+  <li><strong>Skills:</strong> Modular folders of instructions and scripts loaded dynamically to equip the AI model with specialized, repeatable workflow capabilities.</li>
+
+  <li><strong>Scripts:</strong> Execution files containing code (such as Python or JS) that runs sequentially without prior compilation, typically used for workflow automation.</li>
+
+  <li><strong>Domain-Specific:</strong> Targeted or restricted to a particular field of expertise, industry segment, or organization-level rules.</li>
+
+  <li><strong>Feature Preview:</strong> A release phase allowing users on select subscription plans to test new experimental capabilities before full commercial availability.</li>
+
+  <li><strong>Sandboxed Environment:</strong> An isolated, secure compute area that restricts programs from interacting with host systems, personal files, or core resources.</li>
+
+  <li><strong>Code Execution:</strong> The functional ability of an AI assistant to interpret, run, and extract output from code blocks dynamically.</li>
 </ul>
       `,
     },

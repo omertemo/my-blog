@@ -129,6 +129,70 @@ To get the most out of projects and keep the response quality high:
 *   **Name Documents Descriptively:** Use names like `Q4-2025-Sales-Report.pdf` rather than `report.pdf`, and group related files together. Claude uses filenames and folder **proximity** to understand relationships between documents.
 *   **Reference Documents by Name:** When asking questions, you can mention specific documents to help Claude focus its search (e.g., *"Based on our Q3 report, what were the top customer concerns?"*).
 
+### What are Artifacts?
+
+**Artifacts** are standalone, interactive outputs that Claude creates in a dedicated window alongside your conversation. Instead of getting a long block of code or text buried in the chat, you see your content rendered and ready to use—whether that's a working website, an interactive chart, or a document you can immediately download.
+
+Claude automatically creates an artifact when content meets certain criteria:
+
+*   **Significant and Self-Contained:** Typically over 15 lines of complex code or documentation.
+*   **Iterative and Modifiable:** Something you are likely to edit, iterate on, or reuse in the future.
+*   **Complex and Standalone:** Content that represents a distinct asset that stands on its own without needing the surrounding conversation.
+*   **Persistent Reference:** Assets that you will want to reference or use later in your workflow.
+
+### Common Artifact Types
+
+Claude can create different types of artifacts, each suited to different needs:
+
+*   **Documents:** Excel, PowerPoint, Word, Markdown, or PDF formats. Ideal for text-heavy content you want to export or continue editing, such as reports, meeting notes, or project plans.
+*   **Code Snippets:** Working code in Python, JavaScript, C++, Go, and more, which you can copy or download to use in your own projects.
+*   **HTML Pages:** Complete, standalone web pages with HTML, CSS, and JS. Perfect for landing pages, interactive forms, or quick prototypes.
+*   **SVG Images:** Scalable vector graphics for logos and illustrations, rendering directly in the artifact window.
+*   **Mermaid Diagrams:** Visualizations like flowcharts, sequence diagrams, and Gantt charts created simply by describing relationships.
+*   **React Components:** Interactive UI elements featuring real functional logic (such as calculators, dashboards, or interactive charts) that respond directly to user input rather than being static mockups.
+
+### Creating Your First Artifact
+
+Creating an artifact is as simple as having a conversation. Just describe what you want, and Claude will determine whether to present it as an artifact.
+
+For example, you might say:
+
+*   *"Create a flowchart showing our customer onboarding process."* (Note: Claude may now generate visual diagrams like flowcharts as HTML using Imagine, in addition to code-based artifacts.)
+*   *"Build an interactive dashboard that lets me input monthly expenses and see a breakdown."*
+*   *"Design a landing page for a productivity app with a hero section and feature list."*
+*   *"Write a project brief template I can reuse for new initiatives."*
+
+If Claude doesn't automatically create an artifact when you expect one, you can explicitly ask: *"Create this as an artifact"* or *"Show me this in an artifact."*
+
+When Claude generates an artifact, it appears in a dedicated window to the right of your conversation. From here, you can:
+
+*   **View Different Formats:** Toggle between a preview (how it looks) and the underlying code.
+*   **Copy Content:** Click the copy icon to grab the content for use elsewhere.
+*   **Download Files:** Save the artifact as a file to your computer.
+*   **View Code:** See exactly what Claude generated under the hood.
+
+### Sharing and Publishing Artifacts
+
+Once you've created something useful, you have several options for sharing it:
+
+*   **Copy or Download:** For personal use or sharing via other channels, use the copy or download buttons in the lower-right corner of the artifact window.
+*   **Share within Your Organization (Claude for Work):** Team and Enterprise users can share artifacts internally with colleagues. The shared artifact stays within your organization and requires team identity **authentication** to access.
+*   **Publish Publicly:** For free, Pro, and Max users, you can publish artifacts to make them accessible to anyone with the link. When you publish:
+    *   Only the selected version becomes public; your conversation history remains private.
+    *   Anyone can view and interact with the artifact without needing a Claude account.
+    *   Others can "**remix**" your artifact—opening it in their own Claude conversation to modify and build upon it.
+
+To publish, click the "Share" or "Publish" button in the upper-right corner of the artifact. You can unpublish at any time by returning to that artifact and removing public access. Note that published artifacts are accessible to anyone with the link, but are not indexed by search engines, meaning they won't appear in Google search results.
+
+### Tips for Getting the Most from Artifacts
+
+To extract the maximum value from the Artifacts feature, consider these tips:
+
+*   **Be Specific About What You Want:** Instead of "Build a budget tracker," say "Build a monthly budget tracker where I can input expenses by category, see a pie chart breakdown, and get a warning when I'm over budget" to guide Claude towards more comprehensive designs.
+*   **Describe the End User:** Identifying who will use the artifact informs its UI choices. "This flowchart is for new employees" yields a different design approach than "This flowchart is for the engineering team."
+*   **Iterate Incrementally:** Ask Claude to add one feature or make one change at a time rather than requesting everything at once. This simplifies debugging and testing.
+*   **Request Artifacts When Needed:** If you prompt for something substantial and Claude responds inline in the chat instead of spawning a new panel, explicitly request: *"Please create that as an artifact."*
+
 ### Key Concepts
 
 *   **Persistent Context:** The underlying architecture that automatically loads project files and custom instructions into the context window of every new conversation within a project.
@@ -140,3 +204,59 @@ To get the most out of projects and keep the response quality high:
 *   **Read-Only:** A restriction level that permits users to read or query information without the ability to modify, delete, or upload data.
 *   **Use Case:** A specific situation or scenario in which a product or service could be used to achieve a goal.
 *   **Proximity:** The physical or semantic closeness of documents or code blocks within a system hierarchy, which RAG tools analyze to infer relationships.
+*   **Standalone:** An independent output or module that functions and provides value on its own without external dependencies or surrounding chat context.
+*   **Render:** The process of compiling and displaying raw code (such as HTML/CSS/JS) into a visual, interactive interface in the browser.
+*   **Mockup:** A static design model representing how a website or application will look, without containing functional logic.
+*   **Preview:** A live visualization screen showing code-based user interfaces executed by the browser.
+*   **Toggle:** A user interface control or action that switches between two alternative states or views.
+*   **Remix:** The action of cloning another user's published artifact into one's own chat session to modify and extend it.
+*   **Unpublish:** The process of removing public access to a previously published URL, restoring its visibility only to the author.
+*   **End User:** The final target audience or individuals who will interact with and utilize a software product or design.
+*   **Incremental Iteration:** The methodology of building software piece-by-piece, requesting individual additions or modifications sequentially rather than all at once.
+
+## Advanced Features
+
+While executing tasks within workspaces and codebases, Claude offers modular expertise packages and dynamic integrations with external tools to handle specialized workflows.
+
+### What are Skills?
+
+**Skills** are directories containing instructions, **scripts**, and template resources that Claude loads dynamically in the background to optimize performance on specialized tasks. Think of them as autonomous expertise packages designed to extend Claude's core capabilities in a repeatable way.
+
+If you have used Claude to generate Excel sheets, PowerPoint slideshows, Word docs, or PDFs, you have already experienced Skills at work behind the scenes. However, the modular nature of Skills goes far beyond document generation. Custom Skills can codify complete repeatable workflows:
+
+*   **Quarterly Variance Analysis:** Automated templates designed to compare financial figures across quarters.
+*   **Brand Voice:** Quality control rules ensuring text aligns with brand voice guidelines.
+*   **Compliance Checklist:** Predefined checklists verifying code compliance against regulatory and security benchmarks.
+
+By deploying custom Skills, you guarantee that Claude executes complex, standard-dependent workflows with high rigor and reproducibility.
+
+### Types of Skills
+
+There are two primary categories of Skills you will encounter:
+
+*   **Anthropic Skills:** Created and maintained by Anthropic. These include enhanced document creation capabilities for Excel, Word, PowerPoint, and PDF files. Anthropic Skills are available to all paid users, and Claude invokes them automatically when relevant—meaning no configuration is needed on your part.
+*   **Custom Skills:** Custom skills built by you or your organization to automate specialized workflows and **domain-specific** tasks. For example, you can create a skill that enforces company brand guidelines on presentations, templates meeting notes in a specific format, or executes custom data analysis pipelines.
+
+### Enabling Skills
+
+Skills are currently available as a feature preview for users on Pro, Max, Team, and Enterprise plans. To use Skills, you'll need to have **Code execution** and **file creation** enabled, since Skills require Claude's secure **sandboxed computing environment** to function.
+
+Here's how to enable Skills:
+
+1. Navigate to **Settings > Capabilities**
+2. Ensure that **Code execution and file creation** is toggled on
+3. Scroll to the **Skills** section
+4. Toggle individual skills on or off as needed
+
+For Enterprise plans, organization Owners must first enable both Code execution and Skills in Admin settings before individual members can access them. For Team plans, this feature preview is enabled by default at the organization level.
+
+Once enabled, you'll see available Skills listed in your settings, including Anthropic's built-in Skills and any custom Skills you've uploaded.
+
+### Key Concepts
+
+*   **Skills:** Modular folders of instructions and scripts loaded dynamically to equip the AI model with specialized, repeatable workflow capabilities.
+*   **Scripts:** Execution files containing code (such as Python or JS) that runs sequentially without prior compilation, typically used for workflow automation.
+*   **Domain-Specific:** Targeted or restricted to a particular field of expertise, industry segment, or organization-level rules.
+*   **Feature Preview:** A release phase allowing users on select subscription plans to test new experimental capabilities before full commercial availability.
+*   **Sandboxed Environment:** An isolated, secure compute area that restricts programs from interacting with host systems, personal files, or core resources.
+*   **Code Execution:** The functional ability of an AI assistant to interpret, run, and extract output from code blocks dynamically.

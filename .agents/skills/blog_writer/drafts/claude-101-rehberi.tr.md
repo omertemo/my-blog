@@ -128,6 +128,70 @@ Projelerden en iyi şekilde yararlanmak ve Claude'un yanıt kalitesini en üst d
 *   **Belgeleri Açıklayıcı Şekilde Adlandırın:** Dosyalara `rapor.pdf` gibi jenerik isimler vermek yerine `Q4-2025-Satis-Raporu.pdf` gibi açıklayıcı isimler verin. Claude, belgeler arasındaki anlamsal ilişkileri kurarken dosya adlarını ve birbirlerine olan yakınlığını (**proximity**) referans alır.
 *   **Belgelere İsimleriyle Referans Verin:** Sohbet esnasında Claude'a belirli bir belgeye odaklanmasını söyleyebilirsiniz (örneğin: *"Q3 raporumuza dayanarak en önemli müşteri geri bildirimlerini özetle"*).
 
+### Artifacts Nedir?
+
+**Artifacts** (Yapay Nesneler), Claude'un sohbetinizin hemen yanında yer alan özel bir pencerede oluşturduğu bağımsız (**standalone**) ve etkileşimli çıktılardır. Sohbet akışının içinde kaybolan uzun kod blokları veya metin yığınları almak yerine, içeriğinizin derlenmiş (**rendered**) ve doğrudan kullanıma hazır halini yan tarafta ayrı bir pencerede görürsünüz. Bu, çalışan bir web sitesi prototipi, etkileşimli bir grafik (**interactive chart**) veya anında indirebileceğiniz bir sistem mimarisi dokümanı olabilir.
+
+Claude, üretilen içerik şu kriterleri karşıladığında otomatik olarak bir **artifact** oluşturur:
+
+*   **Belirgin ve Kendi Kendine Yeten İçerikler:** Genellikle 15 satırın üzerindeki karmaşık kodlar veya belgeler.
+*   **İterasyon ve Düzenlemeye Uygun Yapılar:** Üzerinde tekrar çalışmak, düzenlemek veya gelecekte yeniden kullanmak isteyeceğiniz dosyalar.
+*   **Bağımsız Değer Taşıyan İçerikler:** Çevresindeki sohbet bağlamına ihtiyaç duymadan, kendi başına anlam ifade eden karmaşık yapılar.
+*   **Referans Alınacak Kaynaklar:** Daha sonra tekrar başvurmak veya başka yerlerde kullanmak isteyeceğiniz çıktılar.
+
+### Yaygın Artifact Türleri
+
+Claude, geliştirme süreçlerinizdeki farklı ihtiyaçlara uygun çeşitli **artifact** formatları üretebilir:
+
+*   **Dokümanlar (Documents):** Markdown, düz metin, Word, PDF, PowerPoint ve Excel formatları dahil olmak üzere metin ağırlıklı ve ihraç edilmeye uygun tüm raporlar, toplantı notları veya proje planları bu gruptadır.
+*   **Kod Parçacıkları (Code Snippets):** Herhangi bir dilde (Python, JavaScript, Go, Rust vb.) yazılmış, kopyalanmaya veya doğrudan indirilip kullanılmaya hazır çalışır durumdaki kodlar.
+*   **HTML Sayfaları (HTML Pages):** Tek bir dosyada HTML, CSS ve JavaScript içeren eksiksiz web sayfaları. Hızlı prototipler, açılış sayfaları (**landing pages**) veya etkileşimli demolar için idealdir.
+*   **SVG Görselleri (SVG Images):** Logolar, simgeler ve şemalar için ölçeklenebilir vektör grafikleri. Doğrudan arayüzde render edilerek anında görüntülenebilir.
+*   **Mermaid Diyagramları (Mermaid Diagrams):** Akış şemaları (**flowcharts**), sıralı diyagramlar (**sequence diagrams**) veya Gantt şemaları gibi görselleştirme araçları. Sadece ilişkileri tarif ederek Claude'un çizim yapmasını sağlayabilirsiniz.
+*   **React Bileşenleri (React Components):** Sadece statik birer taslak (**mockup**) olmayan, durum yönetimi (state) ve kullanıcı girdilerine tepki verme gibi gerçek mantık (**logic**) içeren işlevsel kullanıcı arayüzü (**UI**) elemanları.
+
+### İlk Artifact'inizi Oluşturmak
+
+Bir **artifact** oluşturmak, Claude ile sohbet etmek kadar basittir. Yapmak veya tasarlamak istediğiniz şeyi doğal dilde tarif edin, Claude bunu bir **artifact** olarak sunup sunmayacağına kendisi karar verecektir.
+
+Örneğin, şu prompt'ları kullanabilirsiniz:
+
+*   *"Müşteri katılım (onboarding) sürecimizi gösteren bir akış şeması oluştur."* (Not: Claude artık kod tabanlı diyagramların yanı sıra, Imagine özelliğini kullanarak bunları HTML formatında görsel şemalar olarak da üretebilir.)
+*   *"Aylık giderlerimi girebileceğim ve dökümleri görebileceğim etkileşimli bir dashboard geliştir."*
+*   *"Hero bölümü ve özellik listesi olan bir üretkenlik uygulaması için landing page tasarla."*
+*   *"Projelerimde tekrar kullanabileceğim bir proje özeti şablonu yaz."*
+
+Claude beklediğiniz durumlarda otomatik olarak bir artifact oluşturmazsa, ona *"Bunu bir artifact olarak oluştur"* veya *"Bunu bana bir artifact içinde göster"* diyerek bu yapıyı açıkça tetikleyebilirsiniz.
+
+Claude bir artifact ürettiğinde, bu çıktı sohbet pencerenizin sağında bağımsız bir pencerede açılır. Bu pencere üzerinden şu işlemleri yapabilirsiniz:
+
+*   **Formatlar Arasında Geçiş Yapma:** Canlı görünüm (**Preview**) ile kaynak kod (**underlying code**) arasında geçiş yapabilirsiniz (**toggle**).
+*   **Kopyalama:** Kodun veya içeriğin tamamını tek tıkla kopyalayıp başka bir yere yapıştırabilirsiniz.
+*   **Dosya İndirme:** Üretilen dosyayı doğrudan bilgisayarınıza indirebilirsiniz.
+*   **Kod Analizi:** Claude'un arka planda nasıl bir kod yapısı kurduğunu inceleyebilirsiniz.
+
+### Artifact'leri Paylaşmak ve Yayınlamak
+
+Yararlı bir artifact oluşturduktan sonra, bunu başkalarıyla paylaşmak için çeşitli yollara sahipsiniz:
+
+*   **Yerel Kopyalama veya İndirme:** Kişisel projelerinizde kullanmak için sağ alt köşedeki kopyalama veya indirme butonlarını kullanabilirsiniz.
+*   **Organizasyon İçi Güvenli Paylaşım (Claude for Work):** Team ve Enterprise planlarındaki kullanıcılar, hazırladıkları artifact'leri organizasyon içinde güvenle paylaşabilirler. Paylaşılan dosyalara erişim için ekip kimlik doğrulaması (**authentication**) gerekir.
+*   **Herkese Açık Yayınlama (Public Publishing):** Free, Pro veya Max kullanıcısıysanız, oluşturduğunuz aracı herkese açık hale getirebilirsiniz. Bu durumda:
+    *   Yalnızca seçtiğiniz belirli sürüm (versiyon) dışa açılır; Claude ile yaptığınız özel sohbet geçmişi tamamen gizli kalır.
+    *   Claude hesabı olmayan kişiler bile paylaştığınız linke tıklayarak artifact'i görüntüleyebilir ve onunla etkileşime girebilir.
+    *   Diğer kullanıcılar çalışmanızı "**remix**" edebilir; yani tek tıkla kendi Claude sohbetlerine kopyalayarak üzerinde değişiklik yapmaya ve geliştirmeye devam edebilirler.
+
+Oluşturduğunuz aracı yayınlamak için sağ üstteki "Share" veya "Publish" butonunu kullanabilirsiniz. Fikrinizi değiştirirseniz, istediğiniz zaman herkese açık erişimi kaldırarak yayından çekebilirsiniz (**unpublish**). Yayınlanan artifact'ler arama motorları (Google vb.) tarafından dizine eklenmez (**not indexed**), bu nedenle arama sonuçlarında doğrudan listelenmezler.
+
+### Artifacts İçin En İyi Pratikler (Best Practices)
+
+Artifacts özelliğinden maksimum verim almak için şu ipuçlarına dikkat edebilirsiniz:
+
+*   **Prompt Yazarken Spesifik Olun:** "Bir bütçe takipçisi yap" yerine, "Giderleri kategori bazlı girebileceğim, harcama dağılımını pasta grafikle (**pie chart**) gösteren ve bütçe aşıldığında uyarı veren aylık bir bütçe takipçisi geliştir" şeklinde detay vermek çok daha iyi sonuçlar üretir.
+*   **Hedef Kullanıcıyı (End User) Tanımlayın:** Claude'a bu aracı kimin kullanacağını belirtmek tasarım kararlarını etkiler. "Bu akış şeması yeni çalışanlar için" yönergesi ile "Mühendislik ekibi için" yönergesi Claude'un farklı görsel diller seçmesini sağlar.
+*   **Adım Adım Geliştirin (Iterate Incrementally):** Claude'dan tüm özellikleri tek seferde istemek yerine, her adımda tek bir özellik eklemesini veya değişiklik yapmasını talep edin. Bu, hata ayıklamayı (**debugging**) kolaylaştırır.
+*   **Gerektiğinde Manuel Talep Edin:** Büyük bir kod bloğu istediğiniz halde Claude bunu normal sohbet penceresinde verirse, *"Bunu bir artifact olarak oluştur"* diyerek sistemi yönlendirebilirsiniz.
+
 ### Bu Bölümün Önemli Konseptleri
 
 *   **Persistent Context (Kalıcı Bağlam):** Yapay zeka asistanında açılan her yeni sohbet sekmesinde, proje dosyalarının ve sistem talimatlarının hafızaya otomatik olarak yüklenmesini sağlayan yapı.
@@ -139,3 +203,59 @@ Projelerden en iyi şekilde yararlanmak ve Claude'un yanıt kalitesini en üst d
 *   **Read-Only (Salt Okunur):** Kullanıcıların veriyi okumasına ve sorgulamasına izin veren ancak üzerinde düzenleme veya silme hakkı tanımayan erişim kısıtlaması.
 *   **Use Case (Kullanım Senaryosu):** Bir sistemin belirli bir hedefe ulaşmak için izlediği kullanım adımları ve senaryosu.
 *   **Proximity (Semantik Yakınlık):** RAG aramalarında ve veri hiyerarşilerinde, belgelerin veya metin bloklarının anlam olarak birbirine olan yakınlığı ve ilişkisi.
+*   **Standalone (Bağımsız Çıktı):** Harici bir sisteme veya sohbet bağlamına ihtiyaç duymadan kendi sınırları içinde çalışabilen veya kullanılabilen modüller.
+*   **Render (Görselleştirme/Derleme):** Kod bloklarının işlenerek tarayıcı üzerinde canlı ve etkileşimli bir görsel arayüze dönüştürülmesi süreci.
+*   **Mockup (Taslak Arayüz):** Bir uygulamanın veya web sitesinin nasıl görüneceğini gösteren, ancak arka planda çalışan işlevsel bir kod barındırmayan statik tasarım modeli.
+*   **Preview (Önizleme):** Kod tabanlı arayüz çıktılarının tarayıcı tarafından yorumlanarak canlı ve etkileşimli şekilde sunulduğu önizleme ekranı.
+*   **Toggle (Geçiş):** Kullanıcı arayüzünde iki farklı durum veya görünüm arasında geçiş yapmayı sağlayan düğme veya eylem.
+*   **Remix (Klonlama):** Herkese açık paylaşılan bir kodun veya tasarımın, başka bir kullanıcı tarafından kendi sohbet alanına kopyalanarak üzerinde yeni değişiklikler yapılması.
+*   **Unpublish (Yayından Kaldırma):** Herkese açık yayınlanmış bir artifact'in erişim izinlerini sıfırlayarak genel kullanıma kapatılması.
+*   **End User (Hedef Kullanıcı):** Bir yazılım veya tasarımı nihai olarak kullanacak olan kişi veya kitle.
+*   **Incremental Iteration (Aşamalı Geliştirme):** Büyük projeleri yönetmek adına yapay zeka ile parça parça, her adımda tek bir özellik ekleterek çalışma yöntemi.
+
+## Gelişmiş Özellikler
+
+Claude, projelerinizi ve kod tabanınızı yönetirken genel yeteneklerinin yanı sıra dinamik uzmanlık paketleri ve dış dünya araç entegrasyonları sunar.
+
+### Beceriler (Skills) Nedir?
+
+**Skills** (Beceriler), Claude'un belirli ve özelleştirilmiş görevlerdeki başarısını artırmak için arka planda dinamik olarak yüklediği talimatlar, **scripts** (betikler) ve kaynak şablonlarından oluşan modüler klasörlerdir. Bunları, Claude'a yeni yetenekler kazandıran otonom "uzmanlık paketleri" olarak tanımlayabiliriz.
+
+Eğer Claude'u Excel dosyaları, PowerPoint sunumları veya PDF'ler üretmek için kullandıysanız, aslında arka planda bu beceri paketlerini çalıştırmışsınızdır. Ancak Skills yapısı sadece belge oluşturmakla sınırlı değildir. Özel beceriler (**custom skills**) sayesinde tüm tekrarlanabilir iş akışlarınızı kodlayabilirsiniz:
+
+*   **Quarterly Variance Analysis (Çeyreklik Sapma Analizi):** Finansal verilerdeki çeyreklik sapmaları inceleyen analiz şablonları.
+*   **Brand Voice (Marka Sesi):** Metinlerin marka sesine ve tonuna uygunluğunu denetleyen kalite kontrol kuralları.
+*   **Compliance Checklist (Uyumluluk Kontrol Listesi):** Kodun veya dokümanların yasal ve teknik standartlara uyumluluğunu kontrol eden listeler.
+
+Custom Skills sayesinde Claude, ona devrettiğiniz kritik süreçlerde her zaman aynı profesyonel adımları ve kuralları takip eder.
+
+### Beceri Türleri (Types of Skills)
+
+Kullanım esnasında karşılaşacağınız iki ana **skills** kategorisi vardır:
+
+*   **Anthropic Becerileri (Anthropic Skills):** Doğrudan Anthropic tarafından geliştirilen ve güncellenen yerleşik becerilerdir. Excel e-tabloları, Word belgeleri, PowerPoint sunumları ve PDF dosyaları için gelişmiş dosya oluşturma yeteneklerini barındırır. Anthropic Becerileri tüm paid (ücretli) kullanıcılar için varsayılan olarak açıktır ve Claude, ilgili bir işlem yaptığınızda bunları arka planda otomatik olarak tetikler.
+*   **Özel Beceriler (Custom Skills):** Sizin veya kuruluşunuzun belirli iş akışları ve alana özgü (**domain-specific**) görevleri otomatikleştirmek için geliştirdiği beceri paketleridir. Örneğin, şirketinizin marka kurallarını sunumlara entegre eden, toplantı notlarını belirli bir şablona göre düzenleyen veya veri analizi script'lerinizi çalıştıran özel beceriler hazırlayabilirsiniz.
+
+### Becerileri Etkinleştirmek (Enabling Skills)
+
+Beceriler (Skills) özelliği şu anda Pro, Max, Team ve Enterprise planlarındaki kullanıcılar için özellik önizlemesi (**feature preview**) aşamasındadır. Becerilerin çalışabilmesi, Claude'un güvenli yalıtılmış bilgi işlem ortamına (**sandboxed computing environment**) ihtiyaç duyması nedeniyle, **Code execution** (kod yürütme) ve **file creation** (dosya oluşturma) özelliklerinin açık olmasına bağlıdır.
+
+Becerileri etkinleştirmek için şu adımları izleyebilirsiniz:
+
+1. **Settings > Capabilities** (Ayarlar > Yetenekler) menüsüne gidin.
+2. **Code execution and file creation** seçeneğini açık (**toggled on**) duruma getirin.
+3. Aşağı kaydırarak **Skills** bölümünü bulun.
+4. İstediğiniz becerileri tek tek aktif veya pasif hale getirin.
+
+Kurumsal (Enterprise) planlarda, bireysel çalışanların bu özelliklere erişebilmesi için öncelikle organizasyon sahiplerinin (Owners) Yönetici (Admin) ayarlarından **Code execution** ve **Skills** izinlerini vermesi gerekir. Team planlarında ise bu özellik önizlemesi organizasyon düzeyinde varsayılan olarak etkindir.
+
+Beceriler etkinleştirildiğinde, ayarlar sayfanızda hem Anthropic'in yerleşik (built-in) becerilerini hem de sisteme yüklediğiniz özel (custom) becerileri listeleyebilirsiniz.
+
+### Bu Bölümün Önemli Konseptleri
+
+*   **Skills (Beceriler):** Yapay zekaya belirli ve tekrarlanabilir uzmanlık alanlarında otonom çalışma yeteneği kazandıran modüler talimat ve kod paketleri.
+*   **Scripts (Betikler):** Bir derleme işlemine gerek duymadan satır satır yorumlanarak çalıştırılan ve otomasyon süreçlerinde kullanılan kod dosyaları.
+*   **Domain-Specific (Alana Özgü):** Sadece belirli bir teknik uzmanlık alanı, sektör veya şirket kuralları çerçevesinde geçerlilik taşıyan veri ve iş akışları.
+*   **Feature Preview (Özellik Önizlemesi):** Yeni geliştirilen yeteneklerin genel kullanıma açılmadan önce belirli kullanıcı planlarında test edilmesi süreci.
+*   **Sandboxed Environment (Yalıtılmış Ortam):** Kodların ve dosyaların ana sisteme veya kişisel verilere zarar vermesini önlemek adına izole ve güvenli bir sanal çember içinde çalıştırılması.
+*   **Code Execution (Kod Yürütme):** Yapay zekanın arka planda yazılım kodlarını çalıştırıp çıktı üretebilme yeteneği.
