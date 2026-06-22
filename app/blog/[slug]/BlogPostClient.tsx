@@ -12,20 +12,35 @@ interface Props {
 
 const getShortTitle = (title: string, lang: "tr" | "en") => {
   const t = title.toLowerCase();
-  if (t.includes("giriş") || t.includes("introduction")) {
-    return lang === "tr" ? "Giriş" : "Intro";
+  if (t.includes("nedir") || t.includes("what is")) {
+    return lang === "tr" ? "Claude Nedir?" : "What is Claude?";
   }
-  if (t.includes("akıcılığı") || t.includes("fluency")) {
-    return lang === "tr" ? "AI Akıcılığı" : "AI Fluency";
+  if (t.includes("ilk sohbet") || t.includes("first conversation")) {
+    return lang === "tr" ? "İlk Sohbet" : "First Chat";
+  }
+  if (t.includes("sonuçlar") || t.includes("results")) {
+    return lang === "tr" ? "Daha İyi Sonuçlar" : "Better Results";
   }
   if (t.includes("masaüstü") || t.includes("desktop")) {
-    return lang === "tr" ? "Masaüstü" : "Desktop";
+    return lang === "tr" ? "Masaüstü" : "Desktop App";
   }
-  if (t.includes("projeler") || t.includes("projects")) {
-    return lang === "tr" ? "Projeler & Artifacts" : "Projects & Artifacts";
+  if (t.includes("projelere giriş") || t.includes("introduction to projects")) {
+    return lang === "tr" ? "Projeler" : "Projects";
   }
-  if (t.includes("gelişmiş") || t.includes("advanced")) {
-    return lang === "tr" ? "Gelişmiş" : "Advanced";
+  if (t.includes("artifacts")) {
+    return "Artifacts";
+  }
+  if (t.includes("beceri") || t.includes("skills")) {
+    return lang === "tr" ? "Beceriler" : "Skills";
+  }
+  if (t.includes("bağlamak") || t.includes("connecting")) {
+    return lang === "tr" ? "Bağlayıcılar" : "Connectors";
+  }
+  if (t.includes("kurumsal") || t.includes("enterprise")) {
+    return lang === "tr" ? "Kurumsal Arama" : "Ent. Search";
+  }
+  if (t.includes("araştırma") || t.includes("research")) {
+    return lang === "tr" ? "Araştırma Modu" : "Research Mode";
   }
   return title.split(":")[0];
 };

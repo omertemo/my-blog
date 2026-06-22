@@ -12,7 +12,7 @@ export interface Post {
 }
 
 export const posts: Post[] = [
-                                            {
+                                                              {
     slug: "claude-101-rehberi",
     title: {
       tr: "A'dan Z'ye Claude 101: Geliştiriciler İçin Akıllı Bir İş Ortağı",
@@ -25,7 +25,7 @@ export const posts: Post[] = [
     tag: "AI",
     tagVariant: "cyan",
     emoji: "🤖",
-    readTime: 30,
+    readTime: 45,
     date: "2026-06-20",
     published: false,
     content: {
@@ -34,7 +34,7 @@ export const posts: Post[] = [
 
 <p>Bu yazıda, Anthropic'in Claude 101 eğitiminde öne çıkan başlıkları, Claude'un teknik gücünü ve yeni masaüstü uygulamasındaki çalışma modlarını inceleyeceğiz. İlk olarak en temel soruyla başlayalım: Claude'u diğerlerinden farklı kılan ne?</p>
 
-<h2>Giriş: Neden Claude?</h2>
+<h2>Claude Nedir?</h2>
 
 <p>Claude'u ilk kullanmaya başladığınızda dikkatinizi çeken ilk şey, insani, dengeli ve son derece dürüst iletişim tonudur. Bu rastlantısal bir tasarım tercihi değil, Anthropic'in temel felsefesinin bir sonucudur. Claude; faydalı (helpful), zararsız (harmless) ve dürüst (honest) olmak üzere üç temel ilke üzerine inşa edilmiştir.</p>
 
@@ -61,12 +61,36 @@ export const posts: Post[] = [
   <li><strong>Alignment (Hizalama/Uyumlanma):</strong> Yapay zeka sisteminin kararlarının, hedeflerinin ve çıktılarının insan değerleri ve etik kurallarıyla uyumlu hale getirilmesi süreci.</li>
 </ul>
 
-<h2>Yapay Zeka Akıcılığı (AI Fluency) ve 4D Çerçevesi</h2>
+<h2>Claude ile İlk Sohbetiniz</h2>
+
+<p>Claude ile çalışmaya başlamak son derece kolaydır. Tarayıcınızdan <code>claude.ai</code> adresine girdiğinizde veya masaüstü uygulamasını açtığınızda sizi temiz bir sohbet arayüzü karşılar. Bu arayüz üzerinden ilk sorunuzu yazarak sohbeti başlatabilirsiniz. Ancak Claude'un bir "düşünce ortağı" olmasını istiyorsanız, basit bir sohbetten fazlasını yapabilirsiniz:</p>
+
+<ul>
+  <li><strong>Dosya Eklemek (Attachments):</strong> Sohbet satırındaki ataç simgesini kullanarak veya dosyaları sürükleyip bırakarak (drag and drop) Claude'a PDF'ler, kod dosyaları, CSV tabloları veya resimler yükleyebilirsiniz. Claude, geniş bağlam penceresi (context window) sayesinde bu belgelerin tamamını analiz edip sorularınızı bu verilere göre cevaplar.</li>
+
+  <li><strong>Sohbet Geçmişi (Chat History):</strong> Sol taraftaki menüden geçmiş sohbetlerinize dilediğiniz an erişebilirsiniz. Claude her sohbeti ayrı bir bağlamda saklar, böylece farklı projeleriniz veya sorularınız birbirine karışmaz.</li>
+
+  <li><strong>Özelleştirme Tercihleri (Customize):</strong> Profil ayarlarınız altındaki "Customize Claude" (Claude'u Özelleştir) seçeneğiyle, Claude'un sizinle konuşurken uymasını istediğiniz genel kuralları (örneğin "Her zaman Türkçe cevap ver ve açıklamaları kısa tut") sisteme kalıcı olarak kaydedebilirsiniz.</li>
+</ul>
+
+<h3>Bu Bölümün Önemli Konseptleri</h3>
+
+<ul>
+  <li><strong>Attachments (Dosya Ekleri):</strong> Claude sohbetlerine bağlam sağlamak amacıyla yüklenen dokümanlar, kod dosyaları veya görseller.</li>
+
+  <li><strong>Customize (Özelleştirme):</strong> Kullanıcının Claude'un genel davranış ve yanıt tarzını şekillendirmek için tanımladığı kalıcı tercihler.</li>
+
+  <li><strong>Chat History (Sohbet Geçmişi):</strong> Geçmiş etkileşimlerin ve projelerin ayrı ayrı organize edildiği sol menü listesi.</li>
+
+  <li><strong>System Prompts (Sistem İstemleri):</strong> Modelin çalışmaya başlamadan önce uyması gereken genel çerçeveyi çizen arka plan talimatları.</li>
+</ul>
+
+<h2>Daha İyi Sonuçlar Almak</h2>
 
 <p>Yapay zekayı kod yazarken veya günlük işlerimizde kullanırken en büyük yanılgı, tüm işi sadece birkaç butona tıklayarak veya tek seferlik isteklerle (<strong>one-shot requests</strong>) çözebileceğimizi düşünmektir. Gerçek verimlilik, yapay zekayı sadece bir araç değil, otonom bir iş ortağı olarak konumlandırdığımızda başlar. Akademik olarak geliştirilen <strong>4D Framework for AI Fluency</strong> (Yapay Zeka Akıcılığı için 4D Çerçevesi), bu iş birliğini dört temel yetkinlik üzerine kurar:</p>
 
 <p>1. <strong>Delegation (Delege Etme):</strong> Hangi işleri yapay zekanın yapacağına, hangilerini insanın üstleneceğine stratejik karar vermektir.</p>
-<p>2. <strong>Description (Tanımlama):</strong> Yapay zekaya isteklerimizi ve kurallarımızı net, açık ve bağlamlı (<strong>context</strong>) bir şekilde tarif etme yeteneğidir.</p>
+<p>2. <strong>Description (Tanımlama):</strong> Yapay zekaya isteklerimizi ve kurallarımızı net, açık ve bağlamlı (<strong>context</strong>) bir şekilde tarif etme yeteneği.</p>
 <p>3. <strong>Discernment (Ayırt Etme / Muhakeme):</strong> Claude'un çıktılarını (<strong>outputs</strong>) kritik bir süzgeçten geçirmek, kaliteyi ve doğruluğu sorgulamaktır.</p>
 <p>4. <strong>Diligence (Özen / Gayret):</strong> Yapay zekayı sorumlu ve etik kullanmak, üretilen kod veya belgelerin tüm teknik sorumluluğunu üstlenmektir.</p>
 
@@ -80,7 +104,7 @@ export const posts: Post[] = [
 
   <li>Bunları üretecek test prompt'ları hazırlarız.</li>
 
-  <li>Claude'un verdiği çıktılarla kendi örneklerimizi karşılaştırıp tonu, doğruluğu ve eksikleri analiz ederek prompt'larımızı iyileştiririz (<strong>refine</strong>).</li>
+  <li>Claude'un verdiği çıktılarla kendi örneklerimizi karşılaştırıp tonu, doğruluğu ve eksikleri analiz ederek prompt'larimizi iyileştiririz (<strong>refine</strong>).</li>
 </ul>
 
 <h3>İterasyon Zihniyeti ve Sık Karşılaşılan Sorunlar</h3>
@@ -100,7 +124,7 @@ export const posts: Post[] = [
   <li><strong>Context Drift (Bağlam Kayması):</strong> Konuşma geçmişi çok uzadığında, geçmiş kelimelerin dikkat ağırlıklarını dağıtması sonucu modelin odağını kaybetmesi veya kuralları unutmaya başlaması.</li>
 </ul>
 
-<h2>Masaüstü Deneyimi (Chat, Cowork, Code)</h2>
+<h2>Claude Masaüstü Uygulaması: Chat, Cowork, Code</h2>
 
 <p>Yapay zeka ile etkileşim kurarken kullandığımız arayüzler iş verimliliğimizi doğrudan belirler. Claude'un yeni masaüstü uygulaması (desktop app), kullanıcıya ihtiyacına göre geçiş yapabileceği üç farklı çalışma modu sunar:</p>
 
@@ -132,7 +156,7 @@ export const posts: Post[] = [
   <li><strong>Visual Diffs (Görsel Farklar):</strong> İki kod versiyonu arasındaki eklenen, silinen ya da değiştirilen satırları gösteren görsel karşılaştırma arayüzü.</li>
 </ul>
 
-<h2>Projeler ve Artifacts (Üretkenlik Canavarı)</h2>
+<h2>Projelere Giriş</h2>
 
 <p>Yapay zekanın en büyük sınırı, her yeni sohbette geçmişi sıfırlaması ve dosyaları tekrar tekrar yüklemenizi gerektirmesidir. Claude, bu sorunu çözmek ve sürekli devam eden süreçlerimizi optimize etmek için <strong>Projects</strong> (Projeler) özelliğini sunar.</p>
 
@@ -152,7 +176,7 @@ export const posts: Post[] = [
 
 <p>1. <strong>Projeyi Başlatın:</strong> Sol menüdeki "Projects" butonuna veya doğrudan <code>claude.ai/projects</code> adresine giderek sağ üstteki "+ New Project" seçeneğine tıklayın. Projenize açıklayıcı bir isim ve kısa bir amaç açıklaması verin. Görünürlüğünü isteğinize göre gizli tutabilir veya ekip arkadaşlarınızla paylaşabilirsiniz.</p>
 <p>2. <strong>Proje Talimatlarını (Instructions) Tanımlayın:</strong> "Instructions" paneli üzerinden Claude'un bu projedeki tüm sohbetlerde uymasını istediğiniz kuralları yazın. İyi bir talimat seti; projenin amacını, Claude'dan beklenen adımları (örneğin "Önce blog yapısını kurgula, sonra taslağı yaz"), tercih edilen ton ve stil kurallarını ve çıktı gereksinimlerini (örneğin "Her zaman call-to-action ekle") içerir. Ayrıca bu bölümü belirli iş akışlarını (<strong>workflows</strong>) otomatikleştirmek için de programlayabilirsiniz (örneğin "Yüklenen toplantı transkriptlerinden otomatik olarak şablonlu bir özet çıkart").</p>
-<p>3. <strong>Bilgi Tabanını (Knowledge Base) İnşa Edin:</strong> Sağ menüdeki "+" butonunu kullanarak PDF, DOCX, CSV, TXT ve HTML gibi çeşitli formatlarda belgeleri veya doğrudan Google Drive'ı bağlayarak referans dosyalarınızı projeye aktarın. Dosyalarınızı adlandırırken "belge1.pdf" gibi jenerik isimler yerine "Q4-2024-Marka-Kilavuzu.pdf" gibi açıklayıcı isimler kullanmak Claude'un doğru veriyi bulmasını kolaylaştırır.</p>
+<p>3. <strong>Bilgi Tabanını (Knowledge Base) İnşa Edin:</strong> Sağ menüdeki "+" butonunu kullanarak PDF, DOCX, CSV, TXT and HTML gibi çeşitli formatlarda belgeleri veya doğrudan Google Drive'ı bağlayarak referans dosyalarınızı projeye aktarın. Dosyalarınızı adlandırırken "belge1.pdf" gibi jenerik isimler yerine "Q4-2024-Marka-Kilavuzu.pdf" gibi açıklayıcı isimler kullanmak Claude'un doğru veriyi bulmasını kolaylaştırır.</p>
 
 <h3>Projede Çalışmak ve Ekip İş Birliği</h3>
 
@@ -192,7 +216,29 @@ export const posts: Post[] = [
   <li><strong>Belgelere İsimleriyle Referans Verin:</strong> Sohbet esnasında Claude'a belirli bir belgeye odaklanmasını söyleyebilirsiniz (örneğin: *"Q3 raporumuza dayanarak en önemli müşteri geri bildirimlerini özetle"*).</li>
 </ul>
 
-<h3>Artifacts Nedir?</h3>
+<h3>Bu Bölümün Önemli Konseptleri</h3>
+
+<ul>
+  <li><strong>Persistent Context (Kalıcı Bağlam):</strong> Yapay zeka asistanında açılan her yeni sohbet sekmesinde, proje dosyalarının ve sistem talimatlarının hafızaya otomatik olarak yüklenmesini sağlayan yapı.</li>
+
+  <li><strong>Workspace (Çalışma Alanı):</strong> Belirli bir konu, ürün veya yazılım projesine ait dosyaların, sohbetlerin ve kuralların mantıksal olarak gruplandığı dijital çalışma odası.</li>
+
+  <li><strong>Knowledge Base (Bilgi Tabanı):</strong> Yapay zekanın yanıt üretirken referans alabilmesi için yüklenen dokümanlar, şablonlar ve kaynakların oluşturduğu bilgi havuzu.</li>
+
+  <li><strong>RAG (Retrieval Augmented Generation):</strong> Yapay zekanın yanıt vermeden önce harici bir bilgi tabanında arama yapıp en ilgili verileri bularak cevabını bu verilere dayandırması tekniği.</li>
+
+  <li><strong>Workflow Automation (İş Akışı Otomasyonu):</strong> Yapay zekanın, belirli girdileri alıp önceden tanımlanmış kurallar ve şablonlar çerçevesinde otonom olarak işlemesi süreci.</li>
+
+  <li><strong>Permission Levels (Yetkilendirme Seviyeleri):</strong> Bir proje veya sistemdeki kullanıcıların erişim, düzenleme ve yönetim haklarını belirleyen yetki sınırları.</li>
+
+  <li><strong>Read-Only (Salt Okunur):</strong> Kullanıcıların veriyi okumasına ve sorgulamasına izin veren ancak üzerinde düzenleme veya silme hakkı tanımayan erişim kısıtlaması.</li>
+
+  <li><strong>Use Case (Kullanım Senaryosu):</strong> Bir sistemin belirli bir hedefe ulaşmak için izlediği kullanım adımları ve senaryosu.</li>
+
+  <li><strong>Proximity (Semantik Yakınlık):</strong> RAG aramalarında ve veri hiyerarşilerinde, belgelerin veya metin bloklarının anlam olarak birbirine olan yakınlığı ve ilişkisi.</li>
+</ul>
+
+<h2>Artifacts ile Üretmek</h2>
 
 <p><strong>Artifacts</strong> (Yapay Nesneler), Claude'un sohbetinizin hemen yanında yer alan özel bir pencerede oluşturduğu bağımsız (<strong>standalone</strong>) ve etkileşimli çıktılardır. Sohbet akışının içinde kaybolan uzun kod blokları veya metin yığınları almak yerine, içeriğinizin derlenmiş (<strong>rendered</strong>) ve doğrudan kullanıma hazır halini yan tarafta ayrı bir pencerede görürsünüz. Bu, çalışan bir web sitesi prototipi, etkileşimli bir grafik (<strong>interactive chart</strong>) veya anında indirebileceğiniz bir sistem mimarisi dokümanı olabilir.</p>
 
@@ -293,24 +339,6 @@ export const posts: Post[] = [
 <h3>Bu Bölümün Önemli Konseptleri</h3>
 
 <ul>
-  <li><strong>Persistent Context (Kalıcı Bağlam):</strong> Yapay zeka asistanında açılan her yeni sohbet sekmesinde, proje dosyalarının ve sistem talimatlarının hafızaya otomatik olarak yüklenmesini sağlayan yapı.</li>
-
-  <li><strong>Workspace (Çalışma Alanı):</strong> Belirli bir konu, ürün veya yazılım projesine ait dosyaların, sohbetlerin ve kuralların mantıksal olarak gruplandığı dijital çalışma odası.</li>
-
-  <li><strong>Knowledge Base (Bilgi Tabanı):</strong> Yapay zekanın yanıt üretirken referans alabilmesi için yüklenen dokümanlar, şablonlar ve kaynakların oluşturduğu bilgi havuzu.</li>
-
-  <li><strong>RAG (Retrieval Augmented Generation):</strong> Yapay zekanın yanıt vermeden önce harici bir bilgi tabanında arama yapıp en ilgili verileri bularak cevabını bu verilere dayandırması tekniği.</li>
-
-  <li><strong>Workflow Automation (İş Akışı Otomasyonu):</strong> Yapay zekanın, belirli girdileri alıp önceden tanımlanmış kurallar ve şablonlar çerçevesinde otonom olarak işlemesi süreci.</li>
-
-  <li><strong>Permission Levels (Yetkilendirme Seviyeleri):</strong> Bir proje veya sistemdeki kullanıcıların erişim, düzenleme ve yönetim haklarını belirleyen yetki sınırları.</li>
-
-  <li><strong>Read-Only (Salt Okunur):</strong> Kullanıcıların veriyi okumasına ve sorgulamasına izin veren ancak üzerinde düzenleme veya silme hakkı tanımayan erişim kısıtlaması.</li>
-
-  <li><strong>Use Case (Kullanım Senaryosu):</strong> Bir sistemin belirli bir hedefe ulaşmak için izlediği kullanım adımları ve senaryosu.</li>
-
-  <li><strong>Proximity (Semantik Yakınlık):</strong> RAG aramalarında ve veri hiyerarşilerinde, belgelerin veya metin bloklarının anlam olarak birbirine olan yakınlığı ve ilişkisi.</li>
-
   <li><strong>Standalone (Bağımsız Çıktı):</strong> Harici bir sisteme veya sohbet bağlamına ihtiyaç duymadan kendi sınırları içinde çalışabilen veya kullanılabilen modüller.</li>
 
   <li><strong>Render (Görselleştirme/Derleme):</strong> Kod bloklarının işlenerek tarayıcı üzerinde canlı ve etkileşimli bir görsel arayüze dönüştürülmesi süreci.</li>
@@ -321,7 +349,7 @@ export const posts: Post[] = [
 
   <li><strong>Toggle (Geçiş):</strong> Kullanıcı arayüzünde iki farklı durum veya görünüm arasında geçiş yapmayı sağlayan düğme veya eylem.</li>
 
-  <li><strong>Remix (Klonlama):</strong> Herkese açık paylaşılan bir kodun veya tasarımın, başka bir kullanıcı tarafından kendi sohbet alanına kopyalanarak üzerinde yeni değişiklikler yapılması.</li>
+  <li><strong>Remix (Klonlama):</strong> Herkese açık paylaşılan bir kodun veya tasarımın, başka bir kullanıcı tarafından kendi sohbet alanına kopyalayarak üzerinde yeni değişiklikler yapılması.</li>
 
   <li><strong>Unpublish (Yayından Kaldırma):</strong> Herkese açık yayınlanmış bir artifact'in erişim izinlerini sıfırlayarak genel kullanıma kapatılması.</li>
 
@@ -330,11 +358,9 @@ export const posts: Post[] = [
   <li><strong>Incremental Iteration (Aşamalı Geliştirme):</strong> Büyük projeleri yönetmek adına yapay zeka ile parça parça, her adımda tek bir özellik ekleterek çalışma yöntemi.</li>
 </ul>
 
-<h2>Gelişmiş Özellikler</h2>
+<h2>Becerilerle Çalışmak</h2>
 
 <p>Claude, projelerinizi ve kod tabanınızı yönetirken genel yeteneklerinin yanı sıra dinamik uzmanlık paketleri ve dış dünya araç entegrasyonları sunar.</p>
-
-<h3>Beceriler (Skills) Nedir?</h3>
 
 <p><strong>Skills</strong> (Beceriler), Claude'un belirli ve özelleştirilmiş görevlerdeki başarısını artırmak için arka planda dinamik olarak yüklediği talimatlar, <strong>scripts</strong> (betikler) ve kaynak şablonlarından oluşan modüler klasörlerdir. Bunları, Claude'a yeni yetenekler kazandıran otonom "uzmanlık paketleri" olarak tanımlayabiliriz.</p>
 
@@ -425,21 +451,6 @@ export const posts: Post[] = [
 <p>| <strong>Örnek</strong> | Müşteri bilgi deposu, araştırma asistanı. | Marka/hukuk yönergeleri, blog taslağı oluşturma, PDF üretimi. |</p>
 <p>| <strong>Kalıcılık</strong> | Yüklenen bilgi, projedeki tüm sohbetlerde hazırdır. | Talimatlar sadece o beceri tetiklendiğinde uygulanır. |</p>
 
-<h3>Bağlayıcılar (Connectors) ve MCP (Model Context Protocol)</h3>
-
-<p><strong>Bağlayıcılar (Connectors)</strong>, Claude'un her gün kullandığınız araçlara, verilere ve dosyalara erişmesini sağlayarak onu basit bir sohbet asistanından otonom bir iş ortağına dönüştürür. Connectors sayesinde, her yeni sohbete sıfırdan başlamak yerine Claude'u doğrudan iş süreçlerinizdeki gerçek verilerle çalıştırabilirsiniz.</p>
-
-<p>Bağlayıcılar, Claude'un sizin adınıza bilgileri okumasına ve otonom eylemler gerçekleştirmesine imkan tanır. Verdiğiniz izinlere bağlı olarak Claude; dosyalarınızı arayebilir, dokümanları çekebilir, veri analizi yapabilir, kayıtları güncelleyebilir veya bağlı uygulamalar üzerinden görevleri yürütebilir.</p>
-
-<p>İki ana bağlayıcı türü vardır:</p>
-<ul>
-  <li><strong>Web Bağlayıcıları (Web Connectors):</strong> Claude'u bulut tabanlı servislere bağlar (örneğin Google Drive, Notion, Slack, Asana).</li>
-
-  <li><strong>Masaüstü Uzantıları (Desktop Extensions):</strong> Claude Masaüstü (Claude Desktop) uygulaması üzerinden bilgisayarınızda yerel (<strong>local</strong>) olarak çalışır. Claude'a yerel dosyalarınız ve makinenizdeki yerel uygulamalar için erişim yetkisi verir.</li>
-</ul>
-
-<p>Tüm bu bağlayıcı altyapısının arkasında <strong>Model Context Protocol (MCP)</strong> standardı yatar. MCP'yi yapay zeka entegrasyonları için bir <strong>"USB-C"</strong> standardı gibi düşünebilirsiniz. Nasıl ki USB-C tek bir kablo üzerinden şarj, görüntü aktarımı ve veri transferi sağlayarak kablo karmaşasını bitirdiyse; MCP de yapay zekanın yüzlerce farklı uygulamaya tek bir tutarlı arayüz üzerinden bağlanmasını sağlar. Bu açık kaynaklı evrensel standart sayesinde geliştiriciler, herhangi bir yazılım aracı için kolayca bağlayıcı (connector) üretebilirler.</p>
-
 <h3>Bu Bölümün Önemli Konseptleri</h3>
 
 <ul>
@@ -454,22 +465,314 @@ export const posts: Post[] = [
   <li><strong>Sandboxed Environment (Yalıtılmış Ortam):</strong> Kodların ve dosyaların ana sisteme veya kişisel verilere zarar vermesini önlemek adına izole ve güvenli bir sanal çember içinde çalıştırılması.</li>
 
   <li><strong>Code Execution (Kod Yürütme):</strong> Yapay zekanın arka planda yazılım kodlarını çalıştırıp çıktı üretebilme yeteneği.</li>
+</ul>
 
-  <li><strong>Chain of Thought (Düşünce Zinciri):</strong> Yapay zekanın karmaşık problemleri çözerken arka planda gerçekleştirdiği adım adım akıl yürütme ve planlama aşamaları.</li>
+<h2>Araçlarınızı Bağlamak</h2>
 
-  <li><strong>Financial Model (Finansal Model):</strong> Gelecekteki finansal kararları ve tahminleri analiz etmek amacıyla kurgulanan matematiksel ve formüllü veri modelleri.</li>
+<p><strong>Bağlayıcılar (Connectors)</strong>, Claude'un her gün kullandığınız araçlara, verilere ve dosyalara erişmesini sağlayarak onu basit bir sohbet asistanından otonom bir iş ortağına dönüştürür. Connectors sayesinde, her yeni sohbete sıfırdan başlamak yerine Claude'u doğrudan iş süreçlerinizdeki gerçek verilerle çalıştırabilirsiniz.</p>
 
-  <li><strong>Custom Skills (Özel Beceriler):</strong> Organizasyonların veya bireylerin kendi spesifik kurallarını, şablonlarını ve iş akışlarını otomatikleştirmek için tasarladığı beceri paketleri.</li>
+<p>Bağlayıcılar, Claude'un sizin adınıza bilgileri okumasına ve otonom eylemler gerçekleştirmesine imkan tanır. Verdiğiniz izinlere bağlı olarak Claude; dosyalarınızı arayebilir, dokümanları çekebilir, veri analizi yapabilir, kayıtları güncelleyebilir veya bağlı uygulamalar üzerinden görevleri yürütebilir.</p>
 
-  <li><strong>Reference Materials (Referans Materyalleri):</strong> Yapay zekanın doğru standartları yakalayabilmesi amacıyla yüklenen örnek şablonlar, rehberler veya geçmiş çalışma dosyaları.</li>
+<p>İki ana bağlayıcı türü vardır:</p>
+<ul>
+  <li><strong>Web Bağlayıcıları (Web Connectors):</strong> Claude'u bulut tabanlı servislere bağlar (örneğin Google Drive, Notion, Slack, Asana).</li>
 
-  <li><strong>Separation of Concerns (Sorumlulukların Ayrılması):</strong> Yazılım mimarilerinde veri depolama katmanı (data plane) ile işleme mantığının (logic plane) birbirinden bağımsız modüller olarak tasarlanması ilkesi.</li>
+  <li><strong>Masaüstü Uzantıları (Desktop Extensions):</strong> Claude Masaüstü (Claude Desktop) uygulaması üzerinden bilgisayarınızda yerel (<strong>local</strong>) olarak çalışır. Claude'a yerel dosyalarınız ve makinenizdeki yerel uygulamalar için erişim yetkisi verir.</li>
+</ul>
 
+<p>Tüm bu bağlayıcı altyapısının arkasında <strong>Model Context Protocol (MCP)</strong> standardı yatar. MCP'yi yapay zeka entegrasyonları için bir <strong>"USB-C"</strong> standardı gibi düşünebilirsiniz. Nasıl ki USB-C tek bir kablo üzerinden şarj, görüntü aktarımı ve veri transferi sağlayarak kablo karmaşasını bitirdiyse; MCP de yapay zekanın yüzlerce farklı uygulamaya tek bir tutarlı arayüz üzerinden bağlanmasını sağlar. Bu açık kaynaklı evrensel standart sayesinde geliştiriciler, herhangi bir yazılım aracı için kolayca bağlayıcı (connector) üretebilirler.</p>
+
+<h3>Bağlayıcıları Bulma ve Bağlama (Finding and Connecting Tools)</h3>
+
+<p>Anthropic, önerilen bağlayıcıların (connectors) bir dizinini [claude.ai/directory](https://claude.ai/directory) adresinde barındırır. Bu dizin iki sekme halinde düzenlenmiştir:</p>
+<ul>
+  <li><strong>Web</strong>: Bulut servisleri ve uygulamalar (Gmail, Notion, Slack, Asana, Linear, Stripe ve çok daha fazlası).</li>
+
+  <li><strong>Masaüstü Uzantıları (Desktop Extensions)</strong>: Claude Masaüstü (Claude Desktop) uygulaması aracılığıyla bilgisayarınızda yerel (<strong>local</strong>) olarak çalışan araçlar.</li>
+</ul>
+
+<p>Mevcut bağlayıcılara göz atmak için sohbet penceresinin sol alt kısmındaki <code>+</code> butonuna tıklayıp <strong>Connectors</strong> (Bağlayıcılar) seçeneğini de seçebilirsiniz.</p>
+
+<p>#### Bir Web Bağlayıcısı Kurulumu (Setting Up a Web Connector)</p>
+
+<p>Bir bulut servisini bağlamak için şu adımları izleyebilirsiniz:</p>
+<p>1.  <strong>Bağlayıcıyı bulun</strong>: <code>claude.ai/directory</code> adresine gidin veya herhangi bir sohbette <code>+</code> > <strong>Connectors</strong> seçeneğine tıklayın.</p>
+<p>2.  <strong>Bağlan (Connect) butonuna tıklayın</strong>: Eklemek istediğiniz bağlayıcıyı seçin.</p>
+<p>3.  <strong>Kimlik Doğrulama (Authenticate)</strong>: Servisin giriş sayfasına yönlendirileceksiniz. Mevcut kullanıcı bilgilerinizle giriş yapın.</p>
+<p>4.  <strong>İzinleri Verin (Grant permissions)</strong>: Claude'un talep ettiği belirli izinleri inceleyin ve erişimi yetkilendirin.</p>
+<p>5.  <strong>Bağlantıyı Test Edin</strong>: Claude'a geri dönün ve *"Can you access my [araç adı]?"* gibi basit bir istekte bulunarak bağlantıyı test edin.</p>
+
+<p>Bağlantı kurulduktan sonra Claude, verdiğiniz izinlere bağlı olarak o servis içinde arama yapabilir, verileri okuyabilir ve bazı durumlarda otonom eylemler (<strong>actions</strong>) gerçekleştirebilir.</p>
+
+<p>#### Masaüstü Uzantıları (Desktop Extensions)</p>
+
+<p>Masaüstü uzantıları, web arayüzü yerine Claude Masaüstü (Claude Desktop) uygulamalarını gerektirir. Bu uzantılar, Claude'un yerel uygulamalarla, dosya sisteminizle ve macOS veya Windows'taki yerel özelliklerle etkileşime girmesini sağlar.</p>
+
+<p>Bazı masaüstü uzantıları şunlardır:</p>
+<ul>
+  <li>Belgeleri okumak ve düzenlemek için <strong>yerel dosya erişimi (local file access)</strong>.</li>
+
+  <li>Otomatik web görevleri için <strong>tarayıcı kontrolü (browser control)</strong>.</li>
+
+  <li>Tasarım işleri için <strong>yerel uygulama entegrasyonu (Figma gibi)</strong>.</li>
+</ul>
+
+<p>Bir masaüstü uzantısı yüklemek için:</p>
+<p>1.  Claude Masaüstü (Claude Desktop) uygulaması indirin ve kurun.</p>
+<p>2.  Uygulamayı açın ve <strong>Settings > Extensions</strong> (Ayarlar > Uzantılar) menüsüne gidin.</p>
+<p>3.  Mevcut uzantılara göz atın ve <strong>Install</strong> (Yükle) butonuna tıklayın.</p>
+<p>4.  O uzantıya özel ek kurulum adımlarını takip edin.</p>
+
+<h3>Bağlayıcıları İşinizde Kullanmak (Using Connectors in Your Work)</h3>
+
+<p>Araçlarınızı bağladıktan sonra, Claude isteklerinize yanıt verirken bu araçları göz önünde bulundurur. Bağlı araçları kullanmanın bazı pratik yolları şunlardır:</p>
+
+<p>#### Proje Yönetimi (Asana, Linear, Jira)</p>
+<ul>
+  <li>*"Bu hafta teslim edilmesi gereken en yüksek öncelikli görevlerim nelerdir?"*</li>
+
+  <li>*"Q4 bütçe teklifini incelemek için yeni bir görev oluştur."*</li>
+
+  <li>*"Ürün lansmanı projemizin durumunu özetle."*</li>
+</ul>
+
+<p>#### İletişim (Slack, Gmail)</p>
+<ul>
+  <li>*"Tedarikçi sözleşmesini tartıştığımız e-posta yazışmasını bul."*</li>
+
+  <li>*"#marketing kanalındaki en son mesaja bir yanıt taslağı hazırla."*</li>
+
+  <li>*"Ekip, dünkü tartışmada zaman çizelgesi hakkında neye karar verdi?"*</li>
+</ul>
+
+<p>#### Dokümantasyon (Notion, Google Drive, Confluence)</p>
+<ul>
+  <li>*"Dokümantasyonumuzda marka sesi (brand voice) kılavuzumuzu ara."*</li>
+
+  <li>*"Geçen haftaki ürün incelemesi toplantı notlarını özetle."*</li>
+
+  <li>*"Stil rehberimiz kısaltmaların kullanımı hakkında ne diyor?"*</li>
+</ul>
+
+<p>#### İş Araçları (Stripe, PayPal, Salesforce)</p>
+<ul>
+  <li>*"Bana geçen çeyreğin gelir eğilimlerini göster."*</li>
+
+  <li>*"Acme Corp fırsatının (opportunity) durumu nedir?"*</li>
+
+  <li>*"1.000 doların üzerindeki son işlemleri listele."*</li>
+</ul>
+
+<h3>Güvenlik ve İzin Yönetimi (Security and Permissions)</h3>
+
+<p>Claude'u harici servislere bağladığınızda, ona bu servisler içindeki verileri okuma—ve bazen değiştirme—yetkisi vermiş olursunuz. İşte dikkat edilmesi gereken bazı önemli hususlar:</p>
+
+<ul>
+  <li><strong>Kapsamlı Erişim (Scoped Access):</strong> İzinler, bağlayıcının tam olarak neye ihtiyaç duyduğuna göre belirlenir ve her uygulamanın menüsü altından bireysel izinleri açıp kapatabilirsiniz.</li>
+
+  <li><strong>Claude Sadece Sizin Gördüğünüzü Görür:</strong> Claude yalnızca sizin erişim hakkınız olan verilere erişebilir. İş e-postanızı bağlamak, Claude'a şirket yöneticinizin (CEO) gelen kutusuna erişim hakkı vermez; sadece kendi gelen kutunuza erişebilirsiniz.</li>
+
+  <li><strong>Erişim Her An Geri Çekilebilir (Revocable):</strong> Bir servisin bağlantısını Claude'un ayarlarından veya üçüncü taraf servisin güvenlik ayarlarından dilediğiniz an kesebilirsiniz. Becerilerde olduğu gibi, özel bağlayıcılar (custom connectors) bulabilir veya kendiniz inşa edebilirsiniz. Burada da aynı dikkati gösterin: Yalnızca güvenilir kaynaklardan gelen bağlayıcıları kurun.</li>
+</ul>
+
+<h3>Claude Arayüzleri ve Entegrasyon Matrisi</h3>
+
+<p>Claude'u iş akışlarınıza entegre etmek için sadece masaüstü uygulamasıyla sınırlı değilsiniz. Anthropic, kullanım senaryolarına göre optimize edilmiş geniş bir entegrasyon yelpazesi sunar:</p>
+
+<p>| Arayüz / Entegrasyon | Temel Yetenekler / Görevler | Çalıştığı Platformlar |</p>
+<p>| :--- | :--- | :--- |</p>
+<p>| <strong>Claude.ai</strong> | Genel görevler, araştırma, yazma, analiz, dosya oluşturma. | Web tarayıcısı, masaüstü ve mobil uygulamalar. |</p>
+<p>| <strong>Claude Code</strong> | Yazılım geliştirme, kod tabanında gezinme, git iş akışları. | Terminal / komut satırı, IDE veya tarayıcı. |</p>
+<p>| <strong>Claude Cowork</strong> | Karmaşık, çok adımlı görevler; araştırma raporları, belge oluşturma, dosya düzenleme, veri analizi. | Masaüstü uygulaması (ve Dispatch üzerinden mobil). |</p>
+<p>| <strong>Slack Entegrasyonu</strong> | Ekip iş birliği, toplantı hazırlığı, bağlam içi hızlı cevaplar. | Slack çalışma alanı. |</p>
+<p>| <strong>Claude for Excel</strong> | E-tablo analizi, finansal modelleme, formül hata ayıklama. | Microsoft Excel yan çubuğu. |</p>
+<p>| <strong>Claude for PowerPoint</strong> | Slayt oluşturma, sunum düzenleme, biçimlendirme ve tasarım. | Microsoft PowerPoint yan çubuğu. |</p>
+<p>| <strong>Claude for Chrome</strong> | Web araştırması, e-posta yönetimi, tarayıcı otomasyonu. | Chrome tarayıcı yan çubuğu. |</p>
+
+<h3>Bu Bölümün Önemli Konseptleri</h3>
+
+<ul>
   <li><strong>Connectors (Bağlayıcılar):</strong> Claude'un harici araçlara, veri tabanlarına ve bulut uygulamalarına doğrudan erişmesini sağlayan veri entegrasyon yolları.</li>
 
   <li><strong>Model Context Protocol (MCP):</strong> Yapay zekanın farklı uygulama ve veri kaynaklarıyla tek bir tutarlı protokol üzerinden iletişim kurmasını sağlayan açık kaynaklı, evrensel entegrasyon standardı.</li>
 
   <li><strong>Desktop Extensions (Masaüstü Uzantıları):</strong> Claude Masaüstü uygulamasının yerel bilgisayardaki dosyalara ve işletim sistemi yeteneklerine erişmesini sağlayan yerel bağlayıcılar.</li>
+
+  <li><strong>Authenticate (Kimlik Doğrulama):</strong> Bir kullanıcının veya sistemin kimliğini doğrulayarak sisteme güvenli giriş yapmasını sağlama süreci.</li>
+
+  <li><strong>Grant Permissions (Erişim İzinleri):</strong> Bir uygulamaya veya yapay zekaya, belirli verilere erişmesi veya eylemler gerçekleştirmesi için yetki sınırları atamak.</li>
+
+  <li><strong>Browser Control (Tarayıcı Kontrolü):</strong> Yapay zekanın yerel tarayıcıyı otonom olarak yönlendirerek web sitelerinde gezinme, veri toplama veya web tabanlı görevleri yürütme yeteneği.</li>
+
+  <li><strong>Opportunity (Fırsat):</strong> Satış ve CRM sistemlerinde, potansiyel müşteri anlaşmaları veya ticari fırsatları temsil eden yapılandırılmış veri kaydı.</li>
+
+  <li><strong>Scoped Access (Kapsamlı Erişim):</strong> Bir servisin veya eklentinin tüm sisteme değil, sadece önceden yetkilendirilmiş kısıtlı veri alanlarına erişebilmesi durumu.</li>
+
+  <li><strong>Revocable (İptal Edilebilir):</strong> Kullanıcı tarafından harici bir entegrasyona verilen erişim yetkisinin veya anahtarının her an geri çekilebilir olması özelliği.</li>
+</ul>
+
+<h2>Kurumsal Arama</h2>
+
+<p>Kurumsal Arama (Enterprise Search), Claude arayüzündeki yan menünüze özel bir <strong>"Ask {Şirket Adınız}"</strong> (Şirket Adına Sor) seçeneği ekler. Bu özellik; şirketinizin farklı araçları ve veri kaynakları arasında dağılmış olan kurumsal bilgileri bulmak ve sentezlemek için özel olarak tasarlanmıştır.</p>
+
+<p>Kurumsal Arama'yı, tüm organizasyonunuz için önceden kurulmuş devasa bir Proje (Project) gibi düşünebilirsiniz; şirketinizin bilgi tabanı (knowledge base) sisteme zaten yüklenmiştir, böylece sorularınıza bağlama duyarlı yanıtlar almak için doğrudan aramaya başlayabilirsiniz.</p>
+
+<p>Standart sohbetlerin aksine Kurumsal Arama, Anthropic ekibi tarafından özel olarak yapılandırılmış ve sadece bilgi toplamaya odaklanmış özel sistem talimatları ile çalışır.</p>
+
+<h3>Kurumsal Arama ile Neler Sorabilirsiniz?</h3>
+
+<p>Kurumsal Arama, birden fazla bilgi kaynağını taramayı veya şirket genelinden gelen verileri tek bir yerde sentezlemeyi gerektiren durumlarda son derece değerlidir. İşte en yaygın kullanım senaryolarından bazıleri:</p>
+
+<ul>
+  <li><strong>Gelişmelerden Haberdar Olmak (Getting up to speed):</strong></li>
+
+  <li>*   *"Dün ben izinliyken şirket genelinde neler konuşuldu?"*</li>
+
+  <li>*   *"Geçen haftaki iş güncellemelerini ve ilerleme durumlarını özetle."*</li>
+
+  <li>*   *"Platform projesindeki güncel engelleyiciler (blockers) nelerdir?"*</li>
+
+  <li><strong>Politika ve Süreç Soruları:</strong></li>
+
+  <li>*   *"Uzaktan çalışma politikamız hakkında bilgi ver."*</li>
+
+  <li>*   *"Masraf formunu teslim etme süreci nasıldır?"*</li>
+
+  <li>*   *"İzin talebi göndermek için hangi adımları izlemeliyim?"*</li>
+
+  <li><strong>Araştırma ve Analiz:</strong></li>
+
+  <li>*   *"Müşterilerin rakipleri tercih etme sebepleri nelerdir?"*</li>
+
+  <li>*   *"Q4 ürün yol haritası (product roadmap) hakkındaki toplantı notlarını özetle."*</li>
+
+  <li>*   *"Müşteri adaptasyon (onboarding) sürecimiz hakkında bilgi bul."*</li>
+
+  <li><strong>Yeni Ekip Üyelerinin Oryantasyonu:</strong></li>
+
+  <li>*   *"Kimlik doğrulama (authentication) sistemimiz nasıl çalışıyor?"*</li>
+
+  <li>*   *"Faturalandırma altyapısını öğrenmek için kiminle görüşmeliyim?"*</li>
+
+  <li>*   *"Mühendislik ekibimiz deployment için hangi araçları tercih ediyor?"*</li>
+
+  <li><strong>Performans ve Proje Takibi:</strong></li>
+
+  <li>*   *"Yeni pazarlama kampanyasıyla ilgili tüm belgeleri ve yazışmaları listele."*</li>
+
+  <li>*   *"Geçen haftaki liderlik toplantısında alınan kritik kararlar nelerdi?"*</li>
+
+  <li>*   *"Altyapı (Infrastructure) girişimine yapılan ekip katkılarını özetle."*</li>
+</ul>
+
+<p>Bir soru sorduğunuzda Claude; SharePoint belgeleri, Slack kanalları, Gmail yazışmaları ve Google Drive dosyaları gibi tüm bağlı kurumsal araçlarınızda arama yapar, bilgileri sentezler ve yanıt üretir. Üstelik yanıtın doğruluğunu denetleyebilmeniz için <strong>her zaman yararlandığı kaynakları belirtir (cites its sources)</strong>.</p>
+
+<h3>Kurumsal Aramayı Kurmak (Setting Up Enterprise Search)</h3>
+
+<p>Kurumsal Arama, iki adımlı bir kurulum süreci gerektirir: ilk olarak bir yönetici (<strong>admin</strong>) bunu organizasyon için yapılandırır, ardından bireysel kullanıcılar kendi kişisel hesaplarıyla kimlik doğrulaması (<strong>authenticate</strong>) yapar.</p>
+
+<p>#### Yöneticiler (Owners) İçin</p>
+
+<p>Kurumsal Arama projesi, tüm Team ve Enterprise organizasyonları için varsayılan olarak etkindir; ancak ekip üyelerinin bunu kullanabilmesi için önce bir Sahibin (<strong>Owner</strong>) ilk kurulumu tamamlaması gerekir:</p>
+<p>1. Sol yan menüdeki <strong>"Ask Your Org"</strong> (Şirketinize Sorun) seçeneğine tıklayın.</p>
+<p>2. Devam etmek için <strong>"Set up for your org"</strong> (Şirketiniz için kurun) seçeneğine tıklayın (veya özelliği kapatmak için "Disable"ı seçin).</p>
+<p>3. Organizasyonunuzun araçlarını bağlayın. Belgeler (<strong>Documents</strong> - Google Drive veya SharePoint gibi) ve Sohbet (<strong>Chat</strong> - Slack veya Microsoft Teams gibi) için birer bağlayıcı seçmeniz gerekecektir. E-posta önerilir ancak isteğe bağlıdır.</p>
+<p>4. Ekibinizin ihtiyaç duyduğu diğer araçları kurmak için <strong>"+ Add more"</strong> (Daha fazla ekle) seçeneğine tıklayın.</p>
+<p>5. Proje adını özelleştirin. Girdiğiniz isim, herkesin yan menüsünde *"Ask [İsim]"* şeklinde görünecektir.</p>
+<p>6. Bir açıklama ekleyin ve ardından <strong>"Finish set up"</strong> (Kurulumu bitir) seçeneğine tıklayın.</p>
+
+<p>Kurulum tamamlandıktan sonra proje, organizasyonunuzun tüm üyeleri için kullanılabilir hale gelir.</p>
+
+<p>#### Kullanıcılar İçin</p>
+
+<p>Bir yönetici Kurumsal Aramayı kurduktan sonra, yan menünüzde yıldızlı bir *"Ask {Org Name}"* projesi göreceksiniz. Başlamak için şu adımları izleyebilirsiniz:</p>
+<p>1. Yan menünüzdeki projeye tıklayın.</p>
+<p>2. Önerilen hizmetlere bağlanmak için rehberli adaptasyon (<strong>guided onboarding</strong>) akışını takip edin.</p>
+<p>3. Aramak istediğiniz her bir hizmetle (Slack, Google, Microsoft 365 vb.) kimlik doğrulaması (<strong>authenticate</strong>) yapın.</p>
+<p>4. Claude'a organizasyonunuzun bilgileri hakkında sorular sormaya başlayın.</p>
+
+<p>Ne kadar çok bağlayıcıyı etkinleştirirseniz, arama sonuçlarınız o kadar kapsamlı olacaktır. İstediğiniz zaman projenin Talimatlar (Instructions) bölümündeki "Connect" (Bağlan) butonuna tıklayarak daha sonra da yeni bağlayıcılar ekleyebilirsiniz.</p>
+
+<p>#### Bu çok fazla veri... Peki güvenli mi?</p>
+
+<p>Kısacası, evet. Kurumsal Arama, yalnızca orijinal bağlı araçta zaten erişim izniniz olan bilgileri gösterir. Ayrıca sohbetleriniz gizli kalır ve bağlı verileriniz ayrı olarak indekslenmez (<strong>indexed</strong>) veya depolanmaz.</p>
+
+<h3>Bu Bölümün Önemli Konseptleri</h3>
+
+<ul>
+  <li><strong>Enterprise Search (Kurumsal Arama):</strong> Kuruluş genelinde arama yapabilen, yan menüde özel bir sekme halinde sunulan organizasyon düzeyinde akıllı arama platformu.</li>
+
+  <li><strong>Blocker (Engelleyici):</strong> Yazılım süreçlerinde bir işin veya görevin tamamlanmasını tamamen engelleyen ya da geciktiren teknik veya operasyonel aksaklık.</li>
+
+  <li><strong>Onboarding (Oryantasyon):</strong> Şirkete yeni katılan çalışanların veya bir sistemi ilk defa kullanacak kişilerin entegrasyon, eğitim ve adaptasyon süreci.</li>
+
+  <li><strong>Cite Sources (Kaynak Belirtme):</strong> Yapay zekanın yanıt üretirken kullandığı harici belgelerin, konuşmaların veya e-postaların orijinal konumlarını atıf olarak sunması.</li>
+
+  <li><strong>Owner (Organizasyon Sahibi):</strong> Bir SaaS uygulamasında veya platformda organizasyon yönetimi, faturalandırma ve genel yapılandırma izinlerine sahip üst düzey yönetici rolü.</li>
+
+  <li><strong>Guided Onboarding (Rehberli Adaptasyon):</strong> Kullanıcının bir sisteme veya eklentiye ilk kurulum aşamalarını kolaylaştırmak için sunulan etkileşimli, adım adım yönlendirme akışı.</li>
+
+  <li><strong>Indexed (İndekslenmiş):</strong> Aramaları hızlandırmak amacıyla verilerin taranarak harici bir dizinde veya veri tabanında yapılandırılmış şekilde saklanması işlemi.</li>
+</ul>
+
+<h2>Araştırma Modu</h2>
+
+<p>Araştırma özelliği, Claude'un bilgiyi bulma ve analiz etme yöntemini dönüştürür. Claude, tek bir arama yapmak yerine, bir sonraki aşamada neyi inceleyeceğine karar verirken birbiri üzerine inşa edilen çoklu aramalar yürüterek otonom (<strong>agentic</strong>) bir şekilde çalışır. Sorunuzun farklı açılarını otomatik olarak keşfeder ve açık uçlu soruları sistematik bir şekilde çözer.</p>
+
+<p>Araştırma, dakikalar içinde kapsamlı yanıtlar sunar. Çoğu rapor 5 ila 15 dakika arasında tamamlanır, ancak daha karmaşık araştırmalar 45 dakikaya kadar sürebilir; bu da normalde saatler süren manuel araştırmalar gerektiren bir iştir.</p>
+
+<p>Araştırma ile birlikte derin düşünme (<strong>extended thinking</strong>) özelliği otomatik olarak etkinleştirilir. Bu güçlü kombinasyon, Claude'un hem yaklaşımını düşünceli bir şekilde planlamasını hem de kapsamlı bilgileri toplamasını sağlayarak karmaşık istekleri yönetilebilir parçalara böler.</p>
+
+<p>Atıflar (<strong>citations</strong>) doğrulamayı kolaylaştırır. Araştırma, kontrol edilmesi kolay kaynak atıflarıyla tamamlanan eksiksiz ve ayrıntılı yanıtlar sunar; böylece Claude'un bulgularına güvenebilir ve kaynakları kendiniz hızlıca doğrulayabilirsiniz.</p>
+
+<h3>Araştırma (Research) Nedir?</h3>
+
+<p>Araştırma, Claude'un karmaşık soruları yanıtlamak veya bir konu hakkında kapsamlı bilgi toplamak için derinlemesine, çok adımlı web aramaları yapmasını sağlayan bir yetenektir. Araştırma özelliğini etkinleştirdiğinizde Claude:</p>
+
+<ul>
+  <li>Sorgunuza dayalı bir araştırma planı formüle eder.</li>
+
+  <li>Yüksek kaliteli web kaynaklarını bulmak için arama sorguları yürütür.</li>
+
+  <li>İlgili bilgileri çıkarmak için elde edilen sayfaları analiz eder.</li>
+
+  <li>Mevcut bilgisindeki boşlukları belirler ve takip aramaları gerçekleştirir.</li>
+
+  <li>Bulguları atıfta bulunulmuş kapsamlı bir rapor halinde sentezler.</li>
+</ul>
+
+<p>Tek bir arama sonuçları kümesi getiren standart web aramasının aksine Araştırma, konu hakkında daha fazla bilgi edindikçe arama stratejisini dinamik olarak uyarlayan yinelenmeli (<strong>iterative</strong>) ve otonom (<strong>agentic</strong>) bir döngüdür.</p>
+
+<h3>Sonuç: Neler Öğrendik?</h3>
+
+<p>Bu Claude 101 rehberinde, basit bir chatbot mantığının ötesine geçerek Claude'u nasıl tam donanımlı bir "düşünce ortağı" (thought partner) olarak konumlandırabileceğimizi gördük. İşte rehber boyunca edindiğimiz en önemli kazanımlar:</p>
+
+<ul>
+  <li><strong>Claude ile Başlamak:</strong> Claude; Constitutional AI temelli faydalı, zararsız ve dürüst bir yardımcıdır. Web, mobil ve masaüstü arayüzleriyle her cihazda senkronize çalışır.</li>
+
+  <li><strong>Daha İyi Sonuçlar Almak:</strong> Yineleme (iteration) esastır. Yapay Zeka Akıcılığı (AI Fluency) ise şu dört temel yetkinliği barındırır: Delege Etme (Delegation), Tanımlama (Description), Ayırt Etme (Discernment) ve Özen (Diligence).</li>
+
+  <li><strong>Çalışmaları Organize Etmek:</strong> Projeler (Projects) kalıcı bağlam ve ekip iş birliği sunan bilgi merkezleridir. Artifacts, sohbetin yanında derlenen etkileşimli ve bağımsız çıktılardır. Beceriler (Skills) ise Claude'a uzmanlık katan otonom iş akışı paketleridir.</li>
+
+  <li><strong>Claude'un Erişimini Genişletmek:</strong> Bağlayıcılar (Connectors), Claude'u Google Workspace, Notion veya Slack gibi kendi verilerinize bağlar. Kurumsal Arama (Enterprise Search) organizasyon genelinde arama yapmayı sağlar. Araştırma Modu (Research Mode) ise manuel aramaları dakikalara indiren otonom bir tarama döngüsüdür.</li>
+
+  <li><strong>Hepsini Bir Araya Getirmek:</strong> Claude; yazılım, satış, pazarlama, finans, İK ve hukuk gibi birçok rolde kullanılabilir. Ayrıca <code>claude.ai</code> haricinde Claude Code, Slack, Excel ve Chrome eklentileriyle doğrudan iş akışlarınıza entegre olur.</li>
+</ul>
+
+<h3>Bu Bölümün Önemli Konseptleri</h3>
+
+<ul>
+  <li><strong>Research Mode (Araştırma Modu):</strong> Claude'un internet üzerinde çok adımlı, yinelemeli aramalar yaparak kapsamlı raporlar oluşturmasını sağlayan otonom araştırma yeteneği.</li>
+
+  <li><strong>Extended Thinking (Derin Düşünme):</strong> Modelin karmaşık problemleri analiz ederken, yanıt üretmeden önce daha uzun akıl yürütme adımları ve planlama yapmasını sağlayan altyapı.</li>
+
+  <li><strong>Agentic Search (Ajan Tabanlı Arama):</strong> Yapay zekanın arama yaparken kendi kararlarını vererek, bulduğu sonuçlara göre yeni takip sorguları oluşturması ve araştırmayı bağımsız sürdürmesi.</li>
+
+  <li><strong>Citations (Kaynak Atıfları):</strong> Üretilen araştırma raporunda, bilgilerin hangi web sitelerinden veya belgelerden alındığını gösteren tıklanabilir doğrulama bağlantıları.</li>
+
+  <li><strong>Deep Dive (Derinlemesine Analiz):</strong> Bir konu hakkında yüzeyel özet geçmek yerine, tüm alt detayları, teknik parametreleri ve farklı kaynaklardaki görüşleri tarayarak yapılan detaylı inceleme.</li>
+
+  <li><strong>Systematic Investigation (Sistematik İnceleme):</strong> Araştırma konusunun rastgele aramalar yerine, belirli bir plan dahilinde adım adım ve bilgi boşlukları doldurularak düzenli olarak sorgulanması süreci.</li>
 </ul>
       `,
       en: `
@@ -477,7 +780,7 @@ export const posts: Post[] = [
 
 <p>In this post, we'll dive into the key takeaways from Anthropic's Claude 101 course, exploring Claude's technical strengths and the various working modes available in its new desktop app. Let's start with the fundamental question: What makes Claude different?</p>
 
-<h2>Introduction: Why Claude?</h2>
+<h2>What is Claude?</h2>
 
 <p>When you first start using Claude, the first thing you notice is its human-like, balanced, and highly honest communication style. This is not a random design choice; it is a direct result of Anthropic's core engineering philosophy. Claude is built on three foundational principles: being helpful, harmless, and honest.</p>
 
@@ -504,7 +807,31 @@ export const posts: Post[] = [
   <li><strong>Alignment:</strong> The process of training AI systems to ensure their goals, decisions, and outputs align with human safety, ethics, and values.</li>
 </ul>
 
-<h2>AI Fluency and the 4D Framework</h2>
+<h2>Your First Conversation with Claude</h2>
+
+<p>Getting started with Claude is simple. When you open <code>claude.ai</code> in your browser or launch the desktop application, you are greeted by a clean, inviting chat interface. You can immediately type your first prompt to begin. However, to truly leverage Claude as a thought partner, you can utilize several core features of the conversation engine:</p>
+
+<ul>
+  <li><strong>Adding Attachments:</strong> Use the paperclip icon in the input box or simply drag and drop files (PDFs, code files, CSV sheets, or images) directly into the chat. Claude's large context window allows it to process these files entirely and answer questions with precision based on your data.</li>
+
+  <li><strong>Chat History:</strong> Access your previous conversations anytime via the left sidebar. Claude stores each chat in an isolated context, ensuring that different projects or tasks do not bleed into one another.</li>
+
+  <li><strong>Customize Preferences:</strong> Navigate to "Customize Claude" under your profile settings to define persistent instructions (e.g., "Always keep explanations concise and focus on Python best practices"). Claude will adhere to these instructions across all new conversations automatically.</li>
+</ul>
+
+<h3>Key Concepts</h3>
+
+<ul>
+  <li><strong>Attachments:</strong> Documents, code repositories, or images uploaded to a conversation to provide instant context for Claude's reasoning.</li>
+
+  <li><strong>Customize:</strong> A user preferences menu where you can set persistent guidelines that dictate Claude's persona, tone, and output style.</li>
+
+  <li><strong>Chat History:</strong> The structured layout in the sidebar allowing you to organize, rename, and revisit past conversation threads.</li>
+
+  <li><strong>System Prompts:</strong> Behind-the-scenes instructions that establish the rules, safety guidelines, and behavioral limits before the conversation starts.</li>
+</ul>
+
+<h2>Getting Better Results</h2>
 
 <p>The biggest misconception when incorporating AI into software engineering or daily tasks is thinking we can solve everything with simple clicks or one-shot requests. Real efficiency starts when we treat AI not just as a tool, but as an autonomous thought partner. The <strong>4D Framework for AI Fluency</strong>, developed through academic research, outlines four core competencies for effective collaboration:</p>
 
@@ -545,7 +872,7 @@ export const posts: Post[] = [
   <li><strong>Context Drift:</strong> A decline in model focus or instruction-following that occurs as a conversation grows too long, diluting the attention weights over unrelated history.</li>
 </ul>
 
-<h2>The Desktop Experience (Chat, Cowork, Code)</h2>
+<h2>Claude Desktop App: Chat, Cowork, Code</h2>
 
 <p>The interfaces we use to collaborate with AI directly affect our productivity. Claude’s new desktop app offers three distinct working modes tailored to your immediate needs:</p>
 
@@ -554,7 +881,7 @@ export const posts: Post[] = [
 
   <li><strong>Cowork:</strong> An <strong>agentic</strong> tool built for tasks requiring multi-step workflows and autonomous executions. Cowork can coordinate <strong>subagents</strong> in parallel to divide and conquer research reports, run folder-wide document updates, and execute scheduled tasks (e.g., pulling daily Slack/Calendar updates). It can browse the web via Chrome (<strong>browser use</strong>) or directly interact with desktop windows, clicking and typing to get work done (<strong>computer use</strong>). You can also hand off tasks to it remotely from your phone using <strong>Dispatch</strong>.</li>
 
-  <li><strong>Code:</strong> Optimized specifically for software engineering workflows. It can run locally on a folder (<strong>local</strong>) or connect to a bulut-based <strong>GitHub</strong> repository (<strong>remote</strong>) for background tasks. It features three interaction modes to govern AI autonomy: <strong>Ask</strong> (proposes changes and awaits approval via visual diffs), <strong>Code</strong> (applies changes automatically but asks before running terminal commands), and <strong>Plan</strong> (outlines its full strategy beforehand). All changes are tracked via git integration.</li>
+  <li><strong>Code:</strong> Optimized specifically for software engineering workflows. It can run locally on a folder (<strong>local</strong>) or connect to a cloud-based <strong>GitHub</strong> repository (<strong>remote</strong>) for background tasks. It features three interaction modes to govern AI autonomy: <strong>Ask</strong> (proposes changes and awaits approval via visual diffs), <strong>Code</strong> (applies changes automatically but asks before running terminal commands), and <strong>Plan</strong> (outlines its full strategy beforehand). All changes are tracked via git integration.</li>
 </ul>
 
 <p><strong>Cowork</strong> and <strong>Code</strong> run on the same powerful local <strong>engine</strong> (Claude Code), enabling them to perform long-running tasks and coordinate sub-agents locally on your machine.</p>
@@ -577,7 +904,7 @@ export const posts: Post[] = [
   <li><strong>Visual Diffs:</strong> A graphical user interface component showing the exact line-by-line differences (additions, deletions, edits) between two versions of code.</li>
 </ul>
 
-<h2>Projects and Artifacts (The Productivity Powerhouse)</h2>
+<h2>Introduction to Projects</h2>
 
 <p>An inherent limitation of standard AI interactions is that each new chat is a blank slate, requiring you to manually re-upload reference files and repeat instructions. Claude solves this overhead and optimizes ongoing workflows through the <strong>Projects</strong> feature.</p>
 
@@ -637,7 +964,29 @@ export const posts: Post[] = [
   <li><strong>Reference Documents by Name:</strong> When asking questions, you can mention specific documents to help Claude focus its search (e.g., *"Based on our Q3 report, what were the top customer concerns?"*).</li>
 </ul>
 
-<h3>What are Artifacts?</h3>
+<h3>Key Concepts</h3>
+
+<ul>
+  <li><strong>Persistent Context:</strong> The underlying architecture that automatically loads project files and custom instructions into the context window of every new conversation within a project.</li>
+
+  <li><strong>Workspace:</strong> A logical boundary or directory grouping files, instructions, chat history, and shared permissions dedicated to a specific theme or application.</li>
+
+  <li><strong>Knowledge Base:</strong> The collection of reference documents, specifications, templates, and files uploaded to a project for the AI model to query.</li>
+
+  <li><strong>RAG (Retrieval Augmented Generation):</strong> A framework where the AI model searches an external database or knowledge base for relevant passages first, then synthesizes its final answer based on those passages.</li>
+
+  <li><strong>Workflow Automation:</strong> The programmatic execution of multi-step processes by the AI (e.g., generating templates from meeting transcripts) triggered by specific user inputs.</li>
+
+  <li><strong>Permission Levels:</strong> The set of access rights (e.g., Can View, Can Edit, Owner) assigned to different users within a shared digital workspace.</li>
+
+  <li><strong>Read-Only:</strong> A restriction level that permits users to read or query information without the ability to modify, delete, or upload data.</li>
+
+  <li><strong>Use Case:</strong> A specific situation or scenario in which a product or service could be used to achieve a goal.</li>
+
+  <li><strong>Proximity:</strong> The physical or semantic closeness of documents or code blocks within a system hierarchy, which RAG tools analyze to infer relationships.</li>
+</ul>
+
+<h2>Creating with Artifacts</h2>
 
 <p><strong>Artifacts</strong> are standalone, interactive outputs that Claude creates in a dedicated window alongside your conversation. Instead of getting a long block of code or text buried in the chat, you see your content rendered and ready to use—whether that's a working website, an interactive chart, or a document you can immediately download.</p>
 
@@ -738,24 +1087,6 @@ export const posts: Post[] = [
 <h3>Key Concepts</h3>
 
 <ul>
-  <li><strong>Persistent Context:</strong> The underlying architecture that automatically loads project files and custom instructions into the context window of every new conversation within a project.</li>
-
-  <li><strong>Workspace:</strong> A logical boundary or directory grouping files, instructions, chat history, and shared permissions dedicated to a specific theme or application.</li>
-
-  <li><strong>Knowledge Base:</strong> The collection of reference documents, specifications, templates, and files uploaded to a project for the AI model to query.</li>
-
-  <li><strong>RAG (Retrieval Augmented Generation):</strong> A framework where the AI model searches an external database or knowledge base for relevant passages first, then synthesizes its final answer based on those passages.</li>
-
-  <li><strong>Workflow Automation:</strong> The programmatic execution of multi-step processes by the AI (e.g., generating templates from meeting transcripts) triggered by specific user inputs.</li>
-
-  <li><strong>Permission Levels:</strong> The set of access rights (e.g., Can View, Can Edit, Owner) assigned to different users within a shared digital workspace.</li>
-
-  <li><strong>Read-Only:</strong> A restriction level that permits users to read or query information without the ability to modify, delete, or upload data.</li>
-
-  <li><strong>Use Case:</strong> A specific situation or scenario in which a product or service could be used to achieve a goal.</li>
-
-  <li><strong>Proximity:</strong> The physical or semantic closeness of documents or code blocks within a system hierarchy, which RAG tools analyze to infer relationships.</li>
-
   <li><strong>Standalone:</strong> An independent output or module that functions and provides value on its own without external dependencies or surrounding chat context.</li>
 
   <li><strong>Render:</strong> The process of compiling and displaying raw code (such as HTML/CSS/JS) into a visual, interactive interface in the browser.</li>
@@ -775,11 +1106,9 @@ export const posts: Post[] = [
   <li><strong>Incremental Iteration:</strong> The methodology of building software piece-by-piece, requesting individual additions or modifications sequentially rather than all at once.</li>
 </ul>
 
-<h2>Advanced Features</h2>
+<h2>Working with Skills</h2>
 
 <p>While executing tasks within workspaces and codebases, Claude offers modular expertise packages and dynamic integrations with external tools to handle specialized workflows.</p>
-
-<h3>What are Skills?</h3>
 
 <p><strong>Skills</strong> are directories containing instructions, <strong>scripts</strong>, and template resources that Claude loads dynamically in the background to optimize performance on specialized tasks. Think of them as autonomous expertise packages designed to extend Claude's core capabilities in a repeatable way.</p>
 
@@ -870,21 +1199,6 @@ export const posts: Post[] = [
 <p>| <strong>Example</strong> | Customer hub, research buddy, feedback generator. | Process guidelines (brand or legal), blog drafting, PDF creation. |</p>
 <p>| <strong>Persistence</strong> | Knowledge available across all chats in the project. | Instructions applied only when the skill is invoked. |</p>
 
-<h3>Connectors and MCP (Model Context Protocol)</h3>
-
-<p><strong>Connectors</strong> transform Claude from an assistant into an informed collaborator by giving Claude access to the same tools, data, and context that you use every day. Instead of starting every conversation from scratch, Claude can work directly with your actual information.</p>
-
-<p>Connectors allow Claude to read information and perform actions on your behalf. Depending on the connector and permissions you grant, Claude can search your files, retrieve documents, analyze data, create new content, update records, and execute tasks across your connected applications—all from within your conversation.</p>
-
-<p>There are two types of connectors:</p>
-<ul>
-  <li><strong>Web Connectors:</strong> Link Claude to cloud services like Google Drive, Notion, Slack, and Asana.</li>
-
-  <li><strong>Desktop Extensions:</strong> Run locally on your computer through the Claude Desktop app, giving Claude access to local files and native applications.</li>
-</ul>
-
-<p>The Model Context Protocol (MCP) powers connectors. Think of MCP like USB-C for AI—a universal standard that allows Claude to connect to many different applications through a single, consistent interface. This open standard means developers can build connectors for any tool, and those connectors work seamlessly with Claude.</p>
-
 <h3>Key Concepts</h3>
 
 <ul>
@@ -899,22 +1213,312 @@ export const posts: Post[] = [
   <li><strong>Sandboxed Environment:</strong> An isolated, secure compute area that restricts programs from interacting with host systems, personal files, or core resources.</li>
 
   <li><strong>Code Execution:</strong> The functional ability of an AI assistant to interpret, run, and extract output from code blocks dynamically.</li>
+</ul>
 
-  <li><strong>Chain of Thought:</strong> The step-by-step logical reasoning path that an LLM records while planning and executing complex multi-stage tasks.</li>
+<h2>Connecting Your Tools</h2>
 
-  <li><strong>Financial Model:</strong> Mathematical spreadsheets used to forecast a business's or project's financial performance.</li>
+<p><strong>Connectors</strong> transform Claude from an assistant into an informed collaborator by giving Claude access to the same tools, data, and context that you use every day. Instead of starting every conversation from scratch, Claude can work directly with your actual information.</p>
 
-  <li><strong>Custom Skills:</strong> Tailored capabilities built by users or teams to enforce organization-specific templates, brand voices, and workflows.</li>
+<p>Connectors allow Claude to read information and perform actions on your behalf. Depending on the connector and permissions you grant, Claude can search your files, retrieve documents, analyze data, create new content, update records, and execute tasks across your connected applications—all from within your conversation.</p>
 
-  <li><strong>Reference Materials:</strong> Brand guidelines, layout templates, or exemplary files uploaded to guide the AI model's output formatting.</li>
+<p>There are two types of connectors:</p>
+<ul>
+  <li><strong>Web Connectors:</strong> Link Claude to cloud services like Google Drive, Notion, Slack, and Asana.</li>
 
-  <li><strong>Separation of Concerns:</strong> A software design principle for separating a computer program into distinct sections, such as keeping data storage (data plane) separate from processing logic (logic plane).</li>
+  <li><strong>Desktop Extensions:</strong> Run locally on your computer through the Claude Desktop app, giving Claude access to local files and native applications.</li>
+</ul>
 
+<p>The Model Context Protocol (MCP) powers connectors. Think of MCP like USB-C for AI—a universal standard that allows Claude to connect to many different applications through a single, consistent interface. This open standard means developers can build connectors for any tool, and those connectors work seamlessly with Claude.</p>
+
+<h3>Finding and Connecting Tools</h3>
+
+<p>Anthropic maintains a directory of recommended connectors at [claude.ai/directory](https://claude.ai/directory). The directory is organized into two tabs:</p>
+<ul>
+  <li><strong>Web:</strong> Cloud services and applications (Gmail, Notion, Slack, Asana, Linear, Stripe, and many more).</li>
+
+  <li><strong>Desktop Extensions:</strong> Local tools that run on your computer through the Claude Desktop app.</li>
+</ul>
+
+<p>To browse available connectors, you can also click the <code>+</code> button in the lower left of the chat window, then select <strong>Connectors</strong>.</p>
+
+<p>#### Setting Up a Web Connector</p>
+
+<p>Here's how to connect a cloud service:</p>
+<p>1.  <strong>Find the connector:</strong> Navigate to <code>claude.ai/directory</code>, or click <code>+</code> > <strong>Connectors\` in any chat.</p>
+<p>2.  </strong>Click Connect:<strong> Select the connector you want to add.</p>
+<p>3.  </strong>Authenticate:<strong> You'll be redirected to the service's login page. Sign in with your existing credentials.</p>
+<p>4.  </strong>Grant permissions:<strong> Review the specific permissions Claude is requesting, then authorize access.</p>
+<p>5.  </strong>Test the connection:** Return to Claude and try a simple request, like *"Can you access my [tool name]?"*.</p>
+
+<p>Once connected, Claude can search, read, and in some cases take actions within that service—depending on the permissions you've granted.</p>
+
+<p>#### Desktop Extensions</p>
+
+<p>Desktop extensions require the Claude Desktop app rather than the web interface. These extensions let Claude interact with local applications, your file system, and native features on macOS or Windows.</p>
+
+<p>Some desktop extensions include:</p>
+<ul>
+  <li><strong>Local file access:</strong> Reading and organizing documents.</li>
+
+  <li><strong>Browser control:</strong> Automated web tasks.</li>
+
+  <li><strong>Native application integration:</strong> Like Figma for design work.</li>
+</ul>
+
+<p>To install a desktop extension:</p>
+<p>1.  Download and install the Claude Desktop app.</p>
+<p>2.  Open the app and navigate to <strong>Settings > Extensions</strong>.</p>
+<p>3.  Browse available extensions and click <strong>Install</strong>.</p>
+<p>4.  Follow any additional setup steps specific to that extension.</p>
+
+<h3>Using Connectors in Your Work</h3>
+
+<p>Once you've connected your tools, Claude considers them when responding to your requests. Here are some practical ways to use connected tools:</p>
+
+<p>#### Project Management (Asana, Linear, Jira)</p>
+<ul>
+  <li>*"What are my highest priority tasks due this week?"*</li>
+
+  <li>*"Create a new task for reviewing the Q4 budget proposal"*</li>
+
+  <li>*"Summarize the status of our product launch project"*</li>
+</ul>
+
+<p>#### Communication (Slack, Gmail)</p>
+<ul>
+  <li>*"Find the email thread where we discussed the vendor contract"*</li>
+
+  <li>*"Draft a reply to the latest message in the #marketing channel"*</li>
+
+  <li>*"What did the team decide about the timeline in yesterday's discussion?"*</li>
+</ul>
+
+<p>#### Documentation (Notion, Google Drive, Confluence)</p>
+<ul>
+  <li>*"Search our documentation for our brand voice guidelines"*</li>
+
+  <li>*"Summarize the meeting notes from last week's product review"*</li>
+
+  <li>*"What does our style guide say about using contractions?"*</li>
+</ul>
+
+<p>#### Business Tools (Stripe, PayPal, Salesforce)</p>
+<ul>
+  <li>*"Show me revenue trends for the past quarter"*</li>
+
+  <li>*"What's the status of the Acme Corp opportunity?"*</li>
+
+  <li>*"List recent transactions over $1,000"*</li>
+</ul>
+
+<h3>Security and Permissions</h3>
+
+<p>When you connect Claude to external services, you're granting it access to read—and sometimes modify—data within those services. Here are some important considerations:</p>
+
+<ul>
+  <li><strong>Scoped Access:</strong> Permissions are specific to what the connector needs and you can toggle individual permissions on and off within each application's menu.</li>
+
+  <li><strong>Claude Sees What You See:</strong> Claude can only access data you have access to. Connecting your work email doesn't give Claude access to your CEO's inbox—only your own.</li>
+
+  <li><strong>Revocable at Any Time:</strong> You can disconnect a service through Claude's settings or through the third-party service's security settings. Just as with Skills, you can also find or build custom connectors. Exercise the same caution — only install connectors from trusted sources.</li>
+</ul>
+
+<h3>Claude Interfaces and Integration Matrix</h3>
+
+<p>You are not limited to the desktop application when integrating Claude into your workflows. Anthropic provides a diverse ecosystem of interfaces tailored to different use cases:</p>
+
+<p>| Interface / Integration | Core Capabilities / Tasks | Target Platforms |</p>
+<p>| :--- | :--- | :--- |</p>
+<p>| <strong>Claude.ai</strong> | General tasks, research, writing, analysis, file creation. | Web, desktop, and mobile apps. |</p>
+<p>| <strong>Claude Code</strong> | Software development, codebase navigation, git workflows. | Terminal / command line, IDE, or your browser. |</p>
+<p>| <strong>Claude Cowork</strong> | Complex, multi-step tasks: research briefs, document creation, file organization, data analysis. | Desktop (and mobile apps via Dispatch). |</p>
+<p>| <strong>Slack Integration</strong> | Team collaboration, meeting prep, quick answers in context. | Slack workspace. |</p>
+<p>| <strong>Claude for Excel</strong> | Spreadsheet analysis, financial modeling, formula debugging. | Microsoft Excel sidebar. |</p>
+<p>| <strong>Claude for PowerPoint</strong> | Slide creation, presentation editing, formatting and design. | Microsoft PowerPoint sidebar. |</p>
+<p>| <strong>Claude for Chrome</strong> | Web research, email management, browser automation. | Chrome browser sidebar. |</p>
+
+<h3>Key Concepts</h3>
+
+<ul>
   <li><strong>Connectors:</strong> Data integration pathways that enable Claude to directly access external tools, databases, and cloud applications.</li>
 
   <li><strong>Model Context Protocol (MCP):</strong> An open-source, universal integration standard that enables AI models to communicate with different applications and data sources via a single, consistent protocol.</li>
 
   <li><strong>Desktop Extensions:</strong> Local connectors that run via the Claude Desktop app, giving the model access to files and operating system capabilities on the local machine.</li>
+
+  <li><strong>Authenticate:</strong> The process of verifying the identity of a user or system, enabling secure log-in to a service.</li>
+
+  <li><strong>Grant Permissions:</strong> Assigning access rights and boundaries to an application or model, allowing it to perform operations on specific data.</li>
+
+  <li><strong>Browser Control:</strong> The programmatic ability of an AI system to guide a local web browser to navigate, collect data, or perform form submissions autonomously.</li>
+
+  <li><strong>Opportunity:</strong> A structured data entry in sales and CRM platforms representing a potential sale or commercial deal with a client.</li>
+
+  <li><strong>Scoped Access:</strong> A restriction level where an integration can only access pre-authorized and narrow parts of a system rather than the full directory.</li>
+
+  <li><strong>Revocable:</strong> The quality of an integration's access rights that permits the user to immediately and permanently cancel permissions at any time.</li>
+</ul>
+
+<h2>Enterprise Search</h2>
+
+<p>Enterprise Search adds a dedicated <strong>"Ask {Your Org Name}"</strong> option to your sidebar. This is designed specifically for finding and synthesizing knowledge buried across your company's tools and data sources.</p>
+
+<p>Think of Enterprise Search as a pre-built Project for your entire organization — your company's knowledge base is already loaded, so you can jump right in to get context-aware responses to your questions.</p>
+
+<p>Unlike regular chats with connectors enabled, Enterprise Search is specifically designed for information gathering, using custom instructions configured by the Anthropic team.</p>
+
+<h3>What can you ask?</h3>
+
+<p>Enterprise Search is particularly valuable for questions that span multiple sources or require synthesizing information from across your organization. Here are some common use cases:</p>
+
+<ul>
+  <li><strong>Getting up to speed:</strong></li>
+
+  <li>*   *"What happened yesterday while I was out?"*</li>
+
+  <li>*   *"Summarize key updates across the business from the last week."*</li>
+
+  <li>*   *"What are the current blockers on the Platform project?"*</li>
+
+  <li><strong>Policy and process questions:</strong></li>
+
+  <li>*   *"What is our company's remote work policy?"*</li>
+
+  <li>*   *"How do I submit an expense report?"*</li>
+
+  <li>*   *"What's the process for requesting time off?"*</li>
+
+  <li><strong>Research and analysis:</strong></li>
+
+  <li>*   *"What are the main reasons customers cite for choosing competitors?"*</li>
+
+  <li>*   *"Summarize discussions about the Q4 product roadmap."*</li>
+
+  <li>*   *"Find information about our customer onboarding process."*</li>
+
+  <li><strong>Onboarding new team members:</strong></li>
+
+  <li>*   *"How does our authentication system work?"*</li>
+
+  <li>*   *"Who should I talk to about learning the billing system?"*</li>
+
+  <li>*   *"What tools does the engineering team use for deployment?"*</li>
+
+  <li><strong>Performance and project tracking:</strong></li>
+
+  <li>*   *"Find discussions and documents related to the marketing campaign."*</li>
+
+  <li>*   *"What were the key decisions from last week's leadership meetings?"*</li>
+
+  <li>*   *"Summarize team contributions to the Infrastructure initiative."*</li>
+</ul>
+
+<p>When you ask a question, Claude searches across all your connected tools—such as SharePoint documents, Slack conversations, Gmail threads, and Google Drive files—and synthesizes information into a unified response. Plus, it always <strong>cites its sources</strong> so you can get the full context.</p>
+
+<h3>Setting Up Enterprise Search</h3>
+
+<p>Enterprise Search requires a two-step setup process: first an admin configures it for the organization, then individual users authenticate with their personal accounts.</p>
+
+<p>#### For Admins (Owners)</p>
+
+<p>The Enterprise Search project is enabled by default for all Team and Enterprise organizations, but an Owner needs to complete the initial setup before team members can use it:</p>
+<p>1. Click <strong>"Ask Your Org"</strong> in the left sidebar.</p>
+<p>2. Click <strong>"Set up for your org"</strong> to continue (or "Disable" to turn the feature off).</p>
+<p>3. Connect your organization's tools. You'll be required to choose a connector for Documents (like Google Drive or SharePoint) and Chat (like Slack or Microsoft Teams). Email is recommended but optional.</p>
+<p>4. Click <strong>"+ Add more"</strong> to set up any additional tools your team needs.</p>
+<p>5. Customize the project name. Whatever you enter will appear as *"Ask [Name]"* in everyone's sidebar.</p>
+<p>6. Add a description, then click <strong>"Finish set up."</strong></p>
+
+<p>Once setup is complete, the project becomes available to all members of your organization.</p>
+
+<p>#### For Users</p>
+
+<p>After an admin has set up Enterprise Search, you'll see the *"Ask {Org Name}"* project starred in your sidebar. Here's how to get started:</p>
+<p>1. Click on the project in your sidebar.</p>
+<p>2. Follow the guided onboarding flow to connect to the recommended services.</p>
+<p>3. Authenticate with each service you want to search (Slack, Google, Microsoft 365, etc.).</p>
+<p>4. Start asking Claude questions about your organization's knowledge.</p>
+
+<p>The more connectors you enable, the more comprehensive your search results will be. You can always add more connectors later by clicking "Connect" in the project's Instructions section.</p>
+
+<p>#### That's a lot of data … is this safe?</p>
+
+<p>In short, yes. Enterprise Search only shows what you already have permission to access in the original connected tool. Plus, your conversations remain private, and your connected data isn't indexed or stored separately.</p>
+
+<h3>Key Concepts</h3>
+
+<ul>
+  <li><strong>Blocker:</strong> An issue or obstacle that completely stops or delays progress on a project task.</li>
+
+  <li><strong>Onboarding:</strong> The integration and training process of a new employee or customer to help them adapt to a new system or environment.</li>
+
+  <li><strong>Cite Sources:</strong> Providing reference links or locations for documents and messages that the model utilized to generate its answer.</li>
+
+  <li><strong>Owner:</strong> An administrative role within a software or platform organization responsible for managing settings, billing, and overall permissions.</li>
+
+  <li><strong>Guided Onboarding:</strong> An interactive, step-by-step guided flow to facilitate initial configuration and connection setup for a user.</li>
+
+  <li><strong>Indexed:</strong> The process of compiling data from files and messages into a search index or structured database to enable fast query execution.</li>
+</ul>
+
+<h2>Research Mode for Deep Dives</h2>
+
+<p>Research transforms how Claude finds and analyzes information. Instead of a single search, Claude operates agentically—conducting multiple searches that build on each other while determining exactly what to investigate next. It explores different angles of your question automatically and works through open questions systematically.</p>
+
+<p>Research delivers comprehensive answers in minutes. Most reports complete in 5 to 15 minutes, though more complex investigations may take up to 45 minutes—work that would typically require hours of manual research.</p>
+
+<p>Extended thinking is automatically enabled with Research. This powerful combination lets Claude both plan its approach thoughtfully and gather comprehensive information, breaking complex requests into manageable pieces.</p>
+
+<p>Citations make verification easy. Research delivers thorough answers complete with easy-to-check citations, so you can trust Claude's findings and quickly verify sources yourself.</p>
+
+<h3>What is Research?</h3>
+
+<p>Research is a capability that allows Claude to perform deep, multi-step web searches to answer complex questions or gather comprehensive information on a topic. When you enable Research, Claude:</p>
+
+<ul>
+  <li>Formulates a research plan based on your query.</li>
+
+  <li>Executes search queries to find high-quality web sources.</li>
+
+  <li>Analyzes retrieved pages to extract relevant information.</li>
+
+  <li>Identifies gaps in its current knowledge and runs follow-up searches.</li>
+
+  <li>Synthesizes findings into a comprehensive, cited report.</li>
+</ul>
+
+<p>Unlike standard web search which retrieves a single set of search results, Research is an iterative, agentic loop that dynamically adapts its search strategy as it learns more about the topic.</p>
+
+<h3>Conclusion: What You've Learned</h3>
+
+<p>Throughout this Claude 101 guide, we have explored how to transition from treating Claude as a simple Q&A chatbot into establishing it as a full-cycle "thought partner." Here are the core takeaways:</p>
+
+<ul>
+  <li><strong>Getting Started with Claude:</strong> Claude is built on Constitutional AI principles to be helpful, harmless, and honest. You can access it via web, desktop, and mobile with seamless sync, and write effective prompts by establishing context, action, and formatting rules.</li>
+
+  <li><strong>Getting Better Results:</strong> Iteration is key. Hone outputs through interactive dialogue. True AI Fluency is achieved by mastering four core competencies: Delegation, Description, Discernment, and Diligence.</li>
+
+  <li><strong>Organizing Your Work:</strong> Projects provide dedicated workspaces with persistent knowledge and instructions. Artifacts compile complex, standalone outputs like code and interactive dashboards alongside your chat. Skills are instruction folders that automate specialized workflows.</li>
+
+  <li><strong>Expanding Claude's Reach:</strong> Connectors link Claude to your Google Drive, Slack, Notion, and other data sources. Enterprise Search serves as an organization-wide search directory. Research Mode automates multi-step, deep web searches into cited reports.</li>
+
+  <li><strong>Putting It All Together:</strong> Claude's value applies across all domains—software development, marketing, finance, HR, legal, and research. Beyond <code>claude.ai</code>, you can utilize Claude Code, Slack, Excel, and Chrome sidebar extensions to embed it into your tools.</li>
+</ul>
+
+<h3>Key Concepts</h3>
+
+<ul>
+  <li><strong>Research Mode:</strong> An autonomous feature allowing Claude to carry out multi-step, iterative web searches to compile comprehensive reports.</li>
+
+  <li><strong>Extended Thinking:</strong> A capability that permits the model to spend more time reasoning and planning steps before generating its final answer.</li>
+
+  <li><strong>Agentic Search:</strong> The process by which the AI makes its own search decisions, creating follow-up queries based on intermediate findings.</li>
+
+  <li><strong>Citations:</strong> Reference links or indicators embedded in reports showing the source documents or websites used by the model.</li>
+
+  <li><strong>Deep Dive:</strong> A comprehensive analysis that digs into all sub-aspects, technical parameters, and source materials rather than summarizing briefly.</li>
+
+  <li><strong>Systematic Investigation:</strong> The structured process of exploring a topic step-by-step to fill knowledge gaps rather than running arbitrary queries.</li>
 </ul>
       `,
     },
