@@ -12,7 +12,7 @@ export interface Post {
 }
 
 export const posts: Post[] = [
-                                      {
+                                            {
     slug: "claude-101-rehberi",
     title: {
       tr: "A'dan Z'ye Claude 101: Geliştiriciler İçin Akıllı Bir İş Ortağı",
@@ -25,7 +25,7 @@ export const posts: Post[] = [
     tag: "AI",
     tagVariant: "cyan",
     emoji: "🤖",
-    readTime: 25,
+    readTime: 30,
     date: "2026-06-20",
     published: false,
     content: {
@@ -375,6 +375,71 @@ export const posts: Post[] = [
 
 <p>Beceriler etkinleştirildiğinde, ayarlar sayfanızda hem Anthropic'in yerleşik (built-in) becerilerini hem de sisteme yüklediğiniz özel (custom) becerileri listeleyebilirsiniz.</p>
 
+<h3>Becerileri Pratikte Kullanmak (Using Skills in Practice)</h3>
+
+<p>Becerilerin en güzel yanı, genellikle onlar hakkında ekstra düşünmenize gerek olmamasıdır. Claude, gönderdiğiniz prompt'u analiz ederek hangi beceri paketini tetikleyeceğine otomatik olarak karar verir.</p>
+
+<p>Becerileri tetikleyecek bazı pratik prompt örnekleri:</p>
+
+<ul>
+  <li>*"Aylık harcamalarımı takip eden ve toplamlar için formüller barındıran bir Excel e-tablosu oluştur."*</li>
+
+  <li>*"Bu toplantı notlarını alıp profesyonel bir PowerPoint sunumuna dönüştür."*</li>
+
+  <li>*"Bu ham verileri özetleyen ve görsel grafikler içeren bir PDF raporu üret."*</li>
+
+  <li>*"Excel'de farklı senaryoları analiz eden dinamik bir finansal model (financial model) tasarla."*</li>
+</ul>
+
+<p>Claude bir beceri (<strong>skill</strong>) kullandığında, arka planda yaptığı işlemleri akıl yürütme adımlarını içeren düşünce zincirinde (<strong>chain of thought</strong>) belirtir. İşlem bittiğinde, bilgisayarınıza kaydedebileceğiniz veya doğrudan Google Drive'a aktarabileceğiniz fiziksel ve indirilebilir bir dosya çıktısı alırsınız.</p>
+
+<h3>Özel Beceriler (Custom Skills) Oluşturmak</h3>
+
+<p>Anthropic'in sunduğu yerleşik beceriler temel ofis işlerinizi çözse de, Beceriler özelliğinin asıl gücü kendi özel iş süreçlerinizi koda dökmenizden gelir. Özel Beceriler (<strong>Custom Skills</strong>), şirketinizin marka kurallarını (brand voice), şablonlarını ve iş yapış şekillerini Claude'a kalıcı olarak öğretmenize imkan tanır.</p>
+
+<p>Özel bir beceri oluşturmanın en kolay yolu, Claude ile sohbet etmektir. Herhangi bir kod yazmanıza veya teknik kurulum yapmanıza gerek kalmaz; Claude dosya yapısını sizin yerinize otonom kurar:</p>
+
+<p>1.  <strong>İhtiyacınızı Tanımlayın:</strong> Yeni bir sohbet başlatıp Claude'a neye ihtiyacınız olduğunu söyleyin (örneğin: *"Çeyreklik iş incelemeleri (QBR) yazmak için bir skill oluşturmak istiyorum"*).</p>
+<p>2.  <strong>Soruları Yanıtlayın:</strong> Claude, iş akışınız hakkında sizinle kısa bir mülakat gerçekleştirir (bu becerinin tam olarak ne işe yarayacağını, kaliteli bir çıktının nasıl olması gerektiğini ve hangi durumlarda kullanılacağını sorar).</p>
+<p>3.  <strong>Referans Materyalleri Yükleyin:</strong> Varsa şablonlarınızı, marka stil rehberlerinizi veya geçmişte başarıyla tamamladığınız örnek çalışmaları referans materyali (<strong>reference materials</strong>) olarak yükleyin.</p>
+<p>4.  <strong>Kaydedin ve Kullanın:</strong> Görüşme sonunda Claude, tüm bu kuralları derleyip otonom bir beceri dosyası üretir. Bu dosyayı kaydettiğinizde, beceriniz kullanıma hazır hale gelir ve sol menüdeki <strong>Customize</strong> (Özelleştir) panelinde listelenir.</p>
+
+<p>Oluşturduğunuz beceri, ilgili bir iş akışı başlattığınızda Claude tarafından otonom olarak çağrılır. Dilediğiniz zaman Claude ile tekrar konuşarak becerilerinizi yinelemeli (<strong>iteration</strong>) olarak güncelleyebilir ve geliştirebilirsiniz.</p>
+
+<h3>Beceriler ve Projeler Karşılaştırması (Skills vs. Projects)</h3>
+
+<p>Hem projelerin hem de becerilerin Claude'a ek bağlam sağlamak için kullanıldığını gördük. Peki hangisini ne zaman kullanmalısınız? Farkı anlamak için şu temel kuralı aklınızda tutabilirsiniz: <strong>Projeler bilgiyi saklar, beceriler süreçleri çalıştırır.</strong></p>
+
+<ul>
+  <li><strong>Projeler Bilgi Merkezleridir (Knowledge Hubs):</strong> Proje spesifikasyonları, toplantı notları, araştırma raporları gibi Claude'un işinizi anlamak için referans alacağı tüm belgeleri barındırır.</li>
+
+  <li><strong>Beceriler Prosedür Makineleridir (Procedural Machines):</strong> Claude'un bir görevi hangi sıra ve yöntemle (metodoloji, iş adımları) tamamlaması gerektiğini kodlar.</li>
+</ul>
+
+<p>Bu iki özellik birbirini tamamlar. Proje <strong>neyi</strong> (bilgiyi/veriyi) sağlayacağını tanımlarken, beceri <strong>nasıl</strong> (işleme sürecini) yapılacağını belirler. Örneğin, bir "müşteri toplantısına hazırlık" becerisi (<strong>skill</strong>), projenin bilgi tabanına (<strong>knowledge base</strong>) yüklenmiş olan müşteri analiz belgelerini çekerek çalışabilir.</p>
+
+<p>| Özellik | Projeler (Projects) | Beceriler (Skills) |</p>
+<p>| :--- | :--- | :--- |</p>
+<p>| <strong>Amaç</strong> | Claude'un referans alacağı verileri saklamak. | Claude'un izleyeceği süreç adımlarını tanımlamak. |</p>
+<p>| <strong>En İyi Alan</strong> | Uzun vadeli bağlam, referans dokümanlar, ekip iş birliği. | Tekrarlanabilir iş akışları, çok adımlı görevler, tutarlı metodoloji. |</p>
+<p>| <strong>Örnek</strong> | Müşteri bilgi deposu, araştırma asistanı. | Marka/hukuk yönergeleri, blog taslağı oluşturma, PDF üretimi. |</p>
+<p>| <strong>Kalıcılık</strong> | Yüklenen bilgi, projedeki tüm sohbetlerde hazırdır. | Talimatlar sadece o beceri tetiklendiğinde uygulanır. |</p>
+
+<h3>Bağlayıcılar (Connectors) ve MCP (Model Context Protocol)</h3>
+
+<p><strong>Bağlayıcılar (Connectors)</strong>, Claude'un her gün kullandığınız araçlara, verilere ve dosyalara erişmesini sağlayarak onu basit bir sohbet asistanından otonom bir iş ortağına dönüştürür. Connectors sayesinde, her yeni sohbete sıfırdan başlamak yerine Claude'u doğrudan iş süreçlerinizdeki gerçek verilerle çalıştırabilirsiniz.</p>
+
+<p>Bağlayıcılar, Claude'un sizin adınıza bilgileri okumasına ve otonom eylemler gerçekleştirmesine imkan tanır. Verdiğiniz izinlere bağlı olarak Claude; dosyalarınızı arayebilir, dokümanları çekebilir, veri analizi yapabilir, kayıtları güncelleyebilir veya bağlı uygulamalar üzerinden görevleri yürütebilir.</p>
+
+<p>İki ana bağlayıcı türü vardır:</p>
+<ul>
+  <li><strong>Web Bağlayıcıları (Web Connectors):</strong> Claude'u bulut tabanlı servislere bağlar (örneğin Google Drive, Notion, Slack, Asana).</li>
+
+  <li><strong>Masaüstü Uzantıları (Desktop Extensions):</strong> Claude Masaüstü (Claude Desktop) uygulaması üzerinden bilgisayarınızda yerel (<strong>local</strong>) olarak çalışır. Claude'a yerel dosyalarınız ve makinenizdeki yerel uygulamalar için erişim yetkisi verir.</li>
+</ul>
+
+<p>Tüm bu bağlayıcı altyapısının arkasında <strong>Model Context Protocol (MCP)</strong> standardı yatar. MCP'yi yapay zeka entegrasyonları için bir <strong>"USB-C"</strong> standardı gibi düşünebilirsiniz. Nasıl ki USB-C tek bir kablo üzerinden şarj, görüntü aktarımı ve veri transferi sağlayarak kablo karmaşasını bitirdiyse; MCP de yapay zekanın yüzlerce farklı uygulamaya tek bir tutarlı arayüz üzerinden bağlanmasını sağlar. Bu açık kaynaklı evrensel standart sayesinde geliştiriciler, herhangi bir yazılım aracı için kolayca bağlayıcı (connector) üretebilirler.</p>
+
 <h3>Bu Bölümün Önemli Konseptleri</h3>
 
 <ul>
@@ -389,6 +454,22 @@ export const posts: Post[] = [
   <li><strong>Sandboxed Environment (Yalıtılmış Ortam):</strong> Kodların ve dosyaların ana sisteme veya kişisel verilere zarar vermesini önlemek adına izole ve güvenli bir sanal çember içinde çalıştırılması.</li>
 
   <li><strong>Code Execution (Kod Yürütme):</strong> Yapay zekanın arka planda yazılım kodlarını çalıştırıp çıktı üretebilme yeteneği.</li>
+
+  <li><strong>Chain of Thought (Düşünce Zinciri):</strong> Yapay zekanın karmaşık problemleri çözerken arka planda gerçekleştirdiği adım adım akıl yürütme ve planlama aşamaları.</li>
+
+  <li><strong>Financial Model (Finansal Model):</strong> Gelecekteki finansal kararları ve tahminleri analiz etmek amacıyla kurgulanan matematiksel ve formüllü veri modelleri.</li>
+
+  <li><strong>Custom Skills (Özel Beceriler):</strong> Organizasyonların veya bireylerin kendi spesifik kurallarını, şablonlarını ve iş akışlarını otomatikleştirmek için tasarladığı beceri paketleri.</li>
+
+  <li><strong>Reference Materials (Referans Materyalleri):</strong> Yapay zekanın doğru standartları yakalayabilmesi amacıyla yüklenen örnek şablonlar, rehberler veya geçmiş çalışma dosyaları.</li>
+
+  <li><strong>Separation of Concerns (Sorumlulukların Ayrılması):</strong> Yazılım mimarilerinde veri depolama katmanı (data plane) ile işleme mantığının (logic plane) birbirinden bağımsız modüller olarak tasarlanması ilkesi.</li>
+
+  <li><strong>Connectors (Bağlayıcılar):</strong> Claude'un harici araçlara, veri tabanlarına ve bulut uygulamalarına doğrudan erişmesini sağlayan veri entegrasyon yolları.</li>
+
+  <li><strong>Model Context Protocol (MCP):</strong> Yapay zekanın farklı uygulama ve veri kaynaklarıyla tek bir tutarlı protokol üzerinden iletişim kurmasını sağlayan açık kaynaklı, evrensel entegrasyon standardı.</li>
+
+  <li><strong>Desktop Extensions (Masaüstü Uzantıları):</strong> Claude Masaüstü uygulamasının yerel bilgisayardaki dosyalara ve işletim sistemi yeteneklerine erişmesini sağlayan yerel bağlayıcılar.</li>
 </ul>
       `,
       en: `
@@ -739,6 +820,71 @@ export const posts: Post[] = [
 
 <p>Once enabled, you'll see available Skills listed in your settings, including Anthropic's built-in Skills and any custom Skills you've uploaded.</p>
 
+<h3>Using Skills in Practice</h3>
+
+<p>The beauty of Skills is that you typically do not need to think about them—Claude automatically handles skill selection based on your prompt.</p>
+
+<p>Here are a few practical examples of prompts that will trigger Skills:</p>
+
+<ul>
+  <li>*"Create an Excel spreadsheet tracking monthly expenses with formulas for totals."*</li>
+
+  <li>*"Turn this meeting notes document into a PowerPoint presentation."*</li>
+
+  <li>*"Generate a PDF report summarizing this data."*</li>
+
+  <li>*"Build a financial model in Excel with scenario analysis."*</li>
+</ul>
+
+<p>When Claude invokes a skill, you will see it mentioned inside Claude's chain of thought as it executes reasoning steps. The final output is a downloadable file that you can save locally or export directly to Google Drive.</p>
+
+<h3>Creating Custom Skills</h3>
+
+<p>While Anthropic's built-in Skills manage basic document creation tasks, the true potential of the feature comes from customising them to your workflows. Custom Skills let you program Claude with your brand guidelines (brand voice), templates, and specific ways of working.</p>
+
+<p>The easiest way to build a Custom Skill is through direct dialogue with Claude. No code writing or manual file structures are required; Claude compiles everything autonomously:</p>
+
+<p>1.  <strong>Define Your Purpose:</strong> Open a new chat and tell Claude what you want to create (e.g., *"I want to create a skill for writing quarterly business reviews (QBR)."*).</p>
+<p>2.  <strong>Answer Claude's Questions:</strong> Claude will run a brief interview about your workflow, asking what the skill should execute, what defines a high-quality output, and in which contexts you plan to deploy it.</p>
+<p>3.  <strong>Upload Reference Materials:</strong> If you have templates, style guidelines, brand assets, or past successful outputs, upload them as reference materials (<strong>reference materials</strong>).</p>
+<p>4.  <strong>Save Your Skill:</strong> At the end of the conversation, Claude generates a structured skill package. Save it, and the skill is instantly listed under the <strong>Customize</strong> panel in the left sidebar.</p>
+
+<p>Once saved, the Custom Skill is automatically invoked by Claude whenever you work on matching tasks. You can edit and improve the skill over time by simply asking Claude to update it.</p>
+
+<h3>Skills vs. Projects</h3>
+
+<p>You might be wondering—if both skills and projects can be used to provide more context to Claude, when should you use each? Think of it this way: <strong>projects store knowledge, skills perform tasks.</strong></p>
+
+<ul>
+  <li><strong>Projects are Knowledge Hubs:</strong> They hold the reference materials Claude needs to understand your work—project specifications, meeting notes, research documents. When files are uploaded to a project, Claude draws on that information across every conversation within that project.</li>
+
+  <li><strong>Skills are Procedural Machines:</strong> They encode how Claude should execute a task—the specific steps, order of operations, and methodology you want followed every time.</li>
+</ul>
+
+<p>The two features complement each other: the project provides the *what (information/data)*, while the skill provides the *how (process/execution)*. For instance, a "customer call prep" <strong>skill</strong> might pull from customer profiles stored in a project's <strong>knowledge base</strong>.</p>
+
+<p>| Feature | Projects | Skills |</p>
+<p>| :--- | :--- | :--- |</p>
+<p>| <strong>Purpose</strong> | Store knowledge Claude references. | Define processes Claude executes. |</p>
+<p>| <strong>Best for</strong> | Long-term context, reference materials, team collaboration. | Repeatable workflows, multi-step tasks, consistent methodology. |</p>
+<p>| <strong>Example</strong> | Customer hub, research buddy, feedback generator. | Process guidelines (brand or legal), blog drafting, PDF creation. |</p>
+<p>| <strong>Persistence</strong> | Knowledge available across all chats in the project. | Instructions applied only when the skill is invoked. |</p>
+
+<h3>Connectors and MCP (Model Context Protocol)</h3>
+
+<p><strong>Connectors</strong> transform Claude from an assistant into an informed collaborator by giving Claude access to the same tools, data, and context that you use every day. Instead of starting every conversation from scratch, Claude can work directly with your actual information.</p>
+
+<p>Connectors allow Claude to read information and perform actions on your behalf. Depending on the connector and permissions you grant, Claude can search your files, retrieve documents, analyze data, create new content, update records, and execute tasks across your connected applications—all from within your conversation.</p>
+
+<p>There are two types of connectors:</p>
+<ul>
+  <li><strong>Web Connectors:</strong> Link Claude to cloud services like Google Drive, Notion, Slack, and Asana.</li>
+
+  <li><strong>Desktop Extensions:</strong> Run locally on your computer through the Claude Desktop app, giving Claude access to local files and native applications.</li>
+</ul>
+
+<p>The Model Context Protocol (MCP) powers connectors. Think of MCP like USB-C for AI—a universal standard that allows Claude to connect to many different applications through a single, consistent interface. This open standard means developers can build connectors for any tool, and those connectors work seamlessly with Claude.</p>
+
 <h3>Key Concepts</h3>
 
 <ul>
@@ -753,6 +899,22 @@ export const posts: Post[] = [
   <li><strong>Sandboxed Environment:</strong> An isolated, secure compute area that restricts programs from interacting with host systems, personal files, or core resources.</li>
 
   <li><strong>Code Execution:</strong> The functional ability of an AI assistant to interpret, run, and extract output from code blocks dynamically.</li>
+
+  <li><strong>Chain of Thought:</strong> The step-by-step logical reasoning path that an LLM records while planning and executing complex multi-stage tasks.</li>
+
+  <li><strong>Financial Model:</strong> Mathematical spreadsheets used to forecast a business's or project's financial performance.</li>
+
+  <li><strong>Custom Skills:</strong> Tailored capabilities built by users or teams to enforce organization-specific templates, brand voices, and workflows.</li>
+
+  <li><strong>Reference Materials:</strong> Brand guidelines, layout templates, or exemplary files uploaded to guide the AI model's output formatting.</li>
+
+  <li><strong>Separation of Concerns:</strong> A software design principle for separating a computer program into distinct sections, such as keeping data storage (data plane) separate from processing logic (logic plane).</li>
+
+  <li><strong>Connectors:</strong> Data integration pathways that enable Claude to directly access external tools, databases, and cloud applications.</li>
+
+  <li><strong>Model Context Protocol (MCP):</strong> An open-source, universal integration standard that enables AI models to communicate with different applications and data sources via a single, consistent protocol.</li>
+
+  <li><strong>Desktop Extensions:</strong> Local connectors that run via the Claude Desktop app, giving the model access to files and operating system capabilities on the local machine.</li>
 </ul>
       `,
     },
