@@ -5,7 +5,7 @@ tag: "AI"
 tagVariant: "cyan"
 emoji: "🤖"
 date: "2026-06-20"
-published: false
+published: true
 ---
 
 As developers and tech professionals, we tackle dozens of problems every single day. Over the past few years, AI tools have become an indispensable part of these workflows. However, many tools struggle to go beyond being simple question-and-answer chatbots. Claude, developed by Anthropic, disrupts this pattern by positioning itself not just as a reactive assistant, but as a "thought partner" that you can collaborate with on complex cognitive tasks.
