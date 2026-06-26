@@ -163,10 +163,10 @@ export default function BlogPostClient({ slug }: Props) {
       {/* Back */}
       <Link
         href="/blog"
-        className="mb-10 bg-white text-center w-48 rounded-2xl h-14 relative text-black text-base font-semibold group flex items-center justify-center transition-transform hover:scale-[1.02] duration-300"
+        className="mb-10 bg-white/[0.03] border border-white/10 text-center w-48 rounded-2xl h-14 relative text-white/80 text-base font-semibold group flex items-center justify-center transition-all hover:border-accent1/30 hover:scale-[1.02] duration-300"
       >
         <div
-          className="bg-green-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
+          className="bg-accent1 rounded-xl absolute left-1 top-1 bottom-1 w-12 flex items-center justify-center group-hover:w-[calc(100%-8px)] z-10 duration-500"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +184,7 @@ export default function BlogPostClient({ slug }: Props) {
             ></path>
           </svg>
         </div>
-        <p className="translate-x-5 select-none">{t("blog.backToList").replace("← ", "")}</p>
+        <p className="translate-x-5 select-none z-0">{t("blog.backToList").replace("← ", "")}</p>
       </Link>
 
       {/* Emoji hero */}
