@@ -12,7 +12,7 @@ export interface Post {
 }
 
 export const posts: Post[] = [
-                                                                  {
+                                                                    {
     slug: "claude-101-rehberi",
     title: {
       tr: "A'dan Z'ye Claude 101: Geliştiriciler İçin Akıllı Bir İş Ortağı",
@@ -499,7 +499,7 @@ export const posts: Post[] = [
 
 <p>Mevcut bağlayıcılara göz atmak için sohbet penceresinin sol alt kısmındaki <code>+</code> butonuna tıklayıp <strong>Connectors</strong> (Bağlayıcılar) seçeneğini de seçebilirsiniz.</p>
 
-<p>#### Bir Web Bağlayıcısı Kurulumu (Setting Up a Web Connector)</p>
+<h4>Bir Web Bağlayıcısı Kurulumu (Setting Up a Web Connector)</h4>
 
 <p>Bir bulut servisini bağlamak için şu adımları izleyebilirsiniz:</p>
 <p>1.  <strong>Bağlayıcıyı bulun</strong>: <code>claude.ai/directory</code> adresine gidin veya herhangi bir sohbette <code>+</code> > <strong>Connectors</strong> seçeneğine tıklayın.</p>
@@ -510,7 +510,7 @@ export const posts: Post[] = [
 
 <p>Bağlantı kurulduktan sonra Claude, verdiğiniz izinlere bağlı olarak o servis içinde arama yapabilir, verileri okuyabilir ve bazı durumlarda otonom eylemler (<strong>actions</strong>) gerçekleştirebilir.</p>
 
-<p>#### Masaüstü Uzantıları (Desktop Extensions)</p>
+<h4>Masaüstü Uzantıları (Desktop Extensions)</h4>
 
 <p>Masaüstü uzantıları, web arayüzü yerine Claude Masaüstü (Claude Desktop) uygulamalarını gerektirir. Bu uzantılar, Claude'un yerel uygulamalarla, dosya sisteminizle ve macOS veya Windows'taki yerel özelliklerle etkileşime girmesini sağlar.</p>
 
@@ -533,7 +533,7 @@ export const posts: Post[] = [
 
 <p>Araçlarınızı bağladıktan sonra, Claude isteklerinize yanıt verirken bu araçları göz önünde bulundurur. Bağlı araçları kullanmanın bazı pratik yolları şunlardır:</p>
 
-<p>#### Proje Yönetimi (Asana, Linear, Jira)</p>
+<h4>Proje Yönetimi (Asana, Linear, Jira)</h4>
 <ul>
   <li>*"Bu hafta teslim edilmesi gereken en yüksek öncelikli görevlerim nelerdir?"*</li>
 
@@ -542,7 +542,7 @@ export const posts: Post[] = [
   <li>*"Ürün lansmanı projemizin durumunu özetle."*</li>
 </ul>
 
-<p>#### İletişim (Slack, Gmail)</p>
+<h4>İletişim (Slack, Gmail)</h4>
 <ul>
   <li>*"Tedarikçi sözleşmesini tartıştığımız e-posta yazışmasını bul."*</li>
 
@@ -551,7 +551,7 @@ export const posts: Post[] = [
   <li>*"Ekip, dünkü tartışmada zaman çizelgesi hakkında neye karar verdi?"*</li>
 </ul>
 
-<p>#### Dokümantasyon (Notion, Google Drive, Confluence)</p>
+<h4>Dokümantasyon (Notion, Google Drive, Confluence)</h4>
 <ul>
   <li>*"Dokümantasyonumuzda marka sesi (brand voice) kılavuzumuzu ara."*</li>
 
@@ -560,7 +560,7 @@ export const posts: Post[] = [
   <li>*"Stil rehberimiz kısaltmaların kullanımı hakkında ne diyor?"*</li>
 </ul>
 
-<p>#### İş Araçları (Stripe, PayPal, Salesforce)</p>
+<h4>İş Araçları (Stripe, PayPal, Salesforce)</h4>
 <ul>
   <li>*"Bana geçen çeyreğin gelir eğilimlerini göster."*</li>
 
@@ -683,7 +683,7 @@ export const posts: Post[] = [
 
 <p>Kurumsal Arama, iki adımlı bir kurulum süreci gerektirir: ilk olarak bir yönetici (<strong>admin</strong>) bunu organizasyon için yapılandırır, ardından bireysel kullanıcılar kendi kişisel hesaplarıyla kimlik doğrulaması (<strong>authenticate</strong>) yapar.</p>
 
-<p>#### Yöneticiler (Owners) İçin</p>
+<h4>Yöneticiler (Owners) İçin</h4>
 
 <p>Kurumsal Arama projesi, tüm Team ve Enterprise organizasyonları için varsayılan olarak etkindir; ancak ekip üyelerinin bunu kullanabilmesi için önce bir Sahibin (<strong>Owner</strong>) ilk kurulumu tamamlaması gerekir:</p>
 <p>1. Sol yan menüdeki <strong>"Ask Your Org"</strong> (Şirketinize Sorun) seçeneğine tıklayın.</p>
@@ -695,7 +695,7 @@ export const posts: Post[] = [
 
 <p>Kurulum tamamlandıktan sonra proje, organizasyonunuzun tüm üyeleri için kullanılabilir hale gelir.</p>
 
-<p>#### Kullanıcılar İçin</p>
+<h4>Kullanıcılar İçin</h4>
 
 <p>Bir yönetici Kurumsal Aramayı kurduktan sonra, yan menünüzde yıldızlı bir *"Ask {Org Name}"* projesi göreceksiniz. Başlamak için şu adımları izleyebilirsiniz:</p>
 <p>1. Yan menünüzdeki projeye tıklayın.</p>
@@ -705,7 +705,7 @@ export const posts: Post[] = [
 
 <p>Ne kadar çok bağlayıcıyı etkinleştirirseniz, arama sonuçlarınız o kadar kapsamlı olacaktır. İstediğiniz zaman projenin Talimatlar (Instructions) bölümündeki "Connect" (Bağlan) butonuna tıklayarak daha sonra da yeni bağlayıcılar ekleyebilirsiniz.</p>
 
-<p>#### Bu çok fazla veri... Peki güvenli mi?</p>
+<h4>Bu çok fazla veri... Peki güvenli mi?</h4>
 
 <p>Kısacası, evet. Kurumsal Arama, yalnızca orijinal bağlı araçta zaten erişim izniniz olan bilgileri gösterir. Ayrıca sohbetleriniz gizli kalır ve bağlı verileriniz ayrı olarak indekslenmez (<strong>indexed</strong>) veya depolanmaz.</p>
 
@@ -1259,7 +1259,7 @@ export const posts: Post[] = [
 
 <p>To browse available connectors, you can also click the <code>+</code> button in the lower left of the chat window, then select <strong>Connectors</strong>.</p>
 
-<p>#### Setting Up a Web Connector</p>
+<h4>Setting Up a Web Connector</h4>
 
 <p>Here's how to connect a cloud service:</p>
 <p>1.  <strong>Find the connector:</strong> Navigate to <code>claude.ai/directory</code>, or click <code>+</code> > <strong>Connectors\` in any chat.</p>
@@ -1270,7 +1270,7 @@ export const posts: Post[] = [
 
 <p>Once connected, Claude can search, read, and in some cases take actions within that service—depending on the permissions you've granted.</p>
 
-<p>#### Desktop Extensions</p>
+<h4>Desktop Extensions</h4>
 
 <p>Desktop extensions require the Claude Desktop app rather than the web interface. These extensions let Claude interact with local applications, your file system, and native features on macOS or Windows.</p>
 
@@ -1293,7 +1293,7 @@ export const posts: Post[] = [
 
 <p>Once you've connected your tools, Claude considers them when responding to your requests. Here are some practical ways to use connected tools:</p>
 
-<p>#### Project Management (Asana, Linear, Jira)</p>
+<h4>Project Management (Asana, Linear, Jira)</h4>
 <ul>
   <li>*"What are my highest priority tasks due this week?"*</li>
 
@@ -1302,7 +1302,7 @@ export const posts: Post[] = [
   <li>*"Summarize the status of our product launch project"*</li>
 </ul>
 
-<p>#### Communication (Slack, Gmail)</p>
+<h4>Communication (Slack, Gmail)</h4>
 <ul>
   <li>*"Find the email thread where we discussed the vendor contract"*</li>
 
@@ -1311,7 +1311,7 @@ export const posts: Post[] = [
   <li>*"What did the team decide about the timeline in yesterday's discussion?"*</li>
 </ul>
 
-<p>#### Documentation (Notion, Google Drive, Confluence)</p>
+<h4>Documentation (Notion, Google Drive, Confluence)</h4>
 <ul>
   <li>*"Search our documentation for our brand voice guidelines"*</li>
 
@@ -1320,7 +1320,7 @@ export const posts: Post[] = [
   <li>*"What does our style guide say about using contractions?"*</li>
 </ul>
 
-<p>#### Business Tools (Stripe, PayPal, Salesforce)</p>
+<h4>Business Tools (Stripe, PayPal, Salesforce)</h4>
 <ul>
   <li>*"Show me revenue trends for the past quarter"*</li>
 
@@ -1443,7 +1443,7 @@ export const posts: Post[] = [
 
 <p>Enterprise Search requires a two-step setup process: first an admin configures it for the organization, then individual users authenticate with their personal accounts.</p>
 
-<p>#### For Admins (Owners)</p>
+<h4>For Admins (Owners)</h4>
 
 <p>The Enterprise Search project is enabled by default for all Team and Enterprise organizations, but an Owner needs to complete the initial setup before team members can use it:</p>
 <p>1. Click <strong>"Ask Your Org"</strong> in the left sidebar.</p>
@@ -1455,7 +1455,7 @@ export const posts: Post[] = [
 
 <p>Once setup is complete, the project becomes available to all members of your organization.</p>
 
-<p>#### For Users</p>
+<h4>For Users</h4>
 
 <p>After an admin has set up Enterprise Search, you'll see the *"Ask {Org Name}"* project starred in your sidebar. Here's how to get started:</p>
 <p>1. Click on the project in your sidebar.</p>
@@ -1465,7 +1465,7 @@ export const posts: Post[] = [
 
 <p>The more connectors you enable, the more comprehensive your search results will be. You can always add more connectors later by clicking "Connect" in the project's Instructions section.</p>
 
-<p>#### That's a lot of data … is this safe?</p>
+<h4>That's a lot of data … is this safe?</h4>
 
 <p>In short, yes. Enterprise Search only shows what you already have permission to access in the original connected tool. Plus, your conversations remain private, and your connected data isn't indexed or stored separately.</p>
 
