@@ -12,7 +12,7 @@ export interface Post {
 }
 
 export const posts: Post[] = [
-                                                                {
+                                                                  {
     slug: "claude-101-rehberi",
     title: {
       tr: "A'dan Z'ye Claude 101: Geliştiriciler İçin Akıllı Bir İş Ortağı",
@@ -444,12 +444,18 @@ export const posts: Post[] = [
 
 <p>Bu iki özellik birbirini tamamlar. Proje <strong>neyi</strong> (bilgiyi/veriyi) sağlayacağını tanımlarken, beceri <strong>nasıl</strong> (işleme sürecini) yapılacağını belirler. Örneğin, bir "müşteri toplantısına hazırlık" becerisi (<strong>skill</strong>), projenin bilgi tabanına (<strong>knowledge base</strong>) yüklenmiş olan müşteri analiz belgelerini çekerek çalışabilir.</p>
 
-<p>| Özellik | Projeler (Projects) | Beceriler (Skills) |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| <strong>Amaç</strong> | Claude'un referans alacağı verileri saklamak. | Claude'un izleyeceği süreç adımlarını tanımlamak. |</p>
-<p>| <strong>En İyi Alan</strong> | Uzun vadeli bağlam, referans dokümanlar, ekip iş birliği. | Tekrarlanabilir iş akışları, çok adımlı görevler, tutarlı metodoloji. |</p>
-<p>| <strong>Örnek</strong> | Müşteri bilgi deposu, araştırma asistanı. | Marka/hukuk yönergeleri, blog taslağı oluşturma, PDF üretimi. |</p>
-<p>| <strong>Kalıcılık</strong> | Yüklenen bilgi, projedeki tüm sohbetlerde hazırdır. | Talimatlar sadece o beceri tetiklendiğinde uygulanır. |</p>
+<table>
+  <thead>
+    <tr><th>Özellik</th><th>Projeler (Projects)</th><th>Beceriler (Skills)</th></tr>
+  </thead>
+  <tbody>
+
+    <tr><td><strong>Amaç</strong></td><td>Claude'un referans alacağı verileri saklamak.</td><td>Claude'un izleyeceği süreç adımlarını tanımlamak.</td></tr>
+    <tr><td><strong>En İyi Alan</strong></td><td>Uzun vadeli bağlam, referans dokümanlar, ekip iş birliği.</td><td>Tekrarlanabilir iş akışları, çok adımlı görevler, tutarlı metodoloji.</td></tr>
+    <tr><td><strong>Örnek</strong></td><td>Müşteri bilgi deposu, araştırma asistanı.</td><td>Marka/hukuk yönergeleri, blog taslağı oluşturma, PDF üretimi.</td></tr>
+    <tr><td><strong>Kalıcılık</strong></td><td>Yüklenen bilgi, projedeki tüm sohbetlerde hazırdır.</td><td>Talimatlar sadece o beceri tetiklendiğinde uygulanır.</td></tr>
+  </tbody>
+</table>
 
 <h3>Bu Bölümün Önemli Konseptleri</h3>
 
@@ -579,15 +585,21 @@ export const posts: Post[] = [
 
 <p>Claude'u iş akışlarınıza entegre etmek için sadece masaüstü uygulamasıyla sınırlı değilsiniz. Anthropic, kullanım senaryolarına göre optimize edilmiş geniş bir entegrasyon yelpazesi sunar:</p>
 
-<p>| Arayüz / Entegrasyon | Temel Yetenekler / Görevler | Çalıştığı Platformlar |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| <strong>Claude.ai</strong> | Genel görevler, araştırma, yazma, analiz, dosya oluşturma. | Web tarayıcısı, masaüstü ve mobil uygulamalar. |</p>
-<p>| <strong>Claude Code</strong> | Yazılım geliştirme, kod tabanında gezinme, git iş akışları. | Terminal / komut satırı, IDE veya tarayıcı. |</p>
-<p>| <strong>Claude Cowork</strong> | Karmaşık, çok adımlı görevler; araştırma raporları, belge oluşturma, dosya düzenleme, veri analizi. | Masaüstü uygulaması (ve Dispatch üzerinden mobil). |</p>
-<p>| <strong>Slack Entegrasyonu</strong> | Ekip iş birliği, toplantı hazırlığı, bağlam içi hızlı cevaplar. | Slack çalışma alanı. |</p>
-<p>| <strong>Claude for Excel</strong> | E-tablo analizi, finansal modelleme, formül hata ayıklama. | Microsoft Excel yan çubuğu. |</p>
-<p>| <strong>Claude for PowerPoint</strong> | Slayt oluşturma, sunum düzenleme, biçimlendirme ve tasarım. | Microsoft PowerPoint yan çubuğu. |</p>
-<p>| <strong>Claude for Chrome</strong> | Web araştırması, e-posta yönetimi, tarayıcı otomasyonu. | Chrome tarayıcı yan çubuğu. |</p>
+<table>
+  <thead>
+    <tr><th>Arayüz / Entegrasyon</th><th>Temel Yetenekler / Görevler</th><th>Çalıştığı Platformlar</th></tr>
+  </thead>
+  <tbody>
+
+    <tr><td><strong>Claude.ai</strong></td><td>Genel görevler, araştırma, yazma, analiz, dosya oluşturma.</td><td>Web tarayıcısı, masaüstü ve mobil uygulamalar.</td></tr>
+    <tr><td><strong>Claude Code</strong></td><td>Yazılım geliştirme, kod tabanında gezinme, git iş akışları.</td><td>Terminal / komut satırı, IDE veya tarayıcı.</td></tr>
+    <tr><td><strong>Claude Cowork</strong></td><td>Karmaşık, çok adımlı görevler; araştırma raporları, belge oluşturma, dosya düzenleme, veri analizi.</td><td>Masaüstü uygulaması (ve Dispatch üzerinden mobil).</td></tr>
+    <tr><td><strong>Slack Entegrasyonu</strong></td><td>Ekip iş birliği, toplantı hazırlığı, bağlam içi hızlı cevaplar.</td><td>Slack çalışma alanı.</td></tr>
+    <tr><td><strong>Claude for Excel</strong></td><td>E-tablo analizi, finansal modelleme, formül hata ayıklama.</td><td>Microsoft Excel yan çubuğu.</td></tr>
+    <tr><td><strong>Claude for PowerPoint</strong></td><td>Slayt oluşturma, sunum düzenleme, biçimlendirme ve tasarım.</td><td>Microsoft PowerPoint yan çubuğu.</td></tr>
+    <tr><td><strong>Claude for Chrome</strong></td><td>Web araştırması, e-posta yönetimi, tarayıcı otomasyonu.</td><td>Chrome tarayıcı yan çubuğu.</td></tr>
+  </tbody>
+</table>
 
 <h3>Bu Bölümün Önemli Konseptleri</h3>
 
@@ -1192,12 +1204,18 @@ export const posts: Post[] = [
 
 <p>The two features complement each other: the project provides the *what (information/data)*, while the skill provides the *how (process/execution)*. For instance, a "customer call prep" <strong>skill</strong> might pull from customer profiles stored in a project's <strong>knowledge base</strong>.</p>
 
-<p>| Feature | Projects | Skills |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| <strong>Purpose</strong> | Store knowledge Claude references. | Define processes Claude executes. |</p>
-<p>| <strong>Best for</strong> | Long-term context, reference materials, team collaboration. | Repeatable workflows, multi-step tasks, consistent methodology. |</p>
-<p>| <strong>Example</strong> | Customer hub, research buddy, feedback generator. | Process guidelines (brand or legal), blog drafting, PDF creation. |</p>
-<p>| <strong>Persistence</strong> | Knowledge available across all chats in the project. | Instructions applied only when the skill is invoked. |</p>
+<table>
+  <thead>
+    <tr><th>Feature</th><th>Projects</th><th>Skills</th></tr>
+  </thead>
+  <tbody>
+
+    <tr><td><strong>Purpose</strong></td><td>Store knowledge Claude references.</td><td>Define processes Claude executes.</td></tr>
+    <tr><td><strong>Best for</strong></td><td>Long-term context, reference materials, team collaboration.</td><td>Repeatable workflows, multi-step tasks, consistent methodology.</td></tr>
+    <tr><td><strong>Example</strong></td><td>Customer hub, research buddy, feedback generator.</td><td>Process guidelines (brand or legal), blog drafting, PDF creation.</td></tr>
+    <tr><td><strong>Persistence</strong></td><td>Knowledge available across all chats in the project.</td><td>Instructions applied only when the skill is invoked.</td></tr>
+  </tbody>
+</table>
 
 <h3>Key Concepts</h3>
 
@@ -1327,15 +1345,21 @@ export const posts: Post[] = [
 
 <p>You are not limited to the desktop application when integrating Claude into your workflows. Anthropic provides a diverse ecosystem of interfaces tailored to different use cases:</p>
 
-<p>| Interface / Integration | Core Capabilities / Tasks | Target Platforms |</p>
-<p>| :--- | :--- | :--- |</p>
-<p>| <strong>Claude.ai</strong> | General tasks, research, writing, analysis, file creation. | Web, desktop, and mobile apps. |</p>
-<p>| <strong>Claude Code</strong> | Software development, codebase navigation, git workflows. | Terminal / command line, IDE, or your browser. |</p>
-<p>| <strong>Claude Cowork</strong> | Complex, multi-step tasks: research briefs, document creation, file organization, data analysis. | Desktop (and mobile apps via Dispatch). |</p>
-<p>| <strong>Slack Integration</strong> | Team collaboration, meeting prep, quick answers in context. | Slack workspace. |</p>
-<p>| <strong>Claude for Excel</strong> | Spreadsheet analysis, financial modeling, formula debugging. | Microsoft Excel sidebar. |</p>
-<p>| <strong>Claude for PowerPoint</strong> | Slide creation, presentation editing, formatting and design. | Microsoft PowerPoint sidebar. |</p>
-<p>| <strong>Claude for Chrome</strong> | Web research, email management, browser automation. | Chrome browser sidebar. |</p>
+<table>
+  <thead>
+    <tr><th>Interface / Integration</th><th>Core Capabilities / Tasks</th><th>Target Platforms</th></tr>
+  </thead>
+  <tbody>
+
+    <tr><td><strong>Claude.ai</strong></td><td>General tasks, research, writing, analysis, file creation.</td><td>Web, desktop, and mobile apps.</td></tr>
+    <tr><td><strong>Claude Code</strong></td><td>Software development, codebase navigation, git workflows.</td><td>Terminal / command line, IDE, or your browser.</td></tr>
+    <tr><td><strong>Claude Cowork</strong></td><td>Complex, multi-step tasks: research briefs, document creation, file organization, data analysis.</td><td>Desktop (and mobile apps via Dispatch).</td></tr>
+    <tr><td><strong>Slack Integration</strong></td><td>Team collaboration, meeting prep, quick answers in context.</td><td>Slack workspace.</td></tr>
+    <tr><td><strong>Claude for Excel</strong></td><td>Spreadsheet analysis, financial modeling, formula debugging.</td><td>Microsoft Excel sidebar.</td></tr>
+    <tr><td><strong>Claude for PowerPoint</strong></td><td>Slide creation, presentation editing, formatting and design.</td><td>Microsoft PowerPoint sidebar.</td></tr>
+    <tr><td><strong>Claude for Chrome</strong></td><td>Web research, email management, browser automation.</td><td>Chrome browser sidebar.</td></tr>
+  </tbody>
+</table>
 
 <h3>Key Concepts</h3>
 

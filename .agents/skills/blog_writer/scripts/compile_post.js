@@ -60,11 +60,42 @@ function mdToHtml(md) {
   }
   html = lines.join('\n');
 
+  // Convert Tables
+  let inTable = false;
+  const tableLines = html.split('\n');
+  for (let i = 0; i < tableLines.length; i++) {
+    const trimmedLine = tableLines[i].trim();
+    if (trimmedLine.startsWith('|') && trimmedLine.endsWith('|')) {
+      const cells = trimmedLine.split('|').map(c => c.trim()).filter((c, idx, arr) => idx > 0 && idx < arr.length - 1);
+      if (trimmedLine.includes('---')) {
+        tableLines[i] = '';
+        continue;
+      }
+      if (!inTable) {
+        inTable = true;
+        const ths = cells.map(c => `<th>${c}</th>`).join('');
+        tableLines[i] = `<table>\n  <thead>\n    <tr>${ths}</tr>\n  </thead>\n  <tbody>`;
+      } else {
+        const tds = cells.map(c => `<td>${c}</td>`).join('');
+        tableLines[i] = `    <tr>${tds}</tr>`;
+      }
+    } else {
+      if (inTable) {
+        tableLines[i] = '  </tbody>\n</table>\n' + tableLines[i];
+        inTable = false;
+      }
+    }
+  }
+  if (inTable) {
+    tableLines.push('  </tbody>\n</table>');
+  }
+  html = tableLines.join('\n');
+
   // Convert Paragraphs
   html = html.split('\n').map(line => {
     const trimmed = line.trim();
     if (!trimmed) return '';
-    if (trimmed.startsWith('<h') || trimmed.startsWith('<pre') || trimmed.startsWith('</pre') || trimmed.startsWith('<ul') || trimmed.startsWith('</ul') || trimmed.startsWith('<li') || trimmed.startsWith('<blockquote') || trimmed.startsWith('__CODE_BLOCK_PLACEHOLDER') || trimmed.startsWith('__INLINE_CODE_PLACEHOLDER')) {
+    if (trimmed.startsWith('<h') || trimmed.startsWith('<pre') || trimmed.startsWith('</pre') || trimmed.startsWith('<ul') || trimmed.startsWith('</ul') || trimmed.startsWith('<li') || trimmed.startsWith('<blockquote') || trimmed.startsWith('__CODE_BLOCK_PLACEHOLDER') || trimmed.startsWith('__INLINE_CODE_PLACEHOLDER') || trimmed.startsWith('<table') || trimmed.startsWith('</table>') || trimmed.startsWith('<thead') || trimmed.startsWith('</thead>') || trimmed.startsWith('<tbody') || trimmed.startsWith('</tbody>') || trimmed.startsWith('<tr') || trimmed.startsWith('</tr>') || trimmed.startsWith('<th') || trimmed.startsWith('</th>') || trimmed.startsWith('<td') || trimmed.startsWith('</td>')) {
       return line;
     }
     return `<p>${trimmed}</p>`;
