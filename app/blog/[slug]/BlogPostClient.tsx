@@ -25,22 +25,22 @@ const getShortTitle = (title: string, lang: "tr" | "en") => {
     return lang === "tr" ? "Masaüstü" : "Desktop App";
   }
   if (t.includes("projelere giriş") || t.includes("introduction to projects")) {
-    return lang === "tr" ? "Projeler" : "Projects";
+    return "Projects";
   }
   if (t.includes("artifacts")) {
     return "Artifacts";
   }
   if (t.includes("beceri") || t.includes("skills")) {
-    return lang === "tr" ? "Beceriler" : "Skills";
+    return "Skills";
   }
   if (t.includes("bağlamak") || t.includes("connecting")) {
-    return lang === "tr" ? "Bağlayıcılar" : "Connectors";
+    return "Connectors";
   }
   if (t.includes("kurumsal") || t.includes("enterprise")) {
-    return lang === "tr" ? "Kurumsal Arama" : "Ent. Search";
+    return "Enterprise Search";
   }
   if (t.includes("araştırma") || t.includes("research")) {
-    return lang === "tr" ? "Araştırma Modu" : "Research Mode";
+    return "Research Mode";
   }
   return title.split(":")[0];
 };

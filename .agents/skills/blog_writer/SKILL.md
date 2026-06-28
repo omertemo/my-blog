@@ -96,3 +96,4 @@ Append the new post object to the `posts` array in `lib/posts.ts`.
 - **First-Person & Authentic**: The blog reflects personal learning. Use "I/We" and share actual production stories (e.g., "At Istanbul Airport...").
 - **Concrete Code Snippets**: Include fully functional code snippets rather than abstract pseudo-code.
 - **Actionable Takeaways**: Always include sections on lessons learned, common pitfalls, and observability metrics.
+- **Objective & No Hype**: Avoid promotional, marketing, or overly praising expressions for Claude or other AI models. Keep the tone realistic, factual, and developer-focused, discussing limitations or realistic utility rather than hype.

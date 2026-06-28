@@ -8,16 +8,16 @@ date: "2026-06-20"
 published: true
 ---
 
-As developers and tech professionals, we tackle dozens of problems every single day. Over the past few years, AI tools have become an indispensable part of these workflows. However, many tools struggle to go beyond being simple question-and-answer chatbots. Claude, developed by Anthropic, disrupts this pattern by positioning itself not just as a reactive assistant, but as a "thought partner" that you can collaborate with on complex cognitive tasks.
+As developers and tech professionals, we tackle dozens of problems every single day. Over the past few years, AI tools have become an indispensable part of these workflows. However, many tools struggle to go beyond being simple question-and-answer chatbots. Claude, developed by Anthropic, is designed with agentic features to support collaborative workflows on complex cognitive tasks.
 
 In this post, we'll dive into the key takeaways from Anthropic's Claude 101 course, exploring Claude's technical strengths and the various working modes available in its new desktop app. Let's start with the fundamental question: What makes Claude different?
 
 ## What is Claude?
 
-When you first start using Claude, the first thing you notice is its human-like, balanced, and highly honest communication style. This is not a random design choice; it is a direct result of Anthropic's core engineering philosophy. Claude is built on three foundational principles: being helpful, harmless, and honest.
+Claude is built on three foundational principles: being helpful, harmless, and honest, which shape its communication style.
 
 ### 1. Constitutional AI
-Most AI models are trained using Reinforcement Learning from Human Feedback (RLHF), which can inadvertently train models to mirror human biases or act sycophantially to please evaluators. Claude, however, is trained using a novel method called **Constitutional AI**. The model is provided with a written "constitution"—a set of principles based on declarations of human rights, privacy guidelines, and ethical rules. During training, the model self-supervises, critiquing and correcting its own outputs against this constitution. This ensures it avoids toxic or discriminatory outputs, maintaining transparency and safety.
+Most AI models are trained using Reinforcement Learning from Human Feedback (RLHF), which can inadvertently train models to mirror human biases or act sycophantially to please evaluators. Claude, however, is trained using a method called **Constitutional AI**. The model is provided with a written "constitution"—a set of principles based on declarations of human rights, privacy guidelines, and ethical rules. During training, the model self-supervises, critiquing and correcting its own outputs against this constitution. This ensures it avoids toxic or discriminatory outputs, maintaining transparency and safety.
 
 ### 2. Large Context Window
 For developers, an AI's active memory is critical. Claude offers a massive **context window** of 200K tokens on standard plans, and up to 1M tokens (on supported models) for Pro, Max, Team, and Enterprise plans. This translates to roughly 500 to 2,500 pages of text, or an entire codebase, that you can feed into Claude in a single conversation. You can upload extensive code files or documentation as **attachments**, allowing Claude to evaluate the entire project and provide highly accurate, contextual solutions.
@@ -27,7 +27,7 @@ Claude exhibits high **steerability**, meaning it can strictly adhere to instruc
 
 ### Key Concepts
 
-*   **Constitutional AI:** A novel training method developed by Anthropic where the AI is trained to self-supervise and critique its outputs based on a written set of ethical and safety principles (a constitution).
+*   **Constitutional AI:** A training method developed by Anthropic where the AI is trained to self-supervise and critique its outputs based on a written set of ethical and safety principles (a constitution).
 *   **Context Window:** The active memory of an LLM, defining the maximum volume of text/data (measured in tokens) the model can ingest and consider in a single conversation.
 *   **Steerability:** The model's capacity to strictly follow constraints regarding tone, style, behavior, and output formatting.
 *   **Token:** The basic unit of text processing for LLMs, typically representing a word, sub-word, or punctuation mark (average 1 word = 1.3 tokens).
@@ -80,7 +80,7 @@ Collaborating with AI is an iterative process, not a linear one. Treat the first
 
 ## Claude Desktop App: Chat, Cowork, Code
 
-The interfaces we use to collaborate with AI directly affect our productivity. Claude’s new desktop app offers three distinct working modes tailored to your immediate needs:
+Claude’s desktop app offers three distinct working modes tailored to your immediate needs:
 
 *   **Chat:** The same conversational Claude you know from the web, enhanced with native desktop integrations. This includes a floating **Quick Entry** window that triggers by double-tapping the **Option** key on Mac, allowing you to ask questions without leaving your active window. It also features screen capturing, window sharing, voice **dictation**, and **desktop connectors** that link local data (like Apple Notes) to your chat context.
 *   **Cowork:** An **agentic** tool built for tasks requiring multi-step workflows and autonomous executions. Cowork can coordinate **subagents** in parallel to divide and conquer research reports, run folder-wide document updates, and execute scheduled tasks (e.g., pulling daily Slack/Calendar updates). It can browse the web via Chrome (**browser use**) or directly interact with desktop windows, clicking and typing to get work done (**computer use**). You can also hand off tasks to it remotely from your phone using **Dispatch**.
@@ -100,7 +100,7 @@ The interfaces we use to collaborate with AI directly affect our productivity. C
 
 ## Introduction to Projects
 
-An inherent limitation of standard AI interactions is that each new chat is a blank slate, requiring you to manually re-upload reference files and repeat instructions. Claude solves this overhead and optimizes ongoing workflows through the **Projects** feature.
+AI models typically start each new conversation with a blank slate, requiring files and instructions to be re-uploaded. Claude provides a **Projects** feature to manage persistent context and optimize ongoing workflows.
 
 Projects are dedicated digital workspaces designed for ongoing, multi-stage **workflows** rather than simple, one-off questions. When you establish a project, you can leverage:
 
@@ -110,7 +110,7 @@ Projects are dedicated digital workspaces designed for ongoing, multi-stage **wo
 
 ### Setting Up Your First Project
 
-Establishing a project is straightforward and takes only a few steps:
+The setup process for a project involves the following steps:
 
 1. **Start Your Project:** Click on "Projects" in the left sidebar or navigate directly to `claude.ai/projects`, then click "+ New Project" in the top-right corner. Give your project a descriptive name and a brief description. Set visibility to private or share it with your organization.
 2. **Define Project Instructions:** Click on "Instructions" to specify behavioral rules for Claude across all project chats. A good instruction set includes context about your work, process guidelines (e.g., "First outline the blog structure, then draft the post"), style preferences, and specific output requirements (e.g., "Always include a call-to-action"). You can also use instructions to automate workflows (e.g., "When a meeting transcript is uploaded, generate a structured summary based on this template").
@@ -132,7 +132,7 @@ To share a project, click the "Share project" button to the right of the project
 
 What happens when you upload a substantial volume of documentation to your project? Claude handles scale automatically through **Retrieval Augmented Generation (RAG)**.
 
-When the total volume of your project data approaches the **context window** limit, Claude seamlessly activates **RAG mode**. Rather than loading all project files into memory at once, Claude intelligently searches and retrieves only the most relevant text chunks to answer your specific query. This approach expands your project's data capacity by up to 10x while maintaining response speed and quality. A visual indicator will appear in the UI once RAG is enabled, though the interaction remains identical—allowing you to query files and receive context-aware answers seamlessly.
+When the total volume of your project data approaches the **context window** limit, Claude seamlessly activates **RAG mode**. Rather than loading all project files into memory at once, Claude intelligently searches and retrieves only the most relevant text chunks to answer your specific query. This approach expands the project's data capacity while maintaining response speed and quality. A visual indicator will appear in the UI once RAG is enabled, though the interaction remains identical—allowing you to query files and receive context-aware answers seamlessly.
 
 ### Best Practices for Projects
 
@@ -180,7 +180,7 @@ Claude can create different types of artifacts, each suited to different needs:
 
 ### Creating Your First Artifact
 
-Creating an artifact is as simple as having a conversation. Just describe what you want, and Claude will determine whether to present it as an artifact.
+To create an artifact, describe what you want, and Claude will determine whether to present it as an artifact based on the size and structure of the content.
 
 For example, you might say:
 
@@ -234,7 +234,7 @@ To extract the maximum value from the Artifacts feature, consider these tips:
 
 ## Working with Skills
 
-While executing tasks within workspaces and codebases, Claude offers modular expertise packages and dynamic integrations with external tools to handle specialized workflows.
+While executing tasks within workspaces and codebases, Claude supports modular expertise packages and integrations with external tools to handle specialized workflows.
 
 **Skills** are directories containing instructions, **scripts**, and template resources that Claude loads dynamically in the background to optimize performance on specialized tasks. Think of them as autonomous expertise packages designed to extend Claude's core capabilities in a repeatable way.
 
@@ -270,7 +270,7 @@ Once enabled, you'll see available Skills listed in your settings, including Ant
 
 ### Using Skills in Practice
 
-The beauty of Skills is that you typically do not need to think about them—Claude automatically handles skill selection based on your prompt.
+The workflow automatically handles skill selection based on your prompt.
 
 Here are a few practical examples of prompts that will trigger Skills:
 
@@ -285,7 +285,7 @@ When Claude invokes a skill, you will see it mentioned inside Claude's chain of 
 
 While Anthropic's built-in Skills manage basic document creation tasks, the true potential of the feature comes from customising them to your workflows. Custom Skills let you program Claude with your brand guidelines (brand voice), templates, and specific ways of working.
 
-The easiest way to build a Custom Skill is through direct dialogue with Claude. No code writing or manual file structures are required; Claude compiles everything autonomously:
+To build a Custom Skill, you can describe requirements in a dialogue with Claude. The file structure is compiled autonomously:
 
 1.  **Define Your Purpose:** Open a new chat and tell Claude what you want to create (e.g., *"I want to create a skill for writing quarterly business reviews (QBR)."*).
 2.  **Answer Claude's Questions:** Claude will run a brief interview about your workflow, asking what the skill should execute, what defines a high-quality output, and in which contexts you plan to deploy it.
@@ -329,7 +329,7 @@ There are two types of connectors:
 *   **Web Connectors:** Link Claude to cloud services like Google Drive, Notion, Slack, and Asana.
 *   **Desktop Extensions:** Run locally on your computer through the Claude Desktop app, giving Claude access to local files and native applications.
 
-The Model Context Protocol (MCP) powers connectors. Think of MCP like USB-C for AI—a universal standard that allows Claude to connect to many different applications through a single, consistent interface. This open standard means developers can build connectors for any tool, and those connectors work seamlessly with Claude.
+The Model Context Protocol (MCP) powers connectors. Model Context Protocol (MCP) is an open-source, universal standard that allows AI models to connect to different applications through a single, consistent interface. This open standard means developers can build connectors for any tool, and those connectors work with Claude.
 
 ### Finding and Connecting Tools
 
@@ -499,13 +499,13 @@ In short, yes. Enterprise Search only shows what you already have permission to 
 
 ## Research Mode for Deep Dives
 
-Research transforms how Claude finds and analyzes information. Instead of a single search, Claude operates agentically—conducting multiple searches that build on each other while determining exactly what to investigate next. It explores different angles of your question automatically and works through open questions systematically.
+Research provides an agentic approach for finding and analyzing information. Instead of a single search, the model conducts multiple searches that build on each other while determining exactly what to investigate next, exploring different angles of the question automatically.
 
-Research delivers comprehensive answers in minutes. Most reports complete in 5 to 15 minutes, though more complex investigations may take up to 45 minutes—work that would typically require hours of manual research.
+Research reports typically complete in 5 to 45 minutes depending on the complexity of the query.
 
-Extended thinking is automatically enabled with Research. This powerful combination lets Claude both plan its approach thoughtfully and gather comprehensive information, breaking complex requests into manageable pieces.
+Extended thinking is automatically enabled with Research. This combination lets the model plan its approach and gather comprehensive information, breaking complex requests into manageable pieces.
 
-Citations make verification easy. Research delivers thorough answers complete with easy-to-check citations, so you can trust Claude's findings and quickly verify sources yourself.
+Citations in the research outputs allow for source verification.
 
 ### What is Research?
 

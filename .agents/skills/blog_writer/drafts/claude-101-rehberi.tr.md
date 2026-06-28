@@ -8,13 +8,13 @@ date: "2026-06-20"
 published: true
 ---
 
-Geliştiriciler ve teknoloji profesyonelleri olarak her gün onlarca problemi çözmeye çalışıyoruz. Son birkaç yıldır yapay zeka araçları bu süreçlerin ayrılmaz bir parçası haline geldi. Ancak pek çok araç sadece basit birer soru-cevap asistanı (chatbot) olmanın ötesine geçemiyor. Anthropic tarafından geliştirilen Claude ise bu ezberi bozarak kendisini sadece bir asistan değil, aynı zamanda karmaşık süreçleri birlikte yürütebileceğimiz bir "düşünce ortağı" (thought partner) olarak konumlandırıyor.
+Geliştiriciler ve teknoloji profesyonelleri olarak her gün onlarca problemi çözmeye çalışıyoruz. Son birkaç yıldır yapay zeka araçları bu süreçlerin ayrılmaz bir parçası haline geldi. Ancak pek çok araç sadece basit birer soru-cevap asistanı (chatbot) olmanın ötesine geçemiyor. Anthropic tarafından geliştirilen Claude, soru-cevap işlevlerinin yanı sıra kullanıcıyla birlikte çalışabilen, otonom yeteneklere sahip bir asistan olarak tasarlanmıştır.
 
 Bu yazıda, Anthropic'in Claude 101 eğitiminde öne çıkan başlıkları, Claude'un teknik gücünü ve yeni masaüstü uygulamasındaki çalışma modlarını inceleyeceğiz. İlk olarak en temel soruyla başlayalım: Claude'u diğerlerinden farklı kılan ne?
 
 ## Claude Nedir?
 
-Claude'u ilk kullanmaya başladığınızda dikkatinizi çeken ilk şey, insani, dengeli ve son derece dürüst iletişim tonudur. Bu rastlantısal bir tasarım tercihi değil, Anthropic'in temel felsefesinin bir sonucudur. Claude; faydalı (helpful), zararsız (harmless) ve dürüst (honest) olmak üzere üç temel ilke üzerine inşa edilmiştir.
+Claude, Anthropic'in tasarım tercihleri doğrultusunda şekillenen bir iletişim tonuna sahiptir. Model; faydalı (helpful), zararsız (harmless) ve dürüst (honest) olmak üzere üç temel ilke (HHH felsefesi) gözetilerek geliştirilmiştir.
 
 ### 1. Constitutional AI (Anayasal Yapay Zeka)
 Pek çok yapay zeka modeli, insan geri bildirimleriyle (RLHF) eğitilir ve bu süreç insanların kendi ön yargılarını modele aktarmasına neden olabilir. Claude ise **Constitutional AI** adı verilen özgün bir yöntemle eğitilir. Modele insan hakları beyannamesi, gizlilik kuralları ve etik ilkelerden oluşan yazılı bir "anayasa" verilir. Model, eğitim esnasında kendi çıktılarının bu anayasaya uygunluğunu kendisi denetler ve düzeltir. Bu sayede toksik veya ayrımcı çıktılardan (outputs) uzak dururken, son derece şeffaf ve güvenilir bir çerçevede çalışır.
@@ -109,7 +109,7 @@ Projeler, tek seferlik sorular (**one-shot questions**) yerine, süreğen ve gen
 
 ### İlk Projenizi Kurmak
 
-Bir projeyi hayata geçirmek son derece basittir ve yalnızca birkaç adımdan oluşur:
+Bir projenin kurulum adımları şunlardır:
 
 1. **Projeyi Başlatın:** Sol menüdeki "Projects" butonuna veya doğrudan `claude.ai/projects` adresine giderek sağ üstteki "+ New Project" seçeneğine tıklayın. Projenize açıklayıcı bir isim ve kısa bir amaç açıklaması verin. Görünürlüğünü isteğinize göre gizli tutabilir veya ekip arkadaşlarınızla paylaşabilirsiniz.
 2. **Proje Talimatlarını (Instructions) Tanımlayın:** "Instructions" paneli üzerinden Claude'un bu projedeki tüm sohbetlerde uymasını istediğiniz kuralları yazın. İyi bir talimat seti; projenin amacını, Claude'dan beklenen adımları (örneğin "Önce blog yapısını kurgula, sonra taslağı yaz"), tercih edilen ton ve stil kurallarını ve çıktı gereksinimlerini (örneğin "Her zaman call-to-action ekle") içerir. Ayrıca bu bölümü belirli iş akışlarını (**workflows**) otomatikleştirmek için de programlayabilirsiniz (örneğin "Yüklenen toplantı transkriptlerinden otomatik olarak şablonlu bir özet çıkart").
@@ -131,7 +131,7 @@ Bir projeyi paylaşmak için proje adının sağındaki "Share project" butonuna
 
 Projeye çok sayıda veya çok büyük dosyalar yüklediğinizde ne olur? Claude, bu durumu **Retrieval Augmented Generation (RAG)** mekanizmasıyla otonom olarak yönetir.
 
-Projedeki bilgi miktarı **context window** sınırına yaklaşmaya başladığında, Claude sorunsuz bir şekilde **RAG modunu** etkinleştirir. Claude, tüm proje dosyalarını aynı anda belleğe yüklemek yerine, sorduğunuz soruyu yanıtlamak için en kritik ve ilgili bilgi parçalarını akıllıca arayıp bulur ve yalnızca bu parçaları belleğe çeker. Bu akıllı arama ve getirme süreci, yanıt kalitesinden ödün vermeden projenizin dosya taşıma kapasitesini 10 katına kadar artırır. RAG modu aktif olduğunda arayüzde görsel bir gösterge belirir, ancak belgelerle sohbet etme ve bağlama duyarlı (**context-aware**) yanıtlar alma deneyiminiz kesintisiz olarak devam eder.
+Projedeki bilgi miktarı **context window** sınırına yaklaşmaya başladığında, Claude sorunsuz bir şekilde **RAG modunu** etkinleştirir. Claude, tüm proje dosyalarını aynı anda belleğe yüklemek yerine, sorduğunuz soruyu yanıtlamak için en kritik ve ilgili bilgi parçalarını akıllıca arayıp bulur ve yalnızca bu parçaları belleğe çeker. Bu arama ve getirme süreci, projenin veri kapasitesini artırırken yanıt hızını korur. RAG modu aktif olduğunda arayüzde görsel bir gösterge belirir, ancak belgelerle sohbet etme ve bağlama duyarlı (**context-aware**) yanıtlar alma deneyiminiz kesintisiz olarak devam eder.
 
 ### Projeler İçin En İyi Pratikler (Best Practices)
 
@@ -233,7 +233,7 @@ Artifacts özelliğinden maksimum verim almak için şu ipuçlarına dikkat edeb
 
 ## Becerilerle Çalışmak
 
-Claude, projelerinizi ve kod tabanınızı yönetirken genel yeteneklerinin yanı sıra dinamik uzmanlık paketleri ve dış dünya araç entegrasyonları sunar.
+Claude, projeleri ve kod tabanlarını yönetirken uzmanlık paketleri ve dış dünya araç entegrasyonları çalıştırmayı destekler.
 
 **Skills** (Beceriler), Claude'un belirli ve özelleştirilmiş görevlerdeki başarısını artırmak için arka planda dinamik olarak yüklediği talimatlar, **scripts** (betikler) ve kaynak şablonlarından oluşan modüler klasörlerdir. Bunları, Claude'a yeni yetenekler kazandıran otonom "uzmanlık paketleri" olarak tanımlayabiliriz.
 
@@ -284,7 +284,7 @@ Claude bir beceri (**skill**) kullandığında, arka planda yaptığı işlemler
 
 Anthropic'in sunduğu yerleşik beceriler temel ofis işlerinizi çözse de, Beceriler özelliğinin asıl gücü kendi özel iş süreçlerinizi koda dökmenizden gelir. Özel Beceriler (**Custom Skills**), şirketinizin marka kurallarını (brand voice), şablonlarını ve iş yapış şekillerini Claude'a kalıcı olarak öğretmenize imkan tanır.
 
-Özel bir beceri oluşturmanın en kolay yolu, Claude ile sohbet etmektir. Herhangi bir kod yazmanıza veya teknik kurulum yapmanıza gerek kalmaz; Claude dosya yapısını sizin yerinize otonom kurar:
+Özel bir beceri oluşturmak için model ile sohbet ederek gereksinimler tanımlanır. Dosya yapısı model tarafından otonom olarak kurulur:
 
 1.  **İhtiyacınızı Tanımlayın:** Yeni bir sohbet başlatıp Claude'a neye ihtiyacınız olduğunu söyleyin (örneğin: *"Çeyreklik iş incelemeleri (QBR) yazmak için bir skill oluşturmak istiyorum"*).
 2.  **Soruları Yanıtlayın:** Claude, iş akışınız hakkında sizinle kısa bir mülakat gerçekleştirir (bu becerinin tam olarak ne işe yarayacağını, kaliteli bir çıktının nasıl olması gerektiğini ve hangi durumlarda kullanılacağını sorar).
@@ -501,7 +501,7 @@ Kısacası, evet. Kurumsal Arama, yalnızca orijinal bağlı araçta zaten eriş
 
 Araştırma özelliği, Claude'un bilgiyi bulma ve analiz etme yöntemini dönüştürür. Claude, tek bir arama yapmak yerine, bir sonraki aşamada neyi inceleyeceğine karar verirken birbiri üzerine inşa edilen çoklu aramalar yürüterek otonom (**agentic**) bir şekilde çalışır. Sorunuzun farklı açılarını otomatik olarak keşfeder ve açık uçlu soruları sistematik bir şekilde çözer.
 
-Araştırma, dakikalar içinde kapsamlı yanıtlar sunar. Çoğu rapor 5 ila 15 dakika arasında tamamlanır, ancak daha karmaşık araştırmalar 45 dakikaya kadar sürebilir; bu da normalde saatler süren manuel araştırmalar gerektiren bir iştir.
+Araştırma raporları, konunun karmaşıklığına bağlı olarak 5 ila 45 dakika arasında tamamlanmaktadır.
 
 Araştırma ile birlikte derin düşünme (**extended thinking**) özelliği otomatik olarak etkinleştirilir. Bu güçlü kombinasyon, Claude'un hem yaklaşımını düşünceli bir şekilde planlamasını hem de kapsamlı bilgileri toplamasını sağlayarak karmaşık istekleri yönetilebilir parçalara böler.
 
