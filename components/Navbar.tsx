@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import LangToggle from "./LangToggle";
@@ -22,8 +23,15 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 nav-glass">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         {/* Logo */}
-        <Link href="/" className="text-gradient text-lg font-bold">
-          Ömer ÇAYIR
+        <Link href="/" className="flex items-center gap-2.5 text-gradient text-lg font-bold group">
+          <Image
+            src="/logo.svg"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110"
+          />
+          <span className="tracking-wide">Ömer ÇAYIR</span>
         </Link>
 
         {/* Desktop nav */}
