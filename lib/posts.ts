@@ -10,6 +10,7 @@ export interface Post {
   date: string;
   published: boolean;
   content?: { tr: string; en: string };
+  multiPage?: boolean; // yalnızca chapter'lı yazılar için stepper navigasyonu
 }
 
 export const posts: Post[] = [
@@ -29,6 +30,7 @@ export const posts: Post[] = [
     readTime: 45,
     date: "2026-06-20",
     published: true,
+    multiPage: true,
     content: claude101Content,
   },
   {

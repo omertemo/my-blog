@@ -156,7 +156,7 @@ export default function BlogPostClient({ slug }: Props) {
     );
   }
 
-  const isMultiPage = sections.length > 1;
+  const isMultiPage = !!post.multiPage && sections.length > 1;
 
   return (
     <article className={`mx-auto px-6 py-16 ${isMultiPage ? "max-w-5xl" : "max-w-2xl"}`}>
