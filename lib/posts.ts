@@ -1,4 +1,5 @@
 import { content as claude101Content } from "./posts/claude-101-rehberi";
+import { content as claudeCodeCheatsheetContent } from "./posts/claude-code-cheatsheet";
 export interface Post {
   slug: string;
   title: { tr: string; en: string };
@@ -14,6 +15,24 @@ export interface Post {
 }
 
 export const posts: Post[] = [
+  {
+    slug: "claude-code-cheatsheet",
+    title: {
+      tr: "Claude Code Saha Notları: No-BS Cheatsheet",
+      en: "Claude Code Field Notes: A No-BS Cheatsheet",
+    },
+    desc: {
+      tr: "Terminalde Claude Code kullanırken en kritik kısayollar, bağlam yönetimi hileleri, 60 satırlık CLAUDE.md şablonu ve sık karşılaşılan tuzaklar.",
+      en: "High-leverage terminal shortcuts, context management habits, a 60-line CLAUDE.md template, and battle-tested gotchas for Claude Code.",
+    },
+    tag: "CLI",
+    tagVariant: "cyan",
+    emoji: "💻",
+    readTime: 8,
+    date: "2026-09-04",
+    published: true,
+    content: claudeCodeCheatsheetContent,
+  },
   {
     slug: "claude-101-rehberi",
     title: {
