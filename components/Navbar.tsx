@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import LangToggle from "./LangToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Navbar() {
   const { t } = useLanguage();
@@ -25,7 +26,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 text-gradient text-lg font-bold group">
           <Image
-            src="/logo.svg"
+            src={assetPath("/logo.svg")}
             alt="Logo"
             width={32}
             height={32}
