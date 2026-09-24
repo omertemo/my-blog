@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { assetPath } from "@/lib/assetPath";
 import {
   FaLinkedin,
   FaGithub,
@@ -246,9 +247,9 @@ export default function CVPage() {
           <IoArrowBack className="h-4 w-4" /> {t("cv.backHome")}
         </Link>
         <a
-          href={
+          href={assetPath(
             lang === "tr" ? "/assets/Turkish_CV.pdf" : "/assets/English_CV.pdf"
-          }
+          )}
           download
           className="inline-flex items-center gap-2 rounded-xl border border-accent1/30 bg-gradient-to-r from-accent1/15 to-accent2/15 px-5 py-2 text-sm font-semibold text-white/90 transition-all hover:from-accent1/25 hover:to-accent2/25 hover:border-accent1/50"
         >
@@ -260,7 +261,7 @@ export default function CVPage() {
       <div className="mb-10 text-center">
         <div className="relative mx-auto mb-5 h-24 w-24 overflow-hidden rounded-full border-2 border-accent1/20 bg-bg3">
           <Image
-            src="/assets/MyPhoto.jpeg"
+            src={assetPath("/assets/MyPhoto.jpeg")}
             alt="Ömer ÇAYIR"
             fill
             className="object-cover"

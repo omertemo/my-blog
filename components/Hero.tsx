@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { assetPath } from "@/lib/assetPath";
 
 const socials = [
   {
@@ -97,7 +98,7 @@ export default function Hero() {
           <div className="absolute inset-[-6px] rounded-full bg-accent-gradient opacity-30 blur-xl" />
           <div className="relative h-32 w-32 overflow-hidden rounded-full border-2 border-accent1/25 bg-bg3">
             <Image
-              src="/assets/MyPhoto.jpeg"
+              src={assetPath("/assets/MyPhoto.jpeg")}
               alt="Ömer ÇAYIR"
               fill
               className="object-cover"
