@@ -5,7 +5,7 @@ This project is a React application integrated with Tailwind CSS for styling. It
 ## Project Structure
 
 ```
-my-express-app
+omertemo.github.io
 ├── src
 │   ├── app.ts               # Main entry point of the React application
 │   ├── controllers          # Contains business logic and state management
@@ -26,7 +26,7 @@ To get started with this project, follow these steps:
 1. **Clone the repository:**
    ```bash
    git clone <repository-url>
-   cd my-express-app
+   cd omertemo.github.io
    ```
 
 2. **Install dependencies:**
